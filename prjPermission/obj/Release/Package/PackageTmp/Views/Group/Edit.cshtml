@@ -1,0 +1,150 @@
+﻿@model prjPermission.Models.GroupChooseViewModel
+@{
+    Layout = null;
+    ViewBag.Title = "群組修改";
+}
+<div class="content">
+    @Html.Action("SideBar", "Home")
+</div>
+<script src="~/Scripts/jquery-3.6.3.min.js"></script>
+<style type="text/css">
+    #Header {
+        width: 360px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 15px;
+        color: #fffaf3;
+        font-weight: bold;
+        background-color: #f9c81e;
+    }
+
+    #Sidebar {
+        width: 120px;
+        float: left;
+        height: 280px;
+        text-align: center;
+        line-height: 280px;
+        font-size: 15px;
+        color: #ffffff;
+        font-weight: bold;
+        background-color: #cecece;
+    }
+
+    #body {
+        width: 240px;
+        height: 280px;
+        text-align: center;
+        line-height: 280px;
+        font-size: 15px;
+        color: #f9c81e;
+        font-weight: bold;
+        background-color: #fffaf3;
+        float: left;
+    }
+
+    #Footer {
+        width: 360px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 15px;
+        color: #fffaf3;
+        font-weight: bold;
+        background-color: #f9c81e;
+    }
+
+    .table1, .td1, .th1 {
+        border: 1.5px solid black;
+    }
+
+    .table1 {
+        border-collapse: collapse;
+        width: 40%;
+    }
+
+    .down {
+        margin-top: 10px;
+    }
+</style>
+
+<body class="model-form">
+    <form method="post" action="@Url.Action("Edit")">
+        <table style="text-align:left;">
+
+            <tr><th style="color:cornflowerblue">修改資料</th></tr>
+            <tr>
+                <th>
+                    群組編號:
+                    <input type="text" id="DEPT_NO" name="DEPT_NO" class="form-contol" value="@ViewBag.DEPT_NO" style="background-color:lightblue" readonly />
+                </th>
+                <th>
+                    群組名稱:
+                    <input type="text" id="DEPT_NAME" name="DEPT_NAME" class="form-contol" value="@ViewBag.DEPT_NAME" />
+                </th>
+            </tr>
+            <tr><th><br /></th></tr>
+            <tr>
+                <th><input type="submit" value="修改" class="btn btn-default" style="border:1px gray solid" /><a href="@Url.Action("Index", "Group")" class="btn btn-default" style="border:1px gray solid">取消</a></th>
+            </tr>
+        </table>
+    </form>
+
+    <div style="color:red; text-align: left;">@ViewBag.NameError</div>
+
+    <form method="post" action="@Url.Action("CreateUser")">
+        <input type="text" id="DEPT_NO" name="DEPT_NO" class="hidden" value="@ViewBag.DEPT_NO" style="background-color:lightblue" readonly />
+        <table class="table1" style="width:30%">
+            <tr>
+                <th class="th1" style="background-color:#009FCC; text-align: center; width:20%">
+                    使用者
+                </th>
+                <td class="td1" style="text-align: left; width:70%">
+                    <div>
+                        <select name="choose" id="choose">
+                            <option name="group">請選擇</option>
+                            @foreach (var item in ViewBag.USER)
+                            {
+                                <option name="value">@item.USER.USR_ID.@item.USER.USR_NAME</option>
+                            }
+                        </select>
+                    </div>
+                </td>
+                <th class="btnn" style="width:30px; height:20px"><button>新增</button></th>
+            </tr>
+        </table>
+    </form>
+
+    <div style="color:red; text-align: left;">@ViewBag.GroupError</div>
+
+
+    <table class="table" style="text-align: left; width:30%">
+        <tr><th>群組使用者:</th></tr>
+        <tr style="background-color:#009FCC;">
+            <th>
+                使用者編號
+            </th>
+            <th>
+                使用者名稱
+            </th>
+            <th>
+                處理
+            </th>
+        </tr>
+        @if (ViewBag.GROUPUSER != null)
+        {
+            foreach (var item in ViewBag.GROUPUSER)
+            {
+                <tr style="background-color:#CCEEFF">
+                    <td style="vertical-align: middle">@item.USER.USR_ID</td>
+                    <td style="vertical-align: middle">@item.USER.USR_NAME</td>
+                    <td>
+                        @Html.ActionLink("刪除", "GroupDelete",
+                           new { DEPT_ID = ViewBag.DEPT_NO, USR_ID = item.USER.USR_ID },
+                           new { onclick = "return confirm('確定刪除嗎?');", @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</body>

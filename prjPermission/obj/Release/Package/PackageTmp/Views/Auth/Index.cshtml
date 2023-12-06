@@ -1,0 +1,113 @@
+﻿@model prjPermission.Models.AuthViewModel
+<div class="content">
+    @Html.Action("SideBar", "Home")
+</div>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <script src="~/Scripts/jquery-3.6.3.min.js"></script>
+
+    <script src="~/Scripts/TreeView.js"></script>
+    <title>Index</title>
+    <link href="~/Content/TreeView.css" rel="stylesheet" />
+</head>
+<body style="padding-top: 80px;">
+    <div id="collapseDVR3" class="panel-collapse collapse in" style="float: left;">
+        <div class="tree ">
+            <ul>
+                <li>
+                    <span><i class="fa fa-minus-square"></i> 權限管理</span>
+                    @foreach (var item1 in Model.menu1)
+                    {
+                        <ul>
+                            <li>
+                                <span>
+                                    <i class="fa fa-minus-square"></i>
+                                    <a href="#">@item1.SYS_NAME</a>
+                                </span>
+                                @foreach (var item2 in Model.menu2.Where(m => m.AN_SYS_ID == item1.SYS_ID))
+                                {
+                                    <ul>
+                                        <li>
+                                            <span>
+                                                <i class="fa fa-minus-square"></i>
+                                                <a href="#">@item2.SYS_NAME</a>
+                                            </span>
+                                            @foreach (var item3 in Model.menu3.Where(m => m.AN_SYS_ID == item2.SYS_ID))
+                                            {
+                                                <ul>
+                                                    <li>
+                                                        <span>
+                                                            <a href="#" id="@item3.SYS_ID" onClick="TreeViewClick(this.id)">@item3.SYS_NAME</a>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            }
+
+                                        </li>
+                                    </ul>
+                                }
+
+                            </li>
+                        </ul>
+                    }
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h1>
+        擁有權限部門列表
+    </h1>
+    <hr />
+    <div id="add">
+
+    </div>
+
+    <table class="table" style="width:440px" id="auth">
+        <tr>
+            <th>部門編號</th>
+            <th>部門名稱</th>
+        </tr>
+    </table>
+
+</body>
+</html>
+<script type="text/javascript" language="javascript">
+    function TreeViewClick(clicked_id) {
+        $.ajax({
+            url: '@Url.Action("Index", "Auth")',
+            type: 'post',
+            dataType: 'json',
+            /*            contentType: 'application/json; charset=utf-8',*/
+            data: { sysid: clicked_id }, //json format
+
+            success: function (returnData) {
+                var count = 0;
+                /*部門資訊*/
+                @{
+                string createUrl = Url.Action("Create", "Auth");
+                }
+                $('#auth').empty();
+                $('#add').empty();
+                var createUrlWithId = "@createUrl" + "?SYS_ID=" + clicked_id;
+                $("#add").append("<a class='btn btn-primary' href='" + createUrlWithId + "'>新增部門</a>");
+                $("#auth").append("<th>部門編號</th><th>部門名稱</th>");
+                for (var i = 0; i < returnData.length; i++) {
+                    $("#auth").append(
+                        "<tr id=del_'" + count + "'>" +
+                        "<td>" + returnData[i].DEPT_NO + "</td>" +
+                        "<td>" + returnData[i].DEPT_NAME + "</td>" +
+                        "<td><a  onclick = 'del(del_'" + count + "')' class='btn btn-danger' href='/Auth/Delete?DEPT_NO=" + returnData[i].DEPT_NO + "&SYS_ID=" + returnData[i].SYS_ID + "'>刪除</a></td>" +
+                        "</tr>"
+                    );
+                }
+            }
+        })
+    }
+    function del(sysid) {
+        $(sysid).remove();
+    }
+</script>

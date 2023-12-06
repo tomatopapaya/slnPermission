@@ -1,0 +1,234 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<prjPermission.Models.OGCUSER>
+<div class="content">
+    @Html.Action("SideBar", "Home")
+</div>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<script src="~/Scripts/jquery-3.6.3.min.js"></script>
+<style type="text/css">
+
+    #Header {
+        width: 360px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 15px;
+        color: #fffaf3;
+        font-weight: bold;
+        background-color: #f9c81e;
+    }
+
+    #Sidebar {
+        width: 120px;
+        float: left;
+        height: 280px;
+        text-align: center;
+        line-height: 280px;
+        font-size: 15px;
+        color: #ffffff;
+        font-weight: bold;
+        background-color: #cecece;
+    }
+
+    #body {
+        width: 240px;
+        height: 280px;
+        text-align: center;
+        line-height: 280px;
+        font-size: 15px;
+        color: #f9c81e;
+        font-weight: bold;
+        background-color: #fffaf3;
+        float: left;
+    }
+
+    #Footer {
+        width: 360px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 15px;
+        color: #fffaf3;
+        font-weight: bold;
+        background-color: #f9c81e;
+    }
+
+    .table1, .td1, .th1 {
+        border: 1.5px solid black;
+    }
+
+    .table1 {
+        border-collapse: collapse;
+        width: 40%;
+    }
+
+    .down {
+        margin-top: 10px;
+    }
+</style>
+
+<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        $('#Customers').change(function () { ChangeCustomer(); });
+    });
+    function ChangeCustomer() {
+        var selectedValue = $('#Customers option:selected').val();
+        if ($.trim(selectedValue).length > 0) {
+            GetOrders(selectedValue);
+        }
+    }
+    function GetOrders(customerID) {
+
+        $.ajax({
+            url: '@Url.Action("Orders", "Home")',
+            data: { customerID: customerID },
+            type: 'post',
+            cache: false,
+            async: false,
+            dataType: 'json',
+            success: function (data) {
+                alert(data);
+                if (data.length > 0) {
+                    $('#Orders').empty();
+                    $('#Orders').append($('<option></option>').val('').text('請選擇'));
+                    $.each(data, function (i, item) {
+                        $('#Orders').append($('<option></option>').val(item.Key).text(item.Value));
+                    });
+                }
+            }
+        });
+    }
+</script>
+@*<script>
+        function myFunction() {
+            var x = document.getElementById("Customers").value;
+            document.getElementById("demo").innerHTML = x;
+            var y = document.getElementById("Orders").value;
+            document.getElementById("demo1").innerHTML = y;
+        }
+    </script>*@
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <title>Employee</title>
+</head>
+
+
+<body class="model-form">
+    <br />        
+    <div style="display: flex; align-items: center;">
+        <h2 style="margin: 0;">人員管理　</h2>
+        <a href="@Url.Action("Create", "Home")" class="btn btn-primary">新增</a>
+    </div>
+    <br />
+    <div>
+        <div>
+            @using (Html.BeginForm("Employee", "Home", FormMethod.Get))
+            {
+                <p>
+                    員工編號: @Html.TextBox("USR_ID_search")
+                    員工姓名: @Html.TextBox("USR_NAME_search")
+                    <input type="submit" value="查詢" />
+                </p>
+            }
+        </div>
+        <br />
+        <div class="table-responsive" style="max-width: 1000px;">
+
+            <table class="table table">
+
+                <tr style="background-color:lightskyblue;">
+                    <th></th>
+                    <th style="text-align:left">
+                        員工編號
+                    </th>
+                    <th style="text-align:left">
+                        員工姓名
+                    </th>
+                    <th style="text-align:left">
+                        在職狀況
+                    </th>
+                </tr>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr style="background-color:white;">
+                        <td style="vertical-align: middle"><a href="@Url.Action("Employee", "Home")?chooseSelect=@item.USR_ID" class="btn btn-primary">選取</a></td>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.USR_ID)
+                        </td>
+                        <td style="vertical-align: middle">
+                            @Html.DisplayFor(modelItem => item.USR_NAME)
+                        </td>
+                        <td style="vertical-align: middle">
+                            <input id="" type="checkbox" name="" checked="@item.USR_STAT" disabled="disabled">
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+
+        <table>@Html.PagedListPager(Model, page => Url.Action("Employee", new { page }))</table>
+
+    </div>
+</body>
+
+
+<script>
+    let tbody = document.querySelector('.alert-danger') //取目標
+    let btn = document.querySelector('.btnn')
+    btn.addEventListener('click', () => {
+        let dataNew = []
+        let name = document.getElementById("Orders").value;
+        let subject = document.getElementById("Customers").value;
+        // console.log(name)
+        // console.log(subject);
+        // console.log(score);
+
+        console.log(dataNew);   //輸出在表格內
+        if (name !== '' && subject !== '') {
+            if (dataNew = []) {
+                dataNew.push(name)
+                dataNew.push(subject)
+            }
+            //for (let j = 0; j < dataNew.length; j++)
+            //{
+            //    if (dataNew[j] = '部門')
+            //    {
+            //        dataNew.push(name)
+            //        dataNew.push(subject)
+            //    }
+            //}
+
+            console.log(dataNew);
+            let tr = document.createElement('tr')
+            for (let i = 0; i < dataNew.length; i++) {
+                let td = document.createElement('td')
+                td.innerHTML = dataNew[i]
+                tr.appendChild(td)
+            }
+            let td = document.createElement('td')
+            td.innerHTML = `<a href='javascript:;'>刪除</a>`
+            let a = td.children[0]
+            a.addEventListener('click', () => {
+
+                let parent = a.parentNode.parentNode
+                console.log(parent);
+                parent.remove()
+            })
+            tr.appendChild(td)
+            console.log(tr);
+            tbody.insertBefore(tr, tbody.children[0])
+        }
+        //console.log(tbody.children[0]);
+    })
+</script>

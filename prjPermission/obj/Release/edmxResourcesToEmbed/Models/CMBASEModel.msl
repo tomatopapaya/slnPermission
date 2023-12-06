@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CMBASEModelStoreContainer" CdmEntityContainer="CMBASEEntities">
+    <EntitySetMapping Name="ATWLOGR">
+      <EntityTypeMapping TypeName="CMBASEModel.ATWLOGR">
+        <MappingFragment StoreEntitySet="ATWLOGR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USR_ID" ColumnName="USR_ID" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="PROG_ID" ColumnName="PROG_ID" />
+          <ScalarProperty Name="PROG_NAME" ColumnName="PROG_NAME" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="CMD" ColumnName="CMD" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CBWEMAL">
+      <EntityTypeMapping TypeName="CMBASEModel.CBWEMAL">
+        <MappingFragment StoreEntitySet="CBWEMAL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MAIL_TO" ColumnName="MAIL_TO" />
+          <ScalarProperty Name="MAIL_FROM" ColumnName="MAIL_FROM" />
+          <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="PROC_FG" ColumnName="PROC_FG" />
+          <ScalarProperty Name="TRANS_DT" ColumnName="TRANS_DT" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CBWSMSR">
+      <EntityTypeMapping TypeName="CMBASEModel.CBWSMSR">
+        <MappingFragment StoreEntitySet="CBWSMSR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NT_USER" ColumnName="NT_USER" />
+          <ScalarProperty Name="AN_ADDR" ColumnName="AN_ADDR" />
+          <ScalarProperty Name="AN_CONT" ColumnName="AN_CONT" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="PROC_FG" ColumnName="PROC_FG" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSMLIST">
+      <EntityTypeMapping TypeName="CMBASEModel.DSMLIST">
+        <MappingFragment StoreEntitySet="DSMLIST">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NT_SUBJECT" ColumnName="NT_SUBJECT" />
+          <ScalarProperty Name="NT_DT" ColumnName="NT_DT" />
+          <ScalarProperty Name="NT_TM" ColumnName="NT_TM" />
+          <ScalarProperty Name="NT_CATY" ColumnName="NT_CATY" />
+          <ScalarProperty Name="NT_USER" ColumnName="NT_USER" />
+          <ScalarProperty Name="NT_CONT" ColumnName="NT_CONT" />
+          <ScalarProperty Name="NT_RPLY" ColumnName="NT_RPLY" />
+          <ScalarProperty Name="NT_FG" ColumnName="NT_FG" />
+          <ScalarProperty Name="ADV_UID" ColumnName="ADV_UID" />
+          <ScalarProperty Name="RPLY_USER" ColumnName="RPLY_USER" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dtproperties">
+      <EntityTypeMapping TypeName="CMBASEModel.dtproperties">
+        <MappingFragment StoreEntitySet="dtproperties">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="objectid" ColumnName="objectid" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+          <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MACPOST">
+      <EntityTypeMapping TypeName="CMBASEModel.MACPOST">
+        <MappingFragment StoreEntitySet="MACPOST">
+          <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+          <ScalarProperty Name="TOWN_ID" ColumnName="TOWN_ID" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+          <ScalarProperty Name="LIFE_CATY" ColumnName="LIFE_CATY" />
+          <ScalarProperty Name="PTCOD" ColumnName="PTCOD" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+          <ScalarProperty Name="P_PRICE" ColumnName="P_PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OGCDEPT">
+      <EntityTypeMapping TypeName="CMBASEModel.OGCDEPT">
+        <MappingFragment StoreEntitySet="OGCDEPT">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="AN_DEPT_NO" ColumnName="AN_DEPT_NO" />
+          <ScalarProperty Name="O_DEPT_NO" ColumnName="O_DEPT_NO" />
+          <ScalarProperty Name="DNO" ColumnName="DNO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="SMP_DEPT_NAME" ColumnName="SMP_DEPT_NAME" />
+          <ScalarProperty Name="AD_DEPT_NO" ColumnName="AD_DEPT_NO" />
+          <ScalarProperty Name="AD_DEPT_NAME" ColumnName="AD_DEPT_NAME" />
+          <ScalarProperty Name="DEPT_CHIEF" ColumnName="DEPT_CHIEF" />
+          <ScalarProperty Name="DEPT_WGT" ColumnName="DEPT_WGT" />
+          <ScalarProperty Name="DATA_TP" ColumnName="DATA_TP" />
+          <ScalarProperty Name="CITYLIST" ColumnName="CITYLIST" />
+          <ScalarProperty Name="DPU_ID" ColumnName="DPU_ID" />
+          <ScalarProperty Name="UNIT_ID" ColumnName="UNIT_ID" />
+          <ScalarProperty Name="DEF_PAGE" ColumnName="DEF_PAGE" />
+          <ScalarProperty Name="MGR_FG" ColumnName="MGR_FG" />
+          <ScalarProperty Name="DEPT_STAT" ColumnName="DEPT_STAT" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OGCDPUR">
+      <EntityTypeMapping TypeName="CMBASEModel.OGCDPUR">
+        <MappingFragment StoreEntitySet="OGCDPUR">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="USR_ID" ColumnName="USR_ID" />
+          <ScalarProperty Name="DATA_TP" ColumnName="DATA_TP" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OGCUATH">
+      <EntityTypeMapping TypeName="CMBASEModel.OGCUATH">
+        <MappingFragment StoreEntitySet="OGCUATH">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="PRG_ID" ColumnName="PRG_ID" />
+          <ScalarProperty Name="DATA_TP" ColumnName="DATA_TP" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OTCUSER">
+      <EntityTypeMapping TypeName="CMBASEModel.OTCUSER">
+        <MappingFragment StoreEntitySet="OTCUSER">
+          <ScalarProperty Name="USR_ID" ColumnName="USR_ID" />
+          <ScalarProperty Name="USR_NAME" ColumnName="USR_NAME" />
+          <ScalarProperty Name="USR_PSW" ColumnName="USR_PSW" />
+          <ScalarProperty Name="AGENT" ColumnName="AGENT" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TEL_O" ColumnName="TEL_O" />
+          <ScalarProperty Name="TEL_M" ColumnName="TEL_M" />
+          <ScalarProperty Name="TEL_F" ColumnName="TEL_F" />
+          <ScalarProperty Name="USR_STAT" ColumnName="USR_STAT" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+          <ScalarProperty Name="DEPT_DESC" ColumnName="DEPT_DESC" />
+          <ScalarProperty Name="SUB_DEPT" ColumnName="SUB_DEPT" />
+          <ScalarProperty Name="ADM_DP" ColumnName="ADM_DP" />
+          <ScalarProperty Name="ADM_UID" ColumnName="ADM_UID" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCAUTH">
+      <EntityTypeMapping TypeName="CMBASEModel.SMCAUTH">
+        <MappingFragment StoreEntitySet="SMCAUTH">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="SYS_ID" ColumnName="SYS_ID" />
+          <ScalarProperty Name="DATA_TP" ColumnName="DATA_TP" />
+          <ScalarProperty Name="CUS_FG" ColumnName="CUS_FG" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCCODE">
+      <EntityTypeMapping TypeName="CMBASEModel.SMCCODE">
+        <MappingFragment StoreEntitySet="SMCCODE">
+          <ScalarProperty Name="SYS_ID" ColumnName="SYS_ID" />
+          <ScalarProperty Name="CATY_ID" ColumnName="CATY_ID" />
+          <ScalarProperty Name="CATY_COD" ColumnName="CATY_COD" />
+          <ScalarProperty Name="CODE_DESC" ColumnName="CODE_DESC" />
+          <ScalarProperty Name="DESC_COD" ColumnName="DESC_COD" />
+          <ScalarProperty Name="SPEC_FG" ColumnName="SPEC_FG" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCFILETMP">
+      <EntityTypeMapping TypeName="CMBASEModel.SMCFILETMP">
+        <MappingFragment StoreEntitySet="SMCFILETMP">
+          <ScalarProperty Name="FRM_ID" ColumnName="FRM_ID" />
+          <ScalarProperty Name="KEY_ID" ColumnName="KEY_ID" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="USR_ID" ColumnName="USR_ID" />
+          <ScalarProperty Name="PHOTO_NAME" ColumnName="PHOTO_NAME" />
+          <ScalarProperty Name="PHOTO_FULL" ColumnName="PHOTO_FULL" />
+          <ScalarProperty Name="PHOTO_POSTER" ColumnName="PHOTO_POSTER" />
+          <ScalarProperty Name="PHOTO_THUMB" ColumnName="PHOTO_THUMB" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCNEWS">
+      <EntityTypeMapping TypeName="CMBASEModel.SMCNEWS">
+        <MappingFragment StoreEntitySet="SMCNEWS">
+          <ScalarProperty Name="NEWSID" ColumnName="NEWSID" />
+          <ScalarProperty Name="HEADLINE" ColumnName="HEADLINE" />
+          <ScalarProperty Name="SUMMARY" ColumnName="SUMMARY" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="BODY" ColumnName="BODY" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCNEWSCODE">
+      <EntityTypeMapping TypeName="CMBASEModel.SMCNEWSCODE">
+        <MappingFragment StoreEntitySet="SMCNEWSCODE">
+          <ScalarProperty Name="SYS_ID" ColumnName="SYS_ID" />
+          <ScalarProperty Name="CATY_ID" ColumnName="CATY_ID" />
+          <ScalarProperty Name="CATY_COD" ColumnName="CATY_COD" />
+          <ScalarProperty Name="CODE_DESC" ColumnName="CODE_DESC" />
+          <ScalarProperty Name="DESC_COD" ColumnName="DESC_COD" />
+          <ScalarProperty Name="SPEC_FG" ColumnName="SPEC_FG" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCNEWSDOC">
+      <EntityTypeMapping TypeName="CMBASEModel.SMCNEWSDOC">
+        <MappingFragment StoreEntitySet="SMCNEWSDOC">
+          <ScalarProperty Name="NEWSID" ColumnName="NEWSID" />
+          <ScalarProperty Name="FILID" ColumnName="FILID" />
+          <ScalarProperty Name="FILE_DESC" ColumnName="FILE_DESC" />
+          <ScalarProperty Name="FILE_PATH" ColumnName="FILE_PATH" />
+          <ScalarProperty Name="FILE_BODY" ColumnName="FILE_BODY" />
+          <ScalarProperty Name="FILE_SIZE" ColumnName="FILE_SIZE" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCPOSTN">
+      <EntityTypeMapping TypeName="CMBASEModel.SMCPOSTN">
+        <MappingFragment StoreEntitySet="SMCPOSTN">
+          <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+          <ScalarProperty Name="LIFE_CATY" ColumnName="LIFE_CATY" />
+          <ScalarProperty Name="CPA_CITY_ID" ColumnName="CPA_CITY_ID" />
+          <ScalarProperty Name="CPA_TOWN_ID" ColumnName="CPA_TOWN_ID" />
+          <ScalarProperty Name="PTCOD" ColumnName="PTCOD" />
+          <ScalarProperty Name="AREA" ColumnName="AREA" />
+          <ScalarProperty Name="SUP1" ColumnName="SUP1" />
+          <ScalarProperty Name="SUP2" ColumnName="SUP2" />
+          <ScalarProperty Name="MEB" ColumnName="MEB" />
+          <ScalarProperty Name="POP_CNT" ColumnName="POP_CNT" />
+          <ScalarProperty Name="DOR_CNT" ColumnName="DOR_CNT" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCPROG">
+      <EntityTypeMapping TypeName="CMBASEModel.SMCPROG">
+        <MappingFragment StoreEntitySet="SMCPROG">
+          <ScalarProperty Name="PRG_ID" ColumnName="PRG_ID" />
+          <ScalarProperty Name="PRG_NAME" ColumnName="PRG_NAME" />
+          <ScalarProperty Name="PRG_SEQ" ColumnName="PRG_SEQ" />
+          <ScalarProperty Name="MOD_ID" ColumnName="MOD_ID" />
+          <ScalarProperty Name="MOD_NAME" ColumnName="MOD_NAME" />
+          <ScalarProperty Name="MOD_SEQ" ColumnName="MOD_SEQ" />
+          <ScalarProperty Name="PRG_TP" ColumnName="PRG_TP" />
+          <ScalarProperty Name="PRG_DIR" ColumnName="PRG_DIR" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCROAD">
+      <EntityTypeMapping TypeName="CMBASEModel.SMCROAD">
+        <MappingFragment StoreEntitySet="SMCROAD">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+          <ScalarProperty Name="ROAD" ColumnName="ROAD" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCSYSC">
+      <EntityTypeMapping TypeName="CMBASEModel.SMCSYSC">
+        <MappingFragment StoreEntitySet="SMCSYSC">
+          <ScalarProperty Name="SYS_ID" ColumnName="SYS_ID" />
+          <ScalarProperty Name="SYS_NAME" ColumnName="SYS_NAME" />
+          <ScalarProperty Name="GSYS_ID" ColumnName="GSYS_ID" />
+          <ScalarProperty Name="HOSTNAME" ColumnName="HOSTNAME" />
+          <ScalarProperty Name="DBNAME" ColumnName="DBNAME" />
+          <ScalarProperty Name="DBUID" ColumnName="DBUID" />
+          <ScalarProperty Name="DBPSW" ColumnName="DBPSW" />
+          <ScalarProperty Name="FILE_PATH" ColumnName="FILE_PATH" />
+          <ScalarProperty Name="HTTPNAME" ColumnName="HTTPNAME" />
+          <ScalarProperty Name="TARGET" ColumnName="TARGET" />
+          <ScalarProperty Name="LEV" ColumnName="LEV" />
+          <ScalarProperty Name="DATA_TP" ColumnName="DATA_TP" />
+          <ScalarProperty Name="SYS_ORD" ColumnName="SYS_ORD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEST0012USER">
+      <EntityTypeMapping TypeName="CMBASEModel.TEST0012USER">
+        <MappingFragment StoreEntitySet="TEST0012USER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CARD_NO" ColumnName="CARD_NO" />
+          <ScalarProperty Name="USR_NAME" ColumnName="USR_NAME" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="TEL_H" ColumnName="TEL_H" />
+          <ScalarProperty Name="TEL_M" ColumnName="TEL_M" />
+          <ScalarProperty Name="ADDR" ColumnName="ADDR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TESTDEPT">
+      <EntityTypeMapping TypeName="CMBASEModel.TESTDEPT">
+        <MappingFragment StoreEntitySet="TESTDEPT">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TESTDPUR">
+      <EntityTypeMapping TypeName="CMBASEModel.TESTDPUR">
+        <MappingFragment StoreEntitySet="TESTDPUR">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TESTLOG">
+      <EntityTypeMapping TypeName="CMBASEModel.TESTLOG">
+        <MappingFragment StoreEntitySet="TESTLOG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LID" ColumnName="LID" />
+          <ScalarProperty Name="WORK_SDT" ColumnName="WORK_SDT" />
+          <ScalarProperty Name="WORK_EDT" ColumnName="WORK_EDT" />
+          <ScalarProperty Name="WORK_TP" ColumnName="WORK_TP" />
+          <ScalarProperty Name="AGENT" ColumnName="AGENT" />
+          <ScalarProperty Name="WORK_ADDR" ColumnName="WORK_ADDR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TESTUSER">
+      <EntityTypeMapping TypeName="CMBASEModel.TESTUSER">
+        <MappingFragment StoreEntitySet="TESTUSER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CARD_NO" ColumnName="CARD_NO" />
+          <ScalarProperty Name="USR_NAME" ColumnName="USR_NAME" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="TEL_H" ColumnName="TEL_H" />
+          <ScalarProperty Name="TEL_M" ColumnName="TEL_M" />
+          <ScalarProperty Name="ADDR" ColumnName="ADDR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TESTWEXP">
+      <EntityTypeMapping TypeName="CMBASEModel.TESTWEXP">
+        <MappingFragment StoreEntitySet="TESTWEXP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BID" ColumnName="BID" />
+          <ScalarProperty Name="term" ColumnName="term" />
+          <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UMCLOGR">
+      <EntityTypeMapping TypeName="CMBASEModel.UMCLOGR">
+        <MappingFragment StoreEntitySet="UMCLOGR">
+          <ScalarProperty Name="USR_ID" ColumnName="USR_ID" />
+          <ScalarProperty Name="USR_PSW" ColumnName="USR_PSW" />
+          <ScalarProperty Name="LOG_CNT" ColumnName="LOG_CNT" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UMCUSER_TEMP">
+      <EntityTypeMapping TypeName="CMBASEModel.UMCUSER_TEMP">
+        <MappingFragment StoreEntitySet="UMCUSER_TEMP">
+          <ScalarProperty Name="USR_ID" ColumnName="USR_ID" />
+          <ScalarProperty Name="IC_SN" ColumnName="IC_SN" />
+          <ScalarProperty Name="WORK_GP" ColumnName="WORK_GP" />
+          <ScalarProperty Name="FL_GP" ColumnName="FL_GP" />
+          <ScalarProperty Name="SC_NO" ColumnName="SC_NO" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="CITYLIST" ColumnName="CITYLIST" />
+          <ScalarProperty Name="RATE" ColumnName="RATE" />
+          <ScalarProperty Name="MAG_SC_NO" ColumnName="MAG_SC_NO" />
+          <ScalarProperty Name="USR_NAME" ColumnName="USR_NAME" />
+          <ScalarProperty Name="PASSWD" ColumnName="PASSWD" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TEL_O" ColumnName="TEL_O" />
+          <ScalarProperty Name="TEL_H" ColumnName="TEL_H" />
+          <ScalarProperty Name="TEL_M" ColumnName="TEL_M" />
+          <ScalarProperty Name="TEL_F" ColumnName="TEL_F" />
+          <ScalarProperty Name="U_STAT" ColumnName="U_STAT" />
+          <ScalarProperty Name="V_DATE" ColumnName="V_DATE" />
+          <ScalarProperty Name="STOP_FG" ColumnName="STOP_FG" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="MAG_FG" ColumnName="MAG_FG" />
+          <ScalarProperty Name="SRV_TP" ColumnName="SRV_TP" />
+          <ScalarProperty Name="CPAMI_DEPT_NO" ColumnName="CPAMI_DEPT_NO" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+          <ScalarProperty Name="LMT_DT" ColumnName="LMT_DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OTCDEPT">
+      <EntityTypeMapping TypeName="CMBASEModel.OTCDEPT">
+        <MappingFragment StoreEntitySet="OTCDEPT">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="AN_DEPT_NO" ColumnName="AN_DEPT_NO" />
+          <ScalarProperty Name="O_DEPT_NO" ColumnName="O_DEPT_NO" />
+          <ScalarProperty Name="DNO" ColumnName="DNO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="DEPT_CHIEF" ColumnName="DEPT_CHIEF" />
+          <ScalarProperty Name="DEPT_WGT" ColumnName="DEPT_WGT" />
+          <ScalarProperty Name="DATA_TP" ColumnName="DATA_TP" />
+          <ScalarProperty Name="DPU_ID" ColumnName="DPU_ID" />
+          <ScalarProperty Name="UNIT_ID" ColumnName="UNIT_ID" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+          <ScalarProperty Name="DEF_PAGE" ColumnName="DEF_PAGE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OTCDPUR">
+      <EntityTypeMapping TypeName="CMBASEModel.OTCDPUR">
+        <MappingFragment StoreEntitySet="OTCDPUR">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="USR_ID" ColumnName="USR_ID" />
+          <ScalarProperty Name="DATA_TP" ColumnName="DATA_TP" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCPOST">
+      <EntityTypeMapping TypeName="CMBASEModel.SMCPOST">
+        <MappingFragment StoreEntitySet="SMCPOST">
+          <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+          <ScalarProperty Name="LIFE_CATY" ColumnName="LIFE_CATY" />
+          <ScalarProperty Name="CPA_CITY_ID" ColumnName="CPA_CITY_ID" />
+          <ScalarProperty Name="CPA_TOWN_ID" ColumnName="CPA_TOWN_ID" />
+          <ScalarProperty Name="PTCOD" ColumnName="PTCOD" />
+          <ScalarProperty Name="AREA" ColumnName="AREA" />
+          <ScalarProperty Name="SUP1" ColumnName="SUP1" />
+          <ScalarProperty Name="SUP2" ColumnName="SUP2" />
+          <ScalarProperty Name="MEB" ColumnName="MEB" />
+          <ScalarProperty Name="POP_CNT" ColumnName="POP_CNT" />
+          <ScalarProperty Name="DOR_CNT" ColumnName="DOR_CNT" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TESTFILE">
+      <EntityTypeMapping TypeName="CMBASEModel.TESTFILE">
+        <MappingFragment StoreEntitySet="TESTFILE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FILE_ID" ColumnName="FILE_ID" />
+          <ScalarProperty Name="FILE_DESC" ColumnName="FILE_DESC" />
+          <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
+          <ScalarProperty Name="FILE_DATA" ColumnName="FILE_DATA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SECCITY">
+      <EntityTypeMapping TypeName="CMBASEModel.SECCITY">
+        <MappingFragment StoreEntitySet="SECCITY">
+          <ScalarProperty Name="AREA" ColumnName="AREA" />
+          <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="USR_ID" ColumnName="USR_ID" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OGCUSER">
+      <EntityTypeMapping TypeName="CMBASEModel.OGCUSER">
+        <MappingFragment StoreEntitySet="OGCUSER">
+          <ScalarProperty Name="FALL_TIME" ColumnName="FALL_TIME" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="ADM_UID" ColumnName="ADM_UID" />
+          <ScalarProperty Name="ADM_DP" ColumnName="ADM_DP" />
+          <ScalarProperty Name="SUB_DEPT" ColumnName="SUB_DEPT" />
+          <ScalarProperty Name="DEPT_DESC" ColumnName="DEPT_DESC" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="USR_STAT" ColumnName="USR_STAT" />
+          <ScalarProperty Name="TEL_F" ColumnName="TEL_F" />
+          <ScalarProperty Name="TEL_M" ColumnName="TEL_M" />
+          <ScalarProperty Name="TEL_O" ColumnName="TEL_O" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="AGENT" ColumnName="AGENT" />
+          <ScalarProperty Name="USR_PSW" ColumnName="USR_PSW" />
+          <ScalarProperty Name="USR_NAME" ColumnName="USR_NAME" />
+          <ScalarProperty Name="LDAP_ID" ColumnName="LDAP_ID" />
+          <ScalarProperty Name="USR_ID" ColumnName="USR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OGCORIGI">
+      <EntityTypeMapping TypeName="CMBASEModel.OGCORIGI">
+        <MappingFragment StoreEntitySet="OGCORIGI">
+          <ScalarProperty Name="ORIGINAL_PSW" ColumnName="ORIGINAL_PSW" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OGCTITLE">
+      <EntityTypeMapping TypeName="CMBASEModel.OGCTITLE">
+        <MappingFragment StoreEntitySet="OGCTITLE">
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCMENU2">
+      <EntityTypeMapping TypeName="CMBASEModel.SMCMENU2">
+        <MappingFragment StoreEntitySet="SMCMENU2">
+          <ScalarProperty Name="SYS_ORD" ColumnName="SYS_ORD" />
+          <ScalarProperty Name="DATA_TP" ColumnName="DATA_TP" />
+          <ScalarProperty Name="TARGET" ColumnName="TARGET" />
+          <ScalarProperty Name="HTTPNAME" ColumnName="HTTPNAME" />
+          <ScalarProperty Name="FILE_PATH" ColumnName="FILE_PATH" />
+          <ScalarProperty Name="APP_PATH" ColumnName="APP_PATH" />
+          <ScalarProperty Name="DBPSW" ColumnName="DBPSW" />
+          <ScalarProperty Name="DBUID" ColumnName="DBUID" />
+          <ScalarProperty Name="DBNAME" ColumnName="DBNAME" />
+          <ScalarProperty Name="HOSTNAME" ColumnName="HOSTNAME" />
+          <ScalarProperty Name="GSYSID" ColumnName="GSYSID" />
+          <ScalarProperty Name="SYS_NAME" ColumnName="SYS_NAME" />
+          <ScalarProperty Name="AN_SYS_ID" ColumnName="AN_SYS_ID" />
+          <ScalarProperty Name="SYS_ID" ColumnName="SYS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

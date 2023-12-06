@@ -1,0 +1,692 @@
+﻿@model prjPermission.Models.CMPSGSModels.PJMFORM_CMPSGS
+@{
+    Layout = null;
+}
+
+<div class="content">
+    @Html.Action("SideBar", "Home")
+</div>
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
+    <link rel="stylesheet" type="text/css" href="/path/to/your/styles.css">
+
+</head>
+
+<!DOCTYPE html>
+
+<style>
+    /*     original idea http://www.bootply.com/phf8mnMtpe */
+    .link-button {
+        background: none;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        text-decoration: underline; /* 可以添加下劃線或其他樣式，以顯示它是一個連結 */
+        color: #566787; /* 文字顏色可以自行設定 */
+    }
+
+        .link-button[title="Collapse this branch"]:hover {
+            /* 添加你想要的样式 */
+            background-color: #eee;
+            color: #000;
+        }
+
+    .tree {
+        width: 350px; /* 设置你想要的宽度 */
+        min-height: 890px;
+        /*        padding: 19px;*/
+        /*        margin-bottom: 20px;*/
+        background-color: #fbfbfb;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    }
+
+        .tree li {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px 15px 0 5px;
+            position: relative
+        }
+
+            .tree li::before, .tree li::after {
+                content: '';
+                left: -20px;
+                position: absolute;
+                right: auto
+            }
+
+            .tree li::before {
+                border-left: 1px solid #999;
+                bottom: 50px;
+                height: 100%;
+                top: 0;
+                width: 1px
+            }
+
+            .tree li::after {
+                border-top: 1px solid #999;
+                height: 20px;
+                top: 30px;
+                width: 25px
+            }
+
+            .tree li span {
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                border: 1px solid #999;
+                border-radius: 5px;
+                display: inline-block;
+                padding: 3px 8px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .tree li.parent_li > span {
+                cursor: pointer
+            }
+
+        .tree > ul > li::before, .tree > ul > li::after {
+            border: 0
+        }
+
+        .tree li:last-child::before {
+            height: 30px
+        }
+
+        .tree li.parent_li > span:hover, .tree li.parent_li > span:hover + ul li span {
+            background: #eee;
+            border: 1px solid #94a0b4;
+            color: #000
+        }
+    /*---------------------------------------------------------------------------------------------------------*/
+
+    body {
+        color: #566787;
+        background: #f5f5f5;
+        font-family: 'Varela Round', sans-serif;
+        font-size: 13px;
+    }
+
+    .table-wrapper {
+        background: #fff;
+        padding: 20px 25px;
+        margin: 30px 0;
+        border-radius: 3px;
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+
+    .table-title {
+        padding-bottom: 15px;
+        background: #435d7d;
+        color: #fff;
+        padding: 16px 30px;
+        margin: -20px -25px 10px;
+        border-radius: 3px 3px 0 0;
+    }
+
+        .table-title h2 {
+            margin: 5px 0 0;
+            font-size: 24px;
+        }
+
+        .table-title .btn-group {
+            float: right;
+        }
+
+        .table-title .btn {
+            color: #fff;
+            float: right;
+            font-size: 13px;
+            border: none;
+            min-width: 50px;
+            border-radius: 2px;
+            border: none;
+            outline: none !important;
+            margin-left: 10px;
+        }
+
+            .table-title .btn i {
+                float: left;
+                font-size: 21px;
+                margin-right: 5px;
+            }
+
+            .table-title .btn span {
+                float: left;
+                margin-top: 2px;
+            }
+
+    .tree {
+        float: left; /* 左侧树状结构容器 */
+    }
+
+    .table-container {
+        float: left; /*右侧表格容器 */
+        width: 75%; /* 调整宽度以适应布局 */
+    }
+    /* -------------------------------------------------------------------------------------- */
+
+    /* 卡片样式 */
+    .card {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .card:hover {
+        background-color: #f0f0f0;
+    }
+
+    /* 列表样式 */
+    .card-list {
+        width: 200px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-right: 20px;
+        display: inline-block;
+        vertical-align: top;
+        max-height: 1000px; /* 调整为您希望的高度   這個是控制顯示條長度的 */
+        overflow-y: auto;
+    }
+
+        .card-list h2 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-align: center; /* 居中标题文本 */
+            background-color: #435D7D; /* 标题背景颜色 */
+            color: #fff; /* 标题文字颜色 */
+            padding: 5px 0; /* 增加标题上下内边距 */
+            border-radius: 5px 5px 0 0; /* 使标题的左上和右上角圆角 */
+        }
+    /* -------------------------------------------------------------------------------------- */
+
+    #exTab2 h3 {
+        color: black;
+        background-color: white;
+        padding: 5px 15px;
+    }
+
+    tr {
+        background: white;
+    }
+
+    .list-sortable {
+        min-height: 100px;
+    }
+
+        .list-sortable li {
+            cursor: move;
+        }
+
+            .list-sortable li:hover {
+                background-color: #f1f1f1;
+            }
+
+    .sortable-chosen {
+        box-shadow: none !important;
+    }
+
+</style>
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+
+<form method="post" action="@Url.Action("CRUD")" enctype="multipart/form-data">
+    <div class="model-form2">
+
+        <div>
+            <div id="collapseDVR3" class="panel-collapse collapse in">
+                <div class="tree">
+                    <ul>
+                        <li>
+                            <span>
+                                <i class="fa fa-folder-open"></i> 內政部營建署下水道工程處
+                            </span>
+                            <ul>
+                                @foreach (var item in ViewBag.TreeView)
+                                {
+                                    <li>
+                                        @*<a href="#" id="@item.PJ_NAME" onclick="TreeViewClick(this.id)"><span><i></i>@item.PJ_NAME</span></a>*@
+                                        <button type="submit" name="TreeView_PPID" value="@item.PPID" class="link-button" title="Collapse this branch"><span><i></i>@item.PJ_NAME</span></button>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="table-container">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2>Manage <b>Employees</b></h2>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="submit" name="btn" value="0" class="btn btn-warning" data-toggle="modal"><i class="material-icons">&#xf0ff;</i> <span>清除</span></button>
+                            <button type="submit" name="btn" value="1" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>新增</span></button>
+                            <button type="submit" name="btn" value="2" class="btn btn-danger" data-toggle="modal" onclick="return confirm('確定要刪除嗎?')"><i class="material-icons">&#xE15C;</i> <span>刪除</span></button>
+                            <button type="submit" name="btn" value="3" class="btn btn-primary" data-toggle="modal" onclick="return confirm('確定要修改嗎?')"><i class="material-icons">&#xE254;</i> <span>修改</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="table  table-bordered table-hover " style="text-align: left;">
+                    <tr>
+                        <td>計畫名稱：</td>
+                        <td colspan="3">
+                            <input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.PJ_NAME : "")" name="PJ_NAME" />
+                            <input type="text" value="@ViewBag.PPID" name="PPID" hidden />
+                            <input type="text" value="@ViewBag.PPID" name="FID" hidden />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-column">計畫編號：</td>
+                        <td colspan="3"><input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.PJ_CODE : "")" name="PJ_CODE" /></td>
+                    </tr>
+                    <tr>
+                        <td>樣板類型：</td>
+                        <td colspan="3"><input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.PJ_CATY : "")" name="PJ_CATY" /></td>
+                    </tr>
+                    <tr>
+                        <td>承辦單位：</td>
+                        <td><input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.ADV_DP : "")" name="ADV_DP" /></td>
+                        <td>承辦人：</td>
+                        <td><input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.ADV_UID : "")" name="ADV_UID" /></td>
+                    </tr>
+                    <tr>
+                        <td>實際計畫內容：</td>
+                        <td colspan="3"><input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.PJ_CONT : "")" name="PJ_CONT" /></td>
+                    </tr>
+                    <tr>
+                        <td>核定期程啟日：</td>
+                        <td><input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.STT_DT : "")" name="STT_DT" /></td>
+                        <td>核定期程啟日：</td>
+                        <td><input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.END_DT : "")" name="END_DT" /></td>
+                    </tr>
+                    <tr>
+                        <td>報局日期：</td>
+                        <td><input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.LEV1_DT : "")" name="LEV1_DT" /></td>
+                        <td>報局文號：</td>
+                        <td><input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.LEV1_FN : "")" name="LEV1_FN" /></td>
+                    </tr>
+                    <tr>
+                        <td>報局日期：</td>
+                        <td><input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.LEV2_DT : "")" name="LEV2_DT" /></td>
+                        <td>報局文號：</td>
+                        <td><input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.LEV2_FN : "")" name="LEV2_FN" /></td>
+                    </tr>
+                    <tr>
+                        <td>報局日期：</td>
+                        <td><input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.LEV3_DT : "")" name="LEV3_DT" /></td>
+                        <td>報局文號：</td>
+                        <td><input type="text" value="@((ViewBag.Plan != null) ? ViewBag.Plan.LEV3_FN : "")" name="LEV3_FN" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div  style="font-size:30px; color:red; text-align:center">@ViewBag.Message</div>
+            <div id="exTab2" class="container">
+                <ul class="nav nav-tabs">
+                    <li class="active" style="background:none;">
+                        <a href="#1" data-toggle="tab" style="background:#435D7D; color:white;">系統別</a>
+                    </li>
+                    <li style="background:none;">
+                        <a href="#2" data-toggle="tab" style="background:#435D7D; color:white;">申請執行內容分類</a>
+                    </li>
+                    <li style="background:none;">
+                        <a href="#3" data-toggle="tab" style="background:#435D7D; color:white;">計畫核定經費</a>
+                    </li>
+                    <li style="background:none;">
+                        <a href="#4" data-toggle="tab" style="background:#435D7D; color:white;">計畫相關文件</a>
+                    </li>
+                    <li style="background:none;">
+                        <a href="#5" data-toggle="tab" style="background:#435D7D; color:white;">計畫可補助機關</a>
+                    </li>
+                    <li style="background:none;">
+                        <a href="#6" data-toggle="tab" style="background:#435D7D; color:white;">申請開放管制</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" style="width:1000px">
+                    <div class="tab-pane active" id="1">
+                        <table class="table table-bordered table-hover">
+                            <tr style="background: white;">
+                                <td>
+                                    分類代碼
+                                </td>
+                                <td>
+                                    分類名稱
+                                </td>
+                                <td>
+                                    總工程司核定
+                                </td>
+                                <td>
+                                    委設招商日期
+                                </td>
+                                <td>
+                                    委設招商名稱
+                                </td>
+                                <td>
+                                    辦理設計原則日期
+                                </td>
+                                <td>
+                                    工程會審議日期
+                                </td>
+                                <td>
+                                    匡列經費
+                                </td>
+                                <td>
+                                    初步設計日期
+                                </td>
+                            </tr>
+
+                            @if (ViewBag.Source1 != null)
+                            {
+                                <tr>
+                                    <td>@ViewBag.Source1.PJ_CATY_CODE</td>
+                                    <td>@ViewBag.Source1.CATY_NAME</td>
+                                    <td style="text-align:center;"><input type="checkbox" @(ViewBag.Source1.EVRF_FG ? "checked" : "") /></td>
+                                    <td>@ViewBag.Source1.OTDSG_DT</td>
+                                    <td>@ViewBag.Source1.OTDSG_BUSS</td>
+                                    <td>@ViewBag.Source1.DSGRL_DT</td>
+                                    <td>@ViewBag.Source1.PCCJDG_DT</td>
+                                    <td>@ViewBag.Source1.PCCJDG_FUND</td>
+                                    <td>@ViewBag.Source1.INIDSG_DT</td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="2" style="width:940px">
+                        <table class="table table-bordered table-hover">
+                            <tr style="background: white;">
+                                <td>
+                                    項目代碼
+                                </td>
+                                <td>
+                                    項目名稱
+                                </td>
+                                <td>
+                                    單位別
+                                </td>
+                                <td>
+                                    備註說明
+                                </td>
+                            </tr>
+                            @foreach (var item in ViewBag.Source2)
+                            {
+                                <tr>
+                                    <td>@item.CMS_CODE</td>
+                                    <td>@item.CMS_NAME</td>
+                                    <td>@item.CMS_UNIT</td>
+                                    <td>@item.CMS_NOTE</td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="3" style="width:940px">
+                        <table class="table table-bordered table-hover">
+                            <tr style="background: white;">
+                                <td>
+                                    年度
+                                </td>
+                                <td>
+                                    經費層級
+                                </td>
+                                <td>
+                                    金額
+                                </td>
+                                <td>
+                                    經費說明
+                                </td>
+                                <td>
+                                    實際編列經費
+                                </td>
+                            </tr>
+                            @foreach (var item in ViewBag.Source3)
+                            {
+                                <tr>
+                                    <td>@item.SYR</td>
+                                    <td>@item.CODE_DESC</td>
+                                    <td>@item.FUND</td>
+                                    <td>@item.FUND_DESC</td>
+                                    <td>@item.YBG_FUND</td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="4" style="width:940px">
+                        <div id="fileUploadForm" enctype="multipart/form-data">
+                            <input type="file" name="file" id="inputFile" style="display:inline" onchange="savingFile()">
+                            檔案說明:
+                            <input type="text" name="FILE_DESC" />
+                            <button style="display: inline"> 上傳檔案 </button>
+                        </div>
+                        <table class="table table-bordered table-hover">
+                            <tr style="background: white;">
+                                <td>
+                                    檔案說明
+                                </td>
+                                <td>
+                                    檔案名稱
+                                </td>
+                                <td>
+                                    檔案大小(KB)
+                                </td>
+                                <td>
+                                    上傳日期
+                                </td>
+                                <td>
+                                    刪除
+                                </td>
+                            </tr>
+                            @foreach (var item in ViewBag.Source5)
+                            {
+                                <tr>
+                                    <td>@item.FILE_DESC</td>
+                                    <td>@item.FILE_NAME</td>
+                                    <td>@item.FILE_SIZE</td>
+                                    <td>@item.ADD_DT</td>
+                                    <td>
+                                        @Html.ActionLink("刪除", "CRUD", new { FILE_DELETE_NAME = item.FILE_NAME , FILE_DELETE_PPID = item.PPID }, new { onclick = "return confirm('確定刪除嗎?');", @class = "btn btn-danger" })
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="5" style="width:940px; background-color:white" >
+                        <div id="list1" class="card-list">
+                            <h2>未選取</h2> <!-- 添加标题 -->
+                            @{ int i = 1;}
+                            @foreach (var item in ViewBag.NotChoose)
+                            {
+                                <div class="card" id="@item.DEPT_NO" draggable="true" data-card-id="@i">@item.DEPT_NAME</div>
+                                i++;
+                            }
+                        </div>
+
+                        <div id="list2" class="card-list">
+                            <h2>已選取</h2> <!-- 添加标题 -->
+                            @{ int j = 1;}
+                            @foreach (var item in ViewBag.Choose)
+                            {
+                                <div class="card" id="@item.DEPT_NO" draggable="true" data-card-id="@i">@item.DEPT_NAME</div>
+                                j++;
+                            }
+                        </div>
+                        <button type="button" onclick="Save()" style="width:100px; height:30px;">儲存</button>
+                    </div>
+                    <div class="tab-pane" id="6" style="width:940px">
+                        <table class="table table-bordered table-hover">
+                            <tr style="background: white;">
+                                <td>
+                                    說明
+                                </td>
+                                <td>
+                                    起始年度
+                                </td>
+                                <td>
+                                    終止年度
+                                </td>
+                                <td>
+                                    開放否
+                                </td>
+                            </tr>
+                            @foreach (var item in ViewBag.Source6)
+                            {
+                                <tr>
+                                    <td>@item.PSG_NAME</td>
+                                    <td>@item.BGN_SYR</td>
+                                    <td>@item.END_SYR</td>
+                                    <td style="text-align:center"><input type="checkbox" @(item.OPEN_FG ? "checked" : "") /></td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+</form>
+
+
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+<script src="https://admin.wamc.org.au/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+
+<script>
+    $(function () {
+        $('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
+        $('.tree li.parent_li > span').on('click', function (e) {
+            var children = $(this).parent('li.parent_li').find(' > ul > li');
+            if (children.is(":visible")) {
+                children.hide('fast');
+                $(this).attr('title', 'Expand this branch').find(' > i').addClass('fa-plus-square').removeClass('fa-minus-square');
+            } else {
+                children.show('fast');
+                $(this).attr('title', 'Collapse this branch').find(' > i').addClass('fa-minus-square').removeClass('fa-plus-square');
+            }
+            e.stopPropagation();
+        });
+    });
+</script>
+
+<script>
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        card.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', e.target.dataset.cardId);
+        });
+    });
+
+    const lists = document.querySelectorAll('.card-list');
+
+    lists.forEach(list => {
+        list.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+
+        list.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const cardId = e.dataTransfer.getData('text/plain');
+            const card = document.querySelector(`[data-card-id="${cardId}"]`);
+            list.appendChild(card);
+        });
+    });
+</script>
+
+<script>
+    function GetSelectedDeptNos() {
+        var selectedDeptNos = [];
+
+        // 获取所有具有data-card-id属性的卡片元素
+        var cardElements = document.querySelectorAll('#list2 .card[data-card-id]');
+
+        cardElements.forEach(function (card) {
+            selectedDeptNos.push(card.getAttribute('id'));
+        });
+        debugger;
+        // 现在，selectedDeptNos数组包含了list2下的所有已选择的item.DEPT_NO值
+        return selectedDeptNos;
+    }
+
+    function Save() {
+        var selectedDeptNos = GetSelectedDeptNos();
+        var hiddenField = document.querySelector('input[name="PPID"]');
+        var PPID = hiddenField.value;
+
+        // 在这里，您可以使用selectedDeptNos进行进一步的操作，如发送到服务器
+        // 例如，使用Ajax将这些值发送到服务器
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("CRUD", "Plan")',
+            cache: false,
+            async: false,
+            data: { DEPT_NO: selectedDeptNos , PPID:PPID },
+            dataType: 'json',
+            success: function (data) {
+                alert(data);
+            }
+        });
+    }
+</script>
+@*<script>
+    function UploadFile() {
+        var fileInput = document.getElementById('inputFile');
+        var file = fileInput.files[0];
+
+        var formData = new FormData();
+        formData.append('file', file);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/Plan/Upload', true);
+
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // 處理成功回應
+                var response = xhr.responseText;
+                console.log('回傳的訊息：', response);
+
+                var messageElement = document.getElementById('uploadMessage');
+                messageElement.innerHTML = response; // 设置消息内容
+
+                // 根據回應執行其他操作，例如刷新頁面或顯示成功訊息
+            } else {
+                // 處理錯誤回應
+                console.error('檔案上傳失敗');
+            }
+        };
+        xhr.send(formData);
+    }
+</script>*@

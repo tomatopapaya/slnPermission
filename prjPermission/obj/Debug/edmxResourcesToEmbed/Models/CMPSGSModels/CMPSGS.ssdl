@@ -1,0 +1,1084 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CMPSGSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="APDBGLS">
+    <Key>
+      <PropertyRef Name="AID" />
+      <PropertyRef Name="AC_ITEM_CODE" />
+    </Key>
+    <Property Name="AID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="AC_ITEM_CODE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AN_AC_ITEM_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="AC_ITEM_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="IT_ORDER" Type="int" />
+    <Property Name="IT_TYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="IT_FUND" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="APDFILE">
+    <Key>
+      <PropertyRef Name="AID" />
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="AID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FC_NO" Type="nvarchar" MaxLength="200" />
+    <Property Name="FC_DESC" Type="nvarchar" MaxLength="200" />
+    <Property Name="FILE_DESC" Type="nvarchar" MaxLength="200" />
+    <Property Name="FILE_MEMO" Type="nvarchar" MaxLength="200" />
+    <Property Name="FILE_PATH" Type="nvarchar" MaxLength="500" />
+    <Property Name="FILE_BODY" Type="image" />
+    <Property Name="FILE_BODY_S" Type="image" />
+    <Property Name="FILE_SIZE" Type="varchar" MaxLength="10" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="APDFUND">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="decimal" Precision="19" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SYR" Type="nvarchar" MaxLength="3" />
+    <Property Name="IPJ_CODE_X" Type="nvarchar" MaxLength="50" />
+    <Property Name="FIT_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="FUND_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="FUND" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="JUD_FUND" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="DCS_FUND" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="APDLOCP">
+    <Key>
+      <PropertyRef Name="LID" />
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="LID" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="AID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="TOWN" Type="nvarchar" MaxLength="50" />
+    <Property Name="VILLAGE" Type="nvarchar" MaxLength="10" />
+    <Property Name="GIS_SYS" Type="nvarchar" MaxLength="10" />
+    <Property Name="GIS_X" Type="nvarchar" MaxLength="50" />
+    <Property Name="GIS_Y" Type="nvarchar" MaxLength="50" />
+    <Property Name="GIS_Z" Type="nvarchar" MaxLength="50" />
+    <Property Name="POPULATION" Type="nvarchar" MaxLength="50" />
+    <Property Name="CLAN" Type="nvarchar" MaxLength="50" />
+    <Property Name="SUPH_CNT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="POS_SYB" Type="nvarchar" MaxLength="200" />
+    <Property Name="AC_ITEM_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="APDPICS">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PIC_MEMO" Type="nvarchar" MaxLength="50" />
+    <Property Name="PIC_PATH" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="APDWQTY">
+    <Key>
+      <PropertyRef Name="LID" />
+      <PropertyRef Name="AID" />
+      <PropertyRef Name="MID" />
+    </Key>
+    <Property Name="LID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="AID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="MID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="AN_MID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MT_DESC" Type="nvarchar" MaxLength="100" />
+    <Property Name="MT_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="MT_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="MT_UNIT" Type="nvarchar" MaxLength="50" />
+    <Property Name="MT_QTY" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MT_PRICE" Type="decimal" Precision="19" Scale="2" />
+    <Property Name="MT_SPEC" Type="nvarchar" MaxLength="500" />
+    <Property Name="IV_QTY" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IV_PRICE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IV_DESC" Type="nvarchar" MaxLength="500" />
+    <Property Name="DC_QTY" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DC_PRICE" Type="decimal" Precision="19" Scale="2" />
+    <Property Name="DC_DESC" Type="nvarchar" MaxLength="500" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="APMADMC">
+    <Key>
+      <PropertyRef Name="AID" />
+      <PropertyRef Name="ADV_DP" />
+    </Key>
+    <Property Name="AID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ADV_DP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ADM_LEV" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADV_UID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="APMFORM">
+    <Key>
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="AID" Type="decimal" Precision="19" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="YRC_ID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="SYR" Type="nvarchar" MaxLength="3" />
+    <Property Name="ROAD_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="TD_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="EXT_FG" Type="bit" />
+    <Property Name="AP_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="AP_PJ_NAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="AP_NAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="TIT_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="DA_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="50" />
+    <Property Name="TOWN" Type="nvarchar" MaxLength="50" />
+    <Property Name="TD_LINE" Type="nvarchar" MaxLength="50" />
+    <Property Name="VILLAGE" Type="nvarchar" MaxLength="50" />
+    <Property Name="SYS_CATY" Type="varchar" MaxLength="10" />
+    <Property Name="SYS_CATY_OTH" Type="nvarchar" MaxLength="50" />
+    <Property Name="PJ_CATY_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADV_DP" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADV_UID" Type="nvarchar" MaxLength="50" />
+    <Property Name="OPEN_FG" Type="bit" />
+    <Property Name="AP_NOTE" Type="nvarchar" MaxLength="500" />
+    <Property Name="AP_ALL_NOTE" Type="nvarchar" MaxLength="500" />
+    <Property Name="AP_YEAR_NOTE" Type="nvarchar" MaxLength="500" />
+    <Property Name="TL_FUND" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="BF_FUND" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="FILL_MCH" Type="nvarchar" MaxLength="50" />
+    <Property Name="FILL_DP" Type="nvarchar" MaxLength="50" />
+    <Property Name="EXE_MCH" Type="nvarchar" MaxLength="50" />
+    <Property Name="GIS_SYS" Type="nvarchar" MaxLength="50" />
+    <Property Name="GIS_RANGE_X" Type="nvarchar" MaxLength="2000" />
+    <Property Name="GIS_RANGE_Y" Type="nvarchar" MaxLength="2000" />
+    <Property Name="POPULATION" Type="nvarchar" MaxLength="50" />
+    <Property Name="CLAN" Type="nvarchar" MaxLength="50" />
+    <Property Name="AP_STAT" Type="nvarchar" MaxLength="50" />
+    <Property Name="CANCEL_DT" Type="datetime" />
+    <Property Name="CANCEL_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONT_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONT_TITLE" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONT_TEL" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONT_FAX" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONT_EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="START_DT" Type="datetime" />
+    <Property Name="END_DT" Type="datetime" />
+    <Property Name="MAN_POWER" Type="int" />
+    <Property Name="BENEFITS" Type="ntext" />
+    <Property Name="IPJ_CODE" Type="nvarchar" MaxLength="2" />
+    <Property Name="CHK1_FG" Type="bit" />
+    <Property Name="CHK2_FG" Type="bit" />
+    <Property Name="CHK3_FG" Type="bit" />
+    <Property Name="CATY_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="S1_ORDER" Type="int" />
+    <Property Name="S1_FN_DT" Type="datetime" />
+    <Property Name="S1_FN_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="S1_COMT" Type="nvarchar" MaxLength="500" />
+    <Property Name="S1_OF_DT" Type="datetime" />
+    <Property Name="S1_OF_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="S2_ORDER" Type="int" />
+    <Property Name="S2_FN_DT" Type="datetime" />
+    <Property Name="S2_FN_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="S2_COMT" Type="nvarchar" MaxLength="500" />
+    <Property Name="S2_SCORE" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="S2_OF_DT" Type="datetime" />
+    <Property Name="S2_OF_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="SWW_FG1" Type="bit" />
+    <Property Name="SWW_FG2" Type="bit" />
+    <Property Name="SWW_FG3" Type="bit" />
+    <Property Name="SWW_FG4" Type="bit" />
+    <Property Name="SWW_FG5" Type="bit" />
+    <Property Name="SWW_OT" Type="bit" />
+    <Property Name="SWW_OT_DESC" Type="bit" />
+    <Property Name="SWB_FG1" Type="bit" />
+    <Property Name="SWB_FG2" Type="bit" />
+    <Property Name="SWB_FG3" Type="bit" />
+    <Property Name="SWB_FG4" Type="bit" />
+    <Property Name="SWB_FG5" Type="bit" />
+    <Property Name="SWB_SYR" Type="nvarchar" MaxLength="3" />
+    <Property Name="TF106_DT" Type="datetime" />
+    <Property Name="TF108_DT" Type="datetime" />
+    <Property Name="TK103_DT" Type="datetime" />
+    <Property Name="TK105_DT" Type="datetime" />
+    <Property Name="TK106_DT" Type="datetime" />
+    <Property Name="TK107_DT" Type="datetime" />
+    <Property Name="SWW1_FG" Type="bit" />
+    <Property Name="SWW2_FG" Type="bit" />
+    <Property Name="SWW3_FG" Type="bit" />
+    <Property Name="SWW4_FG" Type="bit" />
+    <Property Name="SWW5_FG" Type="bit" />
+    <Property Name="SWW6_FG" Type="bit" />
+    <Property Name="SWW7_FG" Type="bit" />
+    <Property Name="SWW8_FG" Type="bit" />
+    <Property Name="SWW81_FG" Type="bit" />
+    <Property Name="SWW9_RATE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SWW10_FG" Type="bit" />
+    <Property Name="SWW11_FG" Type="bit" />
+    <Property Name="SWWOT_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="SC1_SCORE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SC2_SCORE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SC3_SCORE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SC4_SCORE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SC5_SCORE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SC6_SCORE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SC7_SCORE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SC1_SCORE1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SC2_SCORE1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SC3_SCORE1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SC4_SCORE1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SC5_SCORE1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SC6_SCORE1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SC7_SCORE1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TCEN_FUND" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="TLOC_FUND" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="RCEN_FUND" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="RLOC_FUND" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="VER_STAT" Type="varchar" MaxLength="2" />
+    <Property Name="CHK_STAT" Type="varchar" MaxLength="2" />
+    <Property Name="ADD_DT" Type="datetime" Nullable="false" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+    <Property Name="BUDGET_TP" Type="varchar" MaxLength="3" />
+    <Property Name="ATTENTION_PEOPLE" Type="nvarchar" MaxLength="50" />
+    <Property Name="PRV_CON_SEWERS" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="TEMP_TD_CODE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DADFILE">
+    <Key>
+      <PropertyRef Name="FFID" />
+    </Key>
+    <Property Name="FFID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FILE_DESC" Type="varchar" MaxLength="50" />
+    <Property Name="FILE_PATH" Type="varchar" MaxLength="50" />
+    <Property Name="FILE_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="MOD_DT" Type="datetime" />
+    <Property Name="EDITOR" Type="varchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DADFUND">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DA_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="SYR" Type="nvarchar" MaxLength="3" />
+    <Property Name="IPJ_CODE_X" Type="nvarchar" MaxLength="50" />
+    <Property Name="FIT_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="FUND" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="FUND_DESC" Type="nvarchar" MaxLength="2000" />
+    <Property Name="DCS_FUND" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DADLOCP">
+    <Key>
+      <PropertyRef Name="LID" />
+    </Key>
+    <Property Name="LID" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="DA_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="TOWN" Type="nvarchar" MaxLength="50" />
+    <Property Name="VILLAGE" Type="nvarchar" MaxLength="50" />
+    <Property Name="GIS_SYS" Type="nvarchar" MaxLength="50" />
+    <Property Name="GIS_X" Type="nvarchar" MaxLength="4000" />
+    <Property Name="GIS_Y" Type="nvarchar" MaxLength="4000" />
+    <Property Name="GIS_Z" Type="nvarchar" MaxLength="4000" />
+    <Property Name="POPULATION" Type="nvarchar" MaxLength="50" />
+    <Property Name="CLAN" Type="nvarchar" MaxLength="50" />
+    <Property Name="SUPH_CNT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="POS_SYB" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DADSDWB">
+    <Key>
+      <PropertyRef Name="AID" />
+      <PropertyRef Name="IT_CODE" />
+    </Key>
+    <Property Name="AID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IT_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="AN_IT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="GP_ORDER" Type="int" />
+    <Property Name="IT_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="IT_GP_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="IT_TYPE" Type="varchar" MaxLength="1" />
+    <Property Name="IT_WGT" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="WKSCHD_FG" Type="varchar" MaxLength="1" />
+    <Property Name="WRO_FG" Type="varchar" MaxLength="1" />
+    <Property Name="DEL_FG" Type="varchar" MaxLength="1" />
+    <Property Name="PRE_EDT" Type="varchar" MaxLength="7" />
+    <Property Name="REL_EDT" Type="varchar" MaxLength="7" />
+    <Property Name="PRE_HDT" Type="varchar" MaxLength="7" />
+    <Property Name="PRE_ADT" Type="varchar" MaxLength="7" />
+    <Property Name="EDIT_FG" Type="varchar" MaxLength="1" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DADTCOD">
+    <Key>
+      <PropertyRef Name="DA_CODE" />
+      <PropertyRef Name="TD_CODE" />
+    </Key>
+    <Property Name="DA_CODE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TD_CODE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DADWQTY">
+    <Key>
+      <PropertyRef Name="LID" />
+    </Key>
+    <Property Name="LID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="DA_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="MID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="AN_MID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MT_DESC" Type="nvarchar" MaxLength="200" />
+    <Property Name="MT_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="MT_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="MT_UNIT" Type="nvarchar" MaxLength="50" />
+    <Property Name="MT_QTY" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MT_PRICE" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MT_SPEC" Type="nvarchar" MaxLength="200" />
+    <Property Name="DC_QTY" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="DC_PRICE" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="DC_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DAMFORM">
+    <Key>
+      <PropertyRef Name="DA_CODE" />
+    </Key>
+    <Property Name="AID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="YRC_ID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="SYR" Type="nvarchar" MaxLength="3" />
+    <Property Name="DID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="DA_CODE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DA_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="TD_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="EXT_FG" Type="bit" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="50" />
+    <Property Name="TOWN" Type="nvarchar" MaxLength="50" />
+    <Property Name="TD_LINE" Type="nvarchar" MaxLength="200" />
+    <Property Name="TIT_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="SYS_CATY" Type="nvarchar" MaxLength="50" />
+    <Property Name="VILLAGE" Type="nvarchar" MaxLength="50" />
+    <Property Name="PJ_CATY_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="FILL_DP" Type="nvarchar" MaxLength="50" />
+    <Property Name="ROAD_TP" Type="varchar" MaxLength="50" />
+    <Property Name="ROAD_LINE" Type="varchar" MaxLength="50" />
+    <Property Name="PCCJDG_FUND" Type="decimal" Precision="19" Scale="2" />
+    <Property Name="ADM_DP" Type="varchar" MaxLength="50" />
+    <Property Name="STAT_NO" Type="varchar" MaxLength="50" />
+    <Property Name="CATY_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="NOTE" Type="nvarchar" MaxLength="2000" />
+    <Property Name="ADV_DP" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADV_UID" Type="nvarchar" MaxLength="50" />
+    <Property Name="OPEN_FG" Type="varchar" MaxLength="50" />
+    <Property Name="BGT_TYPE" Type="nvarchar" MaxLength="2" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="objectid" Type="int" />
+    <Property Name="property" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+    <Property Name="lvalue" Type="image" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OGCDEPT">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AN_DEPT_NO" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_CHIEF" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_WGT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="DATA_TP" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+    <Property Name="DEF_PAGE" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="OGCDPUR">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="USR_ID" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="USR_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DATA_TP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OGCUATH">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="PRG_ID" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PRG_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DATA_TP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OGCUSER">
+    <Key>
+      <PropertyRef Name="USR_ID" />
+    </Key>
+    <Property Name="USR_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="USR_NAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="USR_PSW" Type="varchar" MaxLength="200" />
+    <Property Name="AGENT" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="200" />
+    <Property Name="TEL_O" Type="varchar" MaxLength="50" />
+    <Property Name="TEL_M" Type="varchar" MaxLength="50" />
+    <Property Name="TEL_F" Type="varchar" MaxLength="50" />
+    <Property Name="USR_STAT" Type="varchar" MaxLength="50" />
+    <Property Name="NOTE" Type="varchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PBMLIST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="SUBJECT" Type="varchar" MaxLength="50" />
+    <Property Name="DESP" Type="varchar" MaxLength="100" />
+    <Property Name="CONTENT" Type="varchar" MaxLength="4000" />
+    <Property Name="UploadDate" Type="varchar" MaxLength="7" />
+    <Property Name="EDATE" Type="varchar" MaxLength="7" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="PJCFLST">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="FC_NO" />
+    </Key>
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FC_NO" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="FC_DESC" Type="nvarchar" MaxLength="50" />
+    <Property Name="MF_FG" Type="bit" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJDCATY">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="CATY_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="PJ_CATY_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="CATY_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="CATY_NOTE" Type="varchar" MaxLength="2000" />
+    <Property Name="EVRF_FG" Type="bit" />
+    <Property Name="OTDSG_DT" Type="datetime" />
+    <Property Name="OTDSG_BUSS" Type="varchar" MaxLength="100" />
+    <Property Name="DSGRL_DT" Type="datetime" />
+    <Property Name="PCCJDG_DT" Type="datetime" />
+    <Property Name="PCCJDG_FUND" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="INIDSG_DT" Type="datetime" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJDCMCT">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="CMS_CODE" />
+    </Key>
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CMS_CODE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CMS_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="CMS_UNIT" Type="nvarchar" MaxLength="50" />
+    <Property Name="CMS_NOTE" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJDDOCS">
+    <Key>
+      <PropertyRef Name="FID" />
+      <PropertyRef Name="PPID" />
+    </Key>
+    <Property Name="FID" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FILE_DESC" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FILE_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="FILE_PATH" Type="nvarchar" MaxLength="500" />
+    <Property Name="FILE_BODY" Type="image" />
+    <Property Name="FILE_SIZE" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJDFDIS">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SYR" Type="varchar" MaxLength="3" />
+    <Property Name="TIT_CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FIT_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="ND_FUND" Type="decimal" Precision="19" Scale="2" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJDFILE">
+    <Key>
+      <PropertyRef Name="FFID" />
+    </Key>
+    <Property Name="FFID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FILE_DESC" Type="varchar" MaxLength="50" />
+    <Property Name="FILE_PATH" Type="varchar" MaxLength="50" />
+    <Property Name="FILE_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="MOD_DT" Type="datetime" />
+    <Property Name="EDITOR" Type="varchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJDFUND">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="SYR" />
+      <PropertyRef Name="IPJ_CODE" />
+    </Key>
+    <Property Name="PPID" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="SYR" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="IPJ_CODE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FUND" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="YBG_FUND" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="FUND_DESC" Type="nvarchar" MaxLength="500" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJDMDRC">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="SEQ_NO" />
+    </Key>
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SEQ_NO" Type="int" Nullable="false" />
+    <Property Name="STT_DT" Type="varchar" MaxLength="50" />
+    <Property Name="END_DT" Type="varchar" MaxLength="50" />
+    <Property Name="PJ_CONT" Type="varchar" MaxLength="2000" />
+    <Property Name="LEV1_DT" Type="varchar" MaxLength="50" />
+    <Property Name="LEV1_FN" Type="varchar" MaxLength="50" />
+    <Property Name="LEV2_DT" Type="varchar" MaxLength="50" />
+    <Property Name="LEV2_FN" Type="varchar" MaxLength="50" />
+    <Property Name="LEV3_DT" Type="varchar" MaxLength="50" />
+    <Property Name="LEV3_FN" Type="varchar" MaxLength="50" />
+    <Property Name="LEV4_DT" Type="varchar" MaxLength="50" />
+    <Property Name="LEV4_FN" Type="varchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJDSDWB">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="IT_CODE" />
+    </Key>
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IT_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="AN_IT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="GP_ORDER" Type="int" />
+    <Property Name="IT_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="IT_GP_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="IT_TYPE" Type="varchar" MaxLength="1" />
+    <Property Name="IT_WGT" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="WKSCHD_FG" Type="varchar" MaxLength="1" />
+    <Property Name="WRO_FG" Type="varchar" MaxLength="1" />
+    <Property Name="DEL_FG" Type="varchar" MaxLength="1" />
+    <Property Name="EDIT_FG" Type="varchar" MaxLength="1" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="PJDSUBC">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="CATY_CODE" />
+    </Key>
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CATY_CODE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CATY_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJDSUPD">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="ADV_DP" />
+    </Key>
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ADV_DP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJDSYRC">
+    <Key>
+      <PropertyRef Name="YRC_ID" />
+    </Key>
+    <Property Name="YRC_ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="SYR" Type="varchar" MaxLength="3" />
+    <Property Name="BGN_SYR" Type="varchar" MaxLength="50" />
+    <Property Name="END_SYR" Type="varchar" MaxLength="50" />
+    <Property Name="PSG_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="FLOCK_FG" Type="bit" />
+    <Property Name="ADV_DP" Type="varchar" MaxLength="50" />
+    <Property Name="ADV_UID" Type="varchar" MaxLength="50" />
+    <Property Name="OPEN_FG" Type="bit" />
+    <Property Name="STAT_FG" Type="bit" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJDWKCP">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="IT_CODE" />
+    </Key>
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IT_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="AN_IT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="GP_ORDER" Type="int" />
+    <Property Name="IT_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="IT_GP_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="IT_TYPE" Type="varchar" MaxLength="1" />
+    <Property Name="IT_WGT" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="WKSCHD_FG" Type="varchar" MaxLength="1" />
+    <Property Name="WRO_FG" Type="varchar" MaxLength="1" />
+    <Property Name="DEL_FG" Type="varchar" MaxLength="1" />
+    <Property Name="EDIT_FG" Type="varchar" MaxLength="1" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="PJHFDIS">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SEQ_NO" Type="int" />
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SYR" Type="varchar" MaxLength="3" />
+    <Property Name="TIT_CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FIT_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="ND_FUND" Type="decimal" Precision="19" Scale="2" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJMFORM">
+    <Key>
+      <PropertyRef Name="PPID" />
+    </Key>
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AN_PPID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PJ_CODE" Type="nvarchar" MaxLength="2" />
+    <Property Name="APJ_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="PJ_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="PJ_CATY" Type="nvarchar" MaxLength="50" />
+    <Property Name="GP_ORDER" Type="int" />
+    <Property Name="PRE_FUND" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="STAT_NO" Type="varchar" MaxLength="50" />
+    <Property Name="ADM_TP" Type="varchar" MaxLength="10" />
+    <Property Name="ADM_SC" Type="varchar" MaxLength="50" />
+    <Property Name="ADM_DP" Type="varchar" MaxLength="50" />
+    <Property Name="ADM_UID" Type="varchar" MaxLength="50" />
+    <Property Name="STT_DT" Type="varchar" MaxLength="7" />
+    <Property Name="END_DT" Type="varchar" MaxLength="7" />
+    <Property Name="PJ_CONT" Type="varchar" MaxLength="2000" />
+    <Property Name="LEV1_DT" Type="date" />
+    <Property Name="LEV2_DT" Type="date" />
+    <Property Name="LEV3_DT" Type="date" />
+    <Property Name="LEV1_FN" Type="varchar" MaxLength="50" />
+    <Property Name="LEV2_FN" Type="varchar" MaxLength="50" />
+    <Property Name="LEV3_FN" Type="varchar" MaxLength="50" />
+    <Property Name="CLOSE_FG" Type="bit" />
+    <Property Name="CLOSE_DT" Type="varchar" MaxLength="7" />
+    <Property Name="CNT_FG" Type="varchar" MaxLength="50" />
+    <Property Name="CNT_LEV" Type="varchar" MaxLength="50" />
+    <Property Name="EVRF_FG" Type="bit" />
+    <Property Name="OTDSG_DT" Type="varchar" MaxLength="7" />
+    <Property Name="OTDSG_BUSS" Type="varchar" MaxLength="50" />
+    <Property Name="DSGRL_DT" Type="varchar" MaxLength="7" />
+    <Property Name="PCCJDG_DT" Type="varchar" MaxLength="7" />
+    <Property Name="PCCJDG_FUND" Type="decimal" Precision="19" Scale="2" />
+    <Property Name="INIDSG_DT" Type="varchar" MaxLength="7" />
+    <Property Name="NOTE" Type="varchar" MaxLength="2000" />
+    <Property Name="ADV_DP" Type="varchar" MaxLength="50" />
+    <Property Name="ADV_UID" Type="varchar" MaxLength="50" />
+    <Property Name="OPEN_FG" Type="varchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJOFDIS">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SYR" Type="varchar" MaxLength="3" />
+    <Property Name="TIT_CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FIT_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="ND_FUND" Type="decimal" Precision="19" Scale="2" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PJWFILE">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="F_NO" />
+    </Key>
+    <Property Name="PPID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="F_NO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FILE_DESC" Type="nvarchar" MaxLength="100" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SMCCODE">
+    <Key>
+      <PropertyRef Name="SYS_ID" />
+      <PropertyRef Name="CATY_ID" />
+      <PropertyRef Name="CATY_COD" />
+    </Key>
+    <Property Name="SYS_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CATY_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CATY_COD" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CODE_DESC" Type="varchar" MaxLength="50" />
+    <Property Name="DESC_COD" Type="varchar" MaxLength="10" />
+    <Property Name="SPEC_FG" Type="varchar" MaxLength="1" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SMCGNUM">
+    <Key>
+      <PropertyRef Name="NKEY" />
+    </Key>
+    <Property Name="NKEY" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="HD_NUM" Type="varchar" MaxLength="50" />
+    <Property Name="TL_NUM" Type="int" />
+    <Property Name="NUM_LEN" Type="int" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SMCPROG">
+    <Key>
+      <PropertyRef Name="PRG_ID" />
+    </Key>
+    <Property Name="PRG_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PRG_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="PRG_SEQ" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MOD_ID" Type="varchar" MaxLength="10" />
+    <Property Name="MOD_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="MOD_SEQ" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PRG_TP" Type="varchar" MaxLength="1" />
+    <Property Name="PRG_DIR" Type="varchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SMWSDWB">
+    <Key>
+      <PropertyRef Name="IT_CODE" />
+    </Key>
+    <Property Name="IT_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="AN_IT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="GP_ORDER" Type="int" />
+    <Property Name="IT_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="IT_GP_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="IT_TYPE" Type="varchar" MaxLength="1" />
+    <Property Name="IT_WGT" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="WKSCHD_FG" Type="varchar" MaxLength="1" />
+    <Property Name="WRO_FG" Type="varchar" MaxLength="1" />
+    <Property Name="DEL_FG" Type="varchar" MaxLength="1" />
+    <Property Name="EDIT_FG" Type="varchar" MaxLength="1" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="T">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="縣市別" Type="varchar" MaxLength="8000" />
+    <Property Name="系統" Type="varchar" MaxLength="8000" />
+    <Property Name="類別" Type="varchar" MaxLength="8000" />
+    <Property Name="項次" Type="varchar" MaxLength="8000" />
+    <Property Name="項目" Type="varchar" MaxLength="8000" />
+    <Property Name="總經費" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="中央補助" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="地方自籌" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="辦理層級" Type="varchar" MaxLength="8000" />
+    <Property Name="TMP" Type="varchar" MaxLength="8000" />
+    <Property Name="EXT" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'CMPSGS.dbo.TDDCTFD' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="TDDCTFD">
+    <Key>
+      <PropertyRef Name="PTID" />
+      <PropertyRef Name="SYR" />
+      <PropertyRef Name="TTID" />
+    </Key>
+    <Property Name="PTID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SYR" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TTID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TDDFDIS">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="SYR" Type="varchar" MaxLength="3" />
+    <Property Name="TIT_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="FIT_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="SUP_RATIO" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="FUND" Type="decimal" Precision="19" Scale="2" />
+    <Property Name="PRE_FUND" Type="decimal" Precision="19" Scale="2" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TDDFILE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="TID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="FILE_DESC" Type="varchar" MaxLength="200" />
+    <Property Name="FILE_PATH" Type="varchar" MaxLength="500" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TDDSDWB">
+    <Key>
+      <PropertyRef Name="AID" />
+      <PropertyRef Name="IT_CODE" />
+    </Key>
+    <Property Name="AID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IT_CODE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AN_IT_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="IT_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="IT_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="GP_ORDER" Type="int" />
+    <Property Name="IT_GP_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="PRE_SDT" Type="datetime" />
+    <Property Name="PRE_EDT" Type="datetime" />
+    <Property Name="REL_SDT" Type="datetime" />
+    <Property Name="REL_EDT" Type="datetime" />
+    <Property Name="PRE_FUND" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="REL_FUND" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TDMFORM">
+    <Key>
+      <PropertyRef Name="TID" />
+    </Key>
+    <Property Name="TID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AID" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TD_CODE" Type="varchar" MaxLength="30" />
+    <Property Name="TD_NAME" Type="varchar" MaxLength="100" />
+    <Property Name="IPJ_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="CATY_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="AP_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="PJ_CATY" Type="varchar" MaxLength="50" />
+    <Property Name="PJ_CODE" Type="varchar" MaxLength="200" />
+    <Property Name="AP_TP" Type="varchar" MaxLength="2" />
+    <Property Name="ROAD_TP" Type="varchar" MaxLength="2" />
+    <Property Name="ROAD_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="CITY" Type="varchar" MaxLength="8" />
+    <Property Name="TOWN" Type="varchar" MaxLength="10" />
+    <Property Name="LINE" Type="varchar" MaxLength="100" />
+    <Property Name="START_YR" Type="varchar" MaxLength="3" />
+    <Property Name="END_YR" Type="varchar" MaxLength="3" />
+    <Property Name="RESN_DESC" Type="text" />
+    <Property Name="PERF_DESC" Type="text" />
+    <Property Name="START_PT" Type="varchar" MaxLength="100" />
+    <Property Name="END_PT" Type="varchar" MaxLength="100" />
+    <Property Name="ROAD_WIDTH" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="ROAD_LENGTH" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="BRIDGE_AREA" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="LAND_AREA" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="INCITY_LENGTH" Type="varchar" MaxLength="500" />
+    <Property Name="OUTCITY_LENGTH" Type="varchar" MaxLength="500" />
+    <Property Name="PRT_TP" Type="varchar" MaxLength="2" />
+    <Property Name="NTRAF_QTY" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PTRAF_QTY" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="FTRAF_QTY" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TCMTHD_DESC" Type="text" />
+    <Property Name="NDLAND_AREA" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="GTLAND_AREA" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="NBLAND_AREA" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="CGLAND_AREA" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="OGLAND_FUND" Type="decimal" Precision="13" Scale="0" />
+    <Property Name="NDLAND_FUND" Type="decimal" Precision="13" Scale="0" />
+    <Property Name="FLLAND_AREA" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="SNLAND_AREA" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="PIRM_COUNT" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="ROAD_LEV" Type="varchar" MaxLength="10" />
+    <Property Name="STEP_NO" Type="varchar" MaxLength="10" />
+    <Property Name="STAT_NO" Type="varchar" MaxLength="10" />
+    <Property Name="PIORITY" Type="varchar" MaxLength="10" />
+    <Property Name="AUTO_SCORE" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="COMT_SCORE" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="EDIT_UID" Type="varchar" MaxLength="10" />
+    <Property Name="ADV_SC" Type="varchar" MaxLength="50" />
+    <Property Name="ADM_DP" Type="varchar" MaxLength="50" />
+    <Property Name="ADM_UID" Type="varchar" MaxLength="50" />
+    <Property Name="CHK_SC" Type="varchar" MaxLength="50" />
+    <Property Name="CHK_DP" Type="varchar" MaxLength="50" />
+    <Property Name="CHK_UID" Type="varchar" MaxLength="50" />
+    <Property Name="DCS_SC" Type="varchar" MaxLength="50" />
+    <Property Name="DCS_DP" Type="varchar" MaxLength="50" />
+    <Property Name="DCS_UID" Type="varchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+    <Property Name="CLS_NOTE" Type="text" />
+    <Property Name="WK_FUND" Type="decimal" Precision="13" Scale="0" />
+    <Property Name="LD_FUND" Type="decimal" Precision="13" Scale="0" />
+    <Property Name="SUM_FUND" Type="decimal" Precision="13" Scale="0" />
+    <Property Name="S_SCORE" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="DARESN_TP" Type="varchar" MaxLength="2" />
+    <Property Name="DARESN_NOTE" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityContainer Name="CMPSGSModelStoreContainer">
+    <EntitySet Name="APDBGLS" EntityType="Self.APDBGLS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APDFILE" EntityType="Self.APDFILE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APDFUND" EntityType="Self.APDFUND" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APDLOCP" EntityType="Self.APDLOCP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APDPICS" EntityType="Self.APDPICS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APDWQTY" EntityType="Self.APDWQTY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APMADMC" EntityType="Self.APMADMC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APMFORM" EntityType="Self.APMFORM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DADFILE" EntityType="Self.DADFILE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DADFUND" EntityType="Self.DADFUND" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DADLOCP" EntityType="Self.DADLOCP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DADSDWB" EntityType="Self.DADSDWB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DADTCOD" EntityType="Self.DADTCOD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DADWQTY" EntityType="Self.DADWQTY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DAMFORM" EntityType="Self.DAMFORM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dtproperties" EntityType="Self.dtproperties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OGCDEPT" EntityType="Self.OGCDEPT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OGCDPUR" EntityType="Self.OGCDPUR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OGCUATH" EntityType="Self.OGCUATH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OGCUSER" EntityType="Self.OGCUSER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PBMLIST" EntityType="Self.PBMLIST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJCFLST" EntityType="Self.PJCFLST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJDCATY" EntityType="Self.PJDCATY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJDCMCT" EntityType="Self.PJDCMCT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJDDOCS" EntityType="Self.PJDDOCS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJDFDIS" EntityType="Self.PJDFDIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJDFILE" EntityType="Self.PJDFILE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJDFUND" EntityType="Self.PJDFUND" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJDMDRC" EntityType="Self.PJDMDRC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJDSDWB" EntityType="Self.PJDSDWB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJDSUBC" EntityType="Self.PJDSUBC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJDSUPD" EntityType="Self.PJDSUPD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJDSYRC" EntityType="Self.PJDSYRC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJDWKCP" EntityType="Self.PJDWKCP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJHFDIS" EntityType="Self.PJHFDIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJMFORM" EntityType="Self.PJMFORM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJOFDIS" EntityType="Self.PJOFDIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PJWFILE" EntityType="Self.PJWFILE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCCODE" EntityType="Self.SMCCODE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCGNUM" EntityType="Self.SMCGNUM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCPROG" EntityType="Self.SMCPROG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMWSDWB" EntityType="Self.SMWSDWB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T" EntityType="Self.T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TDDFDIS" EntityType="Self.TDDFDIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TDDFILE" EntityType="Self.TDDFILE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TDDSDWB" EntityType="Self.TDDSDWB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TDMFORM" EntityType="Self.TDMFORM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TDDCTFD" EntityType="Self.TDDCTFD" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TDDCTFD].[PTID] AS [PTID], 
+    [TDDCTFD].[SYR] AS [SYR], 
+    [TDDCTFD].[TTID] AS [TTID], 
+    [TDDCTFD].[ADD_DT] AS [ADD_DT], 
+    [TDDCTFD].[UPD_DT] AS [UPD_DT], 
+    [TDDCTFD].[UPD_TM] AS [UPD_TM], 
+    [TDDCTFD].[UPD_UID] AS [UPD_UID]
+    FROM [dbo].[TDDCTFD] AS [TDDCTFD]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

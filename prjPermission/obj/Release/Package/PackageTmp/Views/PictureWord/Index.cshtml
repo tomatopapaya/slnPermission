@@ -1,0 +1,81 @@
+﻿@model  IEnumerable<prjPermission.Models.CMEDOCModels.TDV_TDDDCOB>
+@{
+    Layout = null;
+}
+
+@{
+    Layout = null;
+}
+
+<div class="content">
+    @Html.Action("SideBar", "Home")
+
+</div>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body class="model-form">
+    <h2>圖文管理系統</h2>
+    @using (Html.BeginForm("Index", "PictureWord", FormMethod.Get))
+    {
+        <p>
+            工程編號: @Html.TextBox("TD_CODE_search")
+            文件類型: <select id="type" name="type">
+                         <option value="" disabled selected>請選擇</option>
+                        @foreach(var item in ViewBag.Type)
+                        {
+                            <option>@item.CODE_DESC</option>
+                        }
+                      </select>
+            工程名稱: @Html.TextBox("TD_NAME_search")
+            文字關鍵字: @Html.TextBox("KEYWORD_search")
+            <input type="submit" value="查詢" />
+        </p>
+    }
+    <br />
+    <div class="table-responsive" style="max-width:1500px;">
+        <table class="table table-bordered" style="background-color:white">
+            <tr style="background-color:lightskyblue;">
+                <td>工程編號</td>
+                <td>工程名稱</td>
+                <td>文件類型</td>
+                <td>文件說明</td>
+                <td>文字關鍵字</td>
+                <td>文件建置時間</td>
+                <td>文字作者</td>
+                <td>詳</td>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                string id = item.OBJ_NAME;
+                string fileName = Path.GetFileNameWithoutExtension(item.OBJ_NAME); // 取得檔名
+                string fileExtension = Path.GetExtension(item.OBJ_NAME); // 取得副檔名
+
+                <tr>
+                    <td>@item.TD_CODE</td>
+                    <td>@item.TD_NAME</td>
+                    <td>@item.IT_CODE_DESC</td>
+                    <td>@item.OBJ_TITLE</td>
+                    <td>@item.OBJ_DESC</td>
+                    <td>@item.OBJ_CRT_DM</td>
+                    <td>@item.AUTHOR</td>
+                    <td>
+                        @*<img src="@Url.Action("GetImage","PictureWord", new { name = fileName, name_type = fileExtension })" />*@
+                        <a href="@Url.Action("GetImage","PictureWord", new { name = fileName, name_type = fileExtension })">詳</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+</body>
+</html>
+
+
+
+
+

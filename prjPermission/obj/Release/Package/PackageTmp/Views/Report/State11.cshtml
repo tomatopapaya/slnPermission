@@ -1,0 +1,309 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="content">
+    @Html.Action("SideBar", "Home")
+</div>
+
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>State11</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+</head>
+
+<body style="text-align:left;" class="model-form">
+
+
+    <style>
+
+    .my-text {
+        font-size: 30px;
+        line-height: 1.8;
+    }
+
+    select {
+        width: auto;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    select, option {
+        font-size: 2.2rem;
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1.5);
+    }
+
+    td {
+        vertical-align: middle;
+    }
+
+    .fixed-column {
+        width: 160px; /* Adjust the width value as per your requirement */
+        min-width: 160px; /* Optional: Set a minimum width to ensure the content doesn't overlap */
+    }
+
+    .custom-input {
+        width: 500px;
+        height: 30px;
+    }
+
+    .loading-container {
+        display: flex;
+/*        justify-content: center;
+        align-items: center;*/
+        height: 5vh; /* 調整高度達到全屏效果 */
+    }
+
+    .loading-spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-top: 4px solid #000;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite; /* 套用旋轉動畫 */
+    }
+
+   @@keyframes spin 
+   {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+        #downloadButton {
+            position: relative;
+            /*padding-right: 20px;*/ /* 為轉圈圈圖示預留空間 */        
+        }
+
+            #downloadButton .loading-spinner {
+                position: absolute;
+                top: 15%;
+                right: 10px; /* 距離按鈕右邊的距離 */
+                transform: translateY(-50%);
+            }
+
+
+
+    </style>
+
+
+
+    <form method="post" @*action="@Url.Action("ReportPrint11")"*@ class="my-text">
+        <h2>例行性管考報表:</h2>   
+        報表類型:
+
+        <select id="choose">
+            <option value="11" @{if (ViewBag.State == "11") { <text> selected</text> }}>G-1.雨水前瞻控管表</option>
+        </select>
+        <br />
+
+        <table class="table table-bordered table-hover" style="text-align:left; width:95%">
+            <tr>
+                <td class="fixed-column">
+                    計畫分類:
+                </td>
+                <td id="Plan">
+                    <div>
+                        <input type="checkbox" name="plan" value="01" class="Plan-checkbox" />
+                        <span>01辦理水安全業務費</span>
+                        <br />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="plan" value="02" class="Plan-checkbox" />
+                        <span>02辦理水安全獎補助費</span>
+                        <br />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="plan" value="03" class="Plan-checkbox" />
+                        <span>03辦理水安全設備投資</span>
+                        <br />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="plan" value="04" class="Plan-checkbox" />
+                        <span>都市總合治水建設計畫(公務預算)</span>
+                        <br />
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="fixed-column">
+                    縣市別:
+                </td>
+                <td id="Year">
+                    <input type="checkbox" class="selectALL">
+                    <span>全選框</span>
+                    <br />
+                    @{ int i = 0;}
+                    @foreach (var item in ViewBag.CITY)
+                    {
+                        if (i > 1 && i % 8 == 0)
+                        {
+                            <br />
+                        }
+                        <input type="checkbox" value="@item.CITY" data-id="@item.CITY" name="CITY" class="City-checkbox" @*onclick="checkboxClicked(this)"*@>
+                        @*<a href="#" onclick="ShowPlan('@item.CITY')">@item.CITY</a>*@<span>@item.CITY</span>
+                        i++;
+                    }
+                </td>
+            </tr>
+            <tr>
+            <tr>
+                <td class="fixed-column">
+                    年度區間:
+                </td>
+                <td>
+                    <select name="year1">
+                        @foreach (var item4 in ViewBag.Year2)
+                        {
+                            <option>@item4.SYR</option>
+                        }
+                    </select>
+                    -
+                    <select name="year2">
+                        @foreach (var item3 in ViewBag.Year)
+                        {
+                            <option>@item3.SYR</option>
+                        }
+                    </select>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" style="text-align:center">
+                    <button id="downloadButton" type="button">EXCEL匯出</button>　
+                    <button type="submit" name="pdf" value="1">PDF匯出</button>
+                </td>
+            </tr>
+
+            <tr id="downloadMessage" style="display: none">
+                <td class="fixed-column">
+                    下載成功:
+                </td>
+                <td>
+                    <a id="downloadLink" href="#" download>Download Excel File</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
+
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.selectALL').on('change', function () {
+            var checkboxes = $('.City-checkbox');
+            checkboxes.prop('checked', $(this).prop('checked'));
+        });
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#choose").change(function () {
+            var selectedValue = $(this).val();
+            $.ajax({
+                url: '@Url.Action("ChooseState", "Report")',  ///report/Report10
+                type: 'post',
+                cache: false,
+                async: false,
+                data: { value: selectedValue },
+                success: function (result) {
+                    window.location.href = result;
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+    function uncheckCancel() {
+        if (document.getElementsByName('Row')[0].checked) {
+            document.getElementsByName('Field')[0].checked = false;
+        }
+    }
+
+    function uncheckFinish() {
+        if (document.getElementsByName('Field')[0].checked) {
+            document.getElementsByName('Row')[0].checked = false;
+        }
+    }
+</script>
+
+<script>
+    document.getElementById("downloadButton").addEventListener("click", function () {
+        const downloadLink = document.getElementById("downloadLink");
+        downloadMessage.style.display = "none";
+
+        var currentDateTime = new Date();
+        var formattedDateTime = currentDateTime.toISOString().replace(/[-:.T]/g, "").slice(0, 14);
+        var filename = "雨水前瞻控管表" + formattedDateTime;
+        var plan = [];
+        var checkboxes = document.querySelectorAll('input[name="plan"]:checked');
+        for (var i = 0; i < checkboxes.length; i++) {
+            plan.push(checkboxes[i].value);
+        }
+        var CITY = [];
+        var checkboxes2 = document.querySelectorAll('input[name="CITY"]:checked');
+        for (var i = 0; i < checkboxes2.length; i++) {
+            CITY.push(checkboxes2[i].value);
+        }
+        var Year1 = document.getElementsByName("year1")[0].value;
+        var Year2 = document.getElementsByName("year2")[0].value;
+
+        var downloadButton = document.getElementById("downloadButton"); // 使用 document.querySelector 也可以
+        downloadButton.innerHTML = '<span class="loading-spinner"></span>下載中 　';
+
+        var url = '@Url.Action("ReportPrint11", "Report")' +
+        '?plan=' + encodeURIComponent(plan.join(',')) +
+        '&CITY=' + encodeURIComponent(CITY.join(',')) +
+        '&Year1=' + encodeURIComponent(Year1) +
+        '&Year2=' + encodeURIComponent(Year2);
+
+        fetch(url, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => response.blob())
+            .then(blob => {
+                const downloadLink = document.getElementById("downloadLink");
+                const downloadMessage = document.getElementById("downloadMessage");
+
+                // 更新下載連結的屬性和顯示訊息
+                const blobUrl = URL.createObjectURL(blob);
+                downloadLink.href = blobUrl;
+                downloadLink.download = filename + ".xlsx";
+                downloadLink.click();
+
+                // 恢復按鈕文本
+                downloadButton.innerHTML = 'EXCEL匯出';
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                // 處理錯誤情況
+                downloadButton.innerHTML = 'EXCEL匯出';
+            });
+    });
+</script>

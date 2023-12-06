@@ -1,0 +1,225 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="content">
+    @Html.Action("SideBar", "Home")
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+</head>
+
+
+@*///body 為 畫面會顯示出來的值////*@
+<body style="text-align: left; " class="model-form">
+
+    <style>
+
+        .my-text {
+            font-size: 30px;
+            line-height: 1.8;
+        }
+
+        .checkbox-container {
+            border: 1.5px solid #000000; /* 设置框格的边框样式 */
+            padding: 1px; /* 设置框格的内边距 */
+            display: inline-block; /* 将框格显示为行内块元素，以便其他元素可以和它在同一行 */
+        }
+
+            .checkbox-container label {
+                display: block; /* 将复选框标签显示为块元素，以便它们垂直排列 */
+            }
+
+        select {
+            width: auto;
+            max-width: 100%;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        select, option {
+            font-size: 2.2rem;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.5);
+        }
+
+        .checkbox-container {
+            padding-left: 10px;
+        }
+
+            .checkbox-container input[type="checkbox"] {
+                margin-right: 10px;
+            }
+        input[type=date]{
+            width: 200px;
+            height: 40px;
+        }
+        select{
+            height: 30px;
+        }
+
+    </style>
+
+    @*//////////////////*@
+
+<form method="post" action="@Url.Action("ReportPrint12")" class="my-text">
+    <h2>例行性管考報表:</h2>
+    報表類型:
+    <select id="choose">
+        <option value="1" @{if (ViewBag.State == "1") { <text> selected</text> }}>A-1.一億元以上工程計畫執行情形表</option>
+        <option value="2" @{if (ViewBag.State == "2") { <text> selected</text> }}>A-2.細項執行情形表</option>
+        <option value="3" @{if (ViewBag.State == "3") { <text> selected</text> }}>A-3.跨年度一億元以上工程計畫執行情形表</option>
+        <option value="4" @{if (ViewBag.State == "4") { <text> selected</text> }}>A-4.跨年度細項執行情形表</option>
+        <option value="5" @{if (ViewBag.State == "5") { <text> selected</text> }}>A-5.細項執行情形表(前瞻計畫)</option>
+        <option value="6" @{if (ViewBag.State == "6") { <text> selected</text> }}>B-1.修正預算作業表</option>
+        <option value="7" @{if (ViewBag.State == "7") { <text> selected</text> }}>C-1.99年振興經濟表格</option>
+        <option value="8" @{if (ViewBag.State == "8") { <text> selected</text> }}>D-1.公共建設推動會報執行情形表</option>
+        <option value="9" @{if (ViewBag.State == "9") { <text> selected</text> }}>E-1.工程細項執行表</option>
+        <option value="10" @{if (ViewBag.State == "10") { <text> selected</text> }}>F-1.相關計畫年度補助經費表</option>
+        <option value="12" @{if (ViewBag.State == "12") { <text> selected</text> }}>H-1.在建工程抽查/查核/督導統計表</option>
+
+    </select>
+    <br />
+
+    選擇年度:
+    <select id="Year" name="SYR" required>
+        <option value="" disabled selected>請選擇</option>
+        @foreach (var item in ViewBag.year)
+        {
+            <option>@item.SYR</option>
+        }
+    </select>
+
+    <br />
+
+    選擇計畫:
+    <select id="Value" name="PID" required>
+        <option>------</option>
+
+
+    </select>
+
+    <div>
+        查核期間:
+        <input type="date" id="datepicker" name="DATE_START"> 至
+        <input type="date" id="datepicker" name="DATE_END">
+
+        @*<select name="SMN">
+            @for (int i = 1; i < 13; i++)
+            {
+                <option value="@i.ToString("D2")" @(i == DateTime.Now.Month ? "selected" : "" )>@string.Format("{0}月", @i)</option>
+            }
+        </select>*@
+    </div>
+   
+
+    <br />
+    <button type="submit"> EXCEL匯出</button> 　<button type="submit" name="ods" value="1">ODS匯出</button>
+</form>
+
+
+
+</body>
+</html>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        $('#Year').change(function () { ChangeCustomer(); });
+    });
+    function ChangeCustomer() {
+        var selectedValue = $('#Year option:selected').val();
+        if ($.trim(selectedValue).length > 0) {
+            GetOrders(selectedValue);
+        }
+    }
+    function GetOrders(Year) {
+
+        $.ajax({
+            url: '@Url.Action("Orders", "Report")',
+            data: { selectYear: Year },
+            type: 'post',
+            cache: false,
+            async: false,
+            dataType: 'json',
+            success: function (data1) {
+                var data = JSON.parse(data1);
+                if (data.length > 0) {
+                    $('#Value').empty();
+                    $('#Value').append($('<option value="" disabled selected></option>').val('').text('請選擇'));
+                    $.each(data, function (i, item) {
+                        $('#Value').append($('<option></option>').val(item.Value).text(item.Text));
+                    })
+                }
+                else {
+                    $('#Value').empty();
+                    $('#Value').append($('<option></option>').val('').text('------'));
+                }
+            }
+        });
+    }
+</script>
+
+<script>
+    $(function () {
+        $("#Value").change(function () {
+            var selectedValue = $(this).val();
+            $.ajax({
+                url:'@Url.Action("ChoosePJYear", "Report")',
+                type: 'post',
+                cache: false,
+                async: false,
+                data: { selectedPID: selectedValue },
+                dataType: 'json',
+                success: function (data1) {
+                    var data = JSON.parse(data1);
+                    if (data.length > 0) {
+                        $('#PJYear').empty();
+                        $('#PJYear').append($('<div></div>').val('').text('計畫年度'));
+                        $.each(data, function (i, item) {
+                            $('#PJYear').append($('<label></label>').append($('<input>', {
+                                type: 'checkbox',
+                                name: 'PJYear',
+                                value: item.SYR
+                            })).append(item.SYR));
+                        });
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+
+<script>
+    $(function () {
+        $("#choose").change(function () {
+            var selectedValue = $(this).val();
+            $.ajax({
+                url:'@Url.Action("ChooseState", "Report")',
+                type: 'post',
+                cache: false,
+                async: false,
+                data: { value: selectedValue },
+                success: function (result) {
+                    window.location.href = result;
+                }
+            });
+        });
+    });
+</script>

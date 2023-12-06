@@ -1,0 +1,232 @@
+﻿
+@model prjPermission.Models.UserViewModel
+
+@{
+    Layout = null;
+}
+
+<div class="content">
+    @Html.Action("SideBar", "Home")
+</div>
+
+
+
+<body class="model-form">
+
+    <h3 style="text-align:left;">新增部門:</h3>
+
+    <form method="post" action="@Url.Action("DeptCreate","User")">
+
+        <table class="table table-bordered table-hover" style="text-align: left; width:80%">
+            <tr>
+                <td width="160px">部門名稱:</td>
+                <td colspan="3">
+                    <select id="dropdownlist" name="Dept">
+                        <option>請選擇</option>
+                        @foreach (var item in Model.OGCDEPT)
+                        {
+                            if (Model.SECCITY.Where(m => m.DEPT_NO == item.DEPT_NO).Any())
+                            {
+
+                            }
+                            else
+                            {
+
+                                <option>@item.DEPT_NAME</option>
+                            }
+                            // 如果 ViewBag.DEPT 存在并且与当前选项匹配，则设置为默认选项
+                            if (ViewBag.Dept != null && ViewBag.Dept == item.DEPT_NAME)
+                            {
+                                <option selected>@item.DEPT_NAME</option>
+                            }
+
+                        }
+                    </select>
+                </td>
+
+            </tr>
+            @*<tr>
+                    <td id="D">縣市區鄉鎮分區:</td>
+                    <td colspan="3">
+                        @if (ViewBag.North != null)
+                        {
+                            @Html.RadioButton("Site", "北區", new { disabled = "disabled" })
+                        }
+                        else
+                        {
+                            @Html.RadioButton("Site", "北區")
+                        }北區
+                        @if (ViewBag.Central != null)
+                        {
+                            @Html.RadioButton("Site", "中區", new { disabled = "disabled" })
+                        }
+                        else
+                        {
+                            @Html.RadioButton("Site", "中區")
+                        }中區
+                        @if (ViewBag.South != null)
+                        {
+                            @Html.RadioButton("Site", "南區", new { disabled = "disabled" })
+                        }
+                        else
+                        {
+                            @Html.RadioButton("Site", "南區")
+                        }南區
+
+                        (一次只能設定一個)
+                    </td>
+
+                </tr>*@
+            <tr>
+                <td>縣市資料權限:</td>
+                <td  colspan="2">
+                    @*<input type="checkbox" id="selectAll" onclick="toggleCheckboxes()">
+                        全選框
+                        <br />*@
+                    @for (int i = 0; i < Model.SMCPOSTN.Count(); i++)
+                    {
+                        if (i == 7 || i == 14 || i == 21)
+                        {
+                            <br />
+                        }
+                        foreach (var City in ViewBag.includeCities)
+                        {
+                            if (Model.SMCPOSTN[i].CITY == City)
+                            {
+                                @Html.CheckBox($"city{i}", false, new { @class = "city-checkbox", @disabled = "disabled" })
+                                <span> </span>
+                                <span id="city@(i)">@Model.SMCPOSTN[i].CITY</span>
+                                <span> </span>
+                                goto OuterLoop;
+                            }
+                        }
+
+                        @Html.CheckBox($"city{i}", false, new { @class = "city-checkbox" })
+                        <span> </span>
+                        <span id="city@(i)" style="cursor: pointer;color: initial;" onmouseover="this.style.color='skyblue'" onmouseout="this.style.color='initial'" onclick="Hello('city@(i)')">@Model.SMCPOSTN[i].CITY</span>
+                        <span> </span>
+                        OuterLoop: continue;
+
+                        }
+                </td>
+                <td rowspan="3">
+                    <input type="submit" value="新增" class="btn btn-default" /><a href="@Url.Action("Index","User")" class="btn btn-primary">返回</a>
+                    <br />
+                    <br />
+                    <div>@ViewBag.Save</div>
+                </td>
+            </tr>
+            <tr id="Second">
+                <td id="C">縣市區鄉鎮權限:<span><br />(目前僅記錄並無功能)</span></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+
+<script>
+    function toggleCheckboxes() {
+        var checkboxes = document.querySelectorAll('.city-checkbox');
+        var selectAllCheckbox = document.getElementById('selectAll');
+
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = selectAllCheckbox.checked;
+        }
+    }
+
+    function Hello(id) {
+        var City = id + 'i';
+        $('.city2-checkbox').closest('td').hide();
+        $('#' + City).attr('colspan', '2');
+        $('#' + City).show();
+
+        //City2Element.attr('colspan', '2');
+        //City2Element.show();
+    }
+</script>
+
+<script>
+    $(function () {
+        var selectedCity; // 儲存被選中的城市
+
+        $('.city-checkbox').change(function () {
+            var checkboxChecked = $(this).is(':checked');
+            selectedCity = $(this).attr('name');
+
+            if (checkboxChecked) {
+                selectedCity = $(this).attr('name');
+                // 隱藏所有城市的新增內容
+                $('.city2-checkbox').closest('td').hide();
+
+                $.ajax({
+                    url: '@Url.Action("ChooseCity","User")',
+                    type: 'post',
+                    cache: false,
+                    async: false,
+                    data: { City: selectedCity },
+                    success: function (result1) {
+                        var result = JSON.parse(result1);
+                        if (result.length > 0) {
+                            var City2 = selectedCity + 'i'; // 建立 City2 的 ID
+                            var City2Element = $('#' + City2);
+
+                            if (City2Element.length === 0) {
+                                $('tr#Second').append('<td colspan="2" id="' + City2 + '"></td>');
+                                City2Element = $('#' + City2);
+
+                                //City2Element.append($('<label></label>').append($('<input>', {
+                                //    type: 'checkbox',
+                                //    name: 'SelectedBoxTOWN',
+                                //    value: selectedCity,
+                                //    checked: true,
+                                //    class: 'city2-checkbox'
+
+                                //})).append('&nbsp;').append(selectedCity).append('&nbsp;').css('display', 'none'));
+
+
+
+                                $.each(result, function (i, item) {
+                                    if (i !== 0 && i % 7 === 0) {
+                                        City2Element.append('<br />');
+                                    }
+
+                                    City2Element.append($('<label></label>').append($('<input>', {
+                                        type: 'checkbox',
+                                        name: 'SelectedBoxTOWN',
+                                        value: selectedCity + item.TOWN,
+                                        checked: true,
+                                        class: 'city2-checkbox'
+                                    })).append('&nbsp;').append(item.TOWN).append('&nbsp;'));
+                                });
+                                City2Element.append($('<label></label>').css('display', 'none').append($('<input>', {
+                                    type: 'checkbox',
+                                    name: 'SelectedBoxTOWN',
+                                    value: selectedCity,
+                                    checked: true,
+                                    class: 'city2-checkbox'
+                                })).append('&nbsp;').append('').append('&nbsp;'));
+                            } else {
+                                City2Element.attr('colspan', '2');
+                                City2Element.show();
+                            }
+                        }
+                    }
+                });
+            } else {
+                // 取消選擇時，隱藏相關的新增內容
+                $('#' + selectedCity + 'i').remove();
+            }
+        });
+    });
+
+    var selectElement = document.getElementById("dropdownlist");
+    selectElement.addEventListener("change", function () {
+        var currentURL = window.location.href;
+        var url = new URL(currentURL);
+        url.searchParams.set("Dept", this.value);
+        // 跳轉到新的 URL
+        window.location.href = url.href;
+    });
+</script>

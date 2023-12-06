@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CMBASEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ATWLOGR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Precision="19" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USR_ID" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_NO" Type="varchar" MaxLength="50" />
+    <Property Name="PROG_ID" Type="varchar" MaxLength="50" />
+    <Property Name="PROG_NAME" Type="varchar" MaxLength="500" />
+    <Property Name="IP" Type="varchar" MaxLength="50" />
+    <Property Name="CMD" Type="varchar" MaxLength="8000" />
+    <Property Name="ADD_DT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CBWEMAL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Precision="19" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAIL_TO" Type="varchar" MaxLength="500" />
+    <Property Name="MAIL_FROM" Type="varchar" MaxLength="500" />
+    <Property Name="SUBJECT" Type="varchar" MaxLength="100" />
+    <Property Name="CONTENT" Type="varchar" MaxLength="1000" />
+    <Property Name="PROC_FG" Type="bit" />
+    <Property Name="TRANS_DT" Type="datetime" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CBWSMSR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Precision="19" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NT_USER" Type="varchar" MaxLength="50" />
+    <Property Name="AN_ADDR" Type="varchar" MaxLength="200" />
+    <Property Name="AN_CONT" Type="varchar" MaxLength="200" />
+    <Property Name="TEL" Type="varchar" MaxLength="50" />
+    <Property Name="PROC_FG" Type="bit" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DSMLIST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Precision="19" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NT_SUBJECT" Type="varchar" MaxLength="2000" />
+    <Property Name="NT_DT" Type="varchar" MaxLength="50" />
+    <Property Name="NT_TM" Type="varchar" MaxLength="50" />
+    <Property Name="NT_CATY" Type="varchar" MaxLength="50" />
+    <Property Name="NT_USER" Type="varchar" MaxLength="50" />
+    <Property Name="NT_CONT" Type="varchar" MaxLength="2000" />
+    <Property Name="NT_RPLY" Type="varchar" MaxLength="2000" />
+    <Property Name="NT_FG" Type="bit" />
+    <Property Name="ADV_UID" Type="varchar" MaxLength="50" />
+    <Property Name="RPLY_USER" Type="varchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="objectid" Type="int" />
+    <Property Name="property" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+    <Property Name="lvalue" Type="image" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MACPOST">
+    <Key>
+      <PropertyRef Name="CITY" />
+      <PropertyRef Name="TOWN" />
+    </Key>
+    <Property Name="CITY_ID" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="TOWN_ID" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="CITY" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="TOWN" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="LIFE_CATY" Type="varchar" MaxLength="5" />
+    <Property Name="PTCOD" Type="varchar" MaxLength="10" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+    <Property Name="P_PRICE" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="OGCDEPT">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AN_DEPT_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="O_DEPT_NO" Type="nvarchar" MaxLength="200" />
+    <Property Name="DNO" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEPT_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="SMP_DEPT_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="AD_DEPT_NO" Type="varchar" MaxLength="50" />
+    <Property Name="AD_DEPT_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEPT_CHIEF" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEPT_WGT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="DATA_TP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CITYLIST" Type="nvarchar" MaxLength="2000" />
+    <Property Name="DPU_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="UNIT_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEF_PAGE" Type="nvarchar" MaxLength="100" />
+    <Property Name="MGR_FG" Type="bit" />
+    <Property Name="DEPT_STAT" Type="bit" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OGCDPUR">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="USR_ID" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="USR_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DATA_TP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OGCORIGI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ORIGINAL_PSW" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OGCTITLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TITLE" Type="nvarchar" MaxLength="50" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OGCUATH">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="PRG_ID" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PRG_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DATA_TP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OGCUSER">
+    <Key>
+      <PropertyRef Name="USR_ID" />
+    </Key>
+    <Property Name="USR_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LDAP_ID" Type="varchar" MaxLength="50" />
+    <Property Name="USR_NAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="USR_PSW" Type="nvarchar" MaxLength="200" />
+    <Property Name="AGENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="200" />
+    <Property Name="TITLE" Type="nvarchar" MaxLength="50" />
+    <Property Name="TEL_O" Type="nvarchar" MaxLength="50" />
+    <Property Name="TEL_M" Type="nvarchar" MaxLength="50" />
+    <Property Name="TEL_F" Type="nvarchar" MaxLength="50" />
+    <Property Name="USR_STAT" Type="bit" />
+    <Property Name="NOTE" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEPT_DESC" Type="nvarchar" MaxLength="100" />
+    <Property Name="SUB_DEPT" Type="nvarchar" MaxLength="100" />
+    <Property Name="ADM_DP" Type="nvarchar" MaxLength="100" />
+    <Property Name="ADM_UID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADDRESS" Type="nvarchar" MaxLength="200" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+    <Property Name="FALL_TIME" Type="int" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'CMBASE.dbo.OTCDEPT' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="OTCDEPT">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AN_DEPT_NO" Type="varchar" MaxLength="50" />
+    <Property Name="O_DEPT_NO" Type="varchar" MaxLength="50" />
+    <Property Name="DNO" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_CHIEF" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_WGT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="DATA_TP" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="DPU_ID" Type="varchar" MaxLength="50" />
+    <Property Name="UNIT_ID" Type="varchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+    <Property Name="DEF_PAGE" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'CMBASE.dbo.OTCDPUR' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="OTCDPUR">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="USR_ID" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="USR_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DATA_TP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OTCUSER">
+    <Key>
+      <PropertyRef Name="USR_ID" />
+    </Key>
+    <Property Name="USR_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="USR_NAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="USR_PSW" Type="varchar" MaxLength="200" />
+    <Property Name="AGENT" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="200" />
+    <Property Name="TEL_O" Type="varchar" MaxLength="50" />
+    <Property Name="TEL_M" Type="varchar" MaxLength="50" />
+    <Property Name="TEL_F" Type="varchar" MaxLength="50" />
+    <Property Name="USR_STAT" Type="varchar" MaxLength="5" />
+    <Property Name="NOTE" Type="varchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_DESC" Type="varchar" MaxLength="100" />
+    <Property Name="SUB_DEPT" Type="varchar" MaxLength="100" />
+    <Property Name="ADM_DP" Type="varchar" MaxLength="100" />
+    <Property Name="ADM_UID" Type="varchar" MaxLength="50" />
+    <Property Name="ADDRESS" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="SECCITY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DEPT_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="USR_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nchar" MaxLength="50" />
+    <Property Name="TOWN" Type="nvarchar" MaxLength="50" />
+    <Property Name="AREA" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SMCAUTH">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="SYS_ID" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SYS_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DATA_TP" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="CUS_FG" Type="bit" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SMCCODE">
+    <Key>
+      <PropertyRef Name="SYS_ID" />
+      <PropertyRef Name="CATY_ID" />
+      <PropertyRef Name="CATY_COD" />
+    </Key>
+    <Property Name="SYS_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CATY_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CATY_COD" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CODE_DESC" Type="varchar" MaxLength="50" />
+    <Property Name="DESC_COD" Type="varchar" MaxLength="10" />
+    <Property Name="SPEC_FG" Type="varchar" MaxLength="1" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SMCFILETMP">
+    <Key>
+      <PropertyRef Name="FRM_ID" />
+      <PropertyRef Name="KEY_ID" />
+      <PropertyRef Name="ITEM_ID" />
+      <PropertyRef Name="USR_ID" />
+    </Key>
+    <Property Name="FRM_ID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="KEY_ID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ITEM_ID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="USR_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PHOTO_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="PHOTO_FULL" Type="image" />
+    <Property Name="PHOTO_POSTER" Type="image" />
+    <Property Name="PHOTO_THUMB" Type="image" />
+    <Property Name="UPD_DT" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SMCMENU2">
+    <Key>
+      <PropertyRef Name="SYS_ID" />
+    </Key>
+    <Property Name="SYS_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AN_SYS_ID" Type="varchar" MaxLength="50" />
+    <Property Name="SYS_NAME" Type="varchar" MaxLength="100" />
+    <Property Name="GSYSID" Type="varchar" MaxLength="50" />
+    <Property Name="HOSTNAME" Type="varchar" MaxLength="50" />
+    <Property Name="DBNAME" Type="varchar" MaxLength="50" />
+    <Property Name="DBUID" Type="varchar" MaxLength="50" />
+    <Property Name="DBPSW" Type="varchar" MaxLength="50" />
+    <Property Name="APP_PATH" Type="varchar" MaxLength="100" />
+    <Property Name="FILE_PATH" Type="varchar" MaxLength="50" />
+    <Property Name="HTTPNAME" Type="varchar" MaxLength="50" />
+    <Property Name="TARGET" Type="varchar" MaxLength="50" />
+    <Property Name="DATA_TP" Type="varchar" MaxLength="2" />
+    <Property Name="SYS_ORD" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SMCNEWS">
+    <Key>
+      <PropertyRef Name="NEWSID" />
+    </Key>
+    <Property Name="NEWSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HEADLINE" Type="nvarchar" MaxLength="500" />
+    <Property Name="SUMMARY" Type="nvarchar" MaxLength="500" />
+    <Property Name="STARTDATE" Type="datetime" />
+    <Property Name="ENDDATE" Type="datetime" />
+    <Property Name="BODY" Type="text" />
+    <Property Name="STATUS" Type="int" />
+    <Property Name="TYPE" Type="varchar" MaxLength="10" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SMCNEWSCODE">
+    <Key>
+      <PropertyRef Name="SYS_ID" />
+      <PropertyRef Name="CATY_ID" />
+      <PropertyRef Name="CATY_COD" />
+    </Key>
+    <Property Name="SYS_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CATY_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CATY_COD" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CODE_DESC" Type="varchar" MaxLength="50" />
+    <Property Name="DESC_COD" Type="varchar" MaxLength="10" />
+    <Property Name="SPEC_FG" Type="varchar" MaxLength="1" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SMCNEWSDOC">
+    <Key>
+      <PropertyRef Name="NEWSID" />
+      <PropertyRef Name="FILID" />
+    </Key>
+    <Property Name="NEWSID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FILID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FILE_DESC" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FILE_PATH" Type="nvarchar" MaxLength="500" />
+    <Property Name="FILE_BODY" Type="image" />
+    <Property Name="FILE_SIZE" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ADD_DT" Type="datetime" />
+    <Property Name="UPD_DT" Type="datetime" />
+    <Property Name="UPD_UID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'CMBASE.dbo.SMCPOST' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="SMCPOST">
+    <Key>
+      <PropertyRef Name="CITY" />
+      <PropertyRef Name="TOWN" />
+    </Key>
+    <Property Name="CITY_ID" Type="char" MaxLength="2" />
+    <Property Name="CITY" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="TOWN" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="LIFE_CATY" Type="varchar" MaxLength="5" />
+    <Property Name="CPA_CITY_ID" Type="varchar" MaxLength="2" />
+    <Property Name="CPA_TOWN_ID" Type="varchar" MaxLength="2" />
+    <Property Name="PTCOD" Type="varchar" MaxLength="10" />
+    <Property Name="AREA" Type="varchar" MaxLength="50" />
+    <Property Name="SUP1" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="SUP2" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="MEB" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="POP_CNT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="DOR_CNT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SMCPOSTN">
+    <Key>
+      <PropertyRef Name="CITY" />
+      <PropertyRef Name="TOWN" />
+    </Key>
+    <Property Name="CITY_ID" Type="char" MaxLength="2" />
+    <Property Name="CITY" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="TOWN" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="LIFE_CATY" Type="varchar" MaxLength="5" />
+    <Property Name="CPA_CITY_ID" Type="varchar" MaxLength="2" />
+    <Property Name="CPA_TOWN_ID" Type="varchar" MaxLength="2" />
+    <Property Name="PTCOD" Type="varchar" MaxLength="10" />
+    <Property Name="AREA" Type="varchar" MaxLength="50" />
+    <Property Name="SUP1" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="SUP2" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="MEB" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="POP_CNT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="DOR_CNT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SMCPROG">
+    <Key>
+      <PropertyRef Name="PRG_ID" />
+    </Key>
+    <Property Name="PRG_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PRG_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="PRG_SEQ" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MOD_ID" Type="varchar" MaxLength="10" />
+    <Property Name="MOD_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="MOD_SEQ" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PRG_TP" Type="varchar" MaxLength="1" />
+    <Property Name="PRG_DIR" Type="varchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SMCROAD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ZIP" Type="varchar" MaxLength="10" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="255" />
+    <Property Name="TOWN" Type="nvarchar" MaxLength="255" />
+    <Property Name="ROAD" Type="nvarchar" MaxLength="255" />
+    <Property Name="NOTE" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="SMCSYSC">
+    <Key>
+      <PropertyRef Name="SYS_ID" />
+    </Key>
+    <Property Name="SYS_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SYS_NAME" Type="varchar" MaxLength="100" />
+    <Property Name="GSYS_ID" Type="varchar" MaxLength="50" />
+    <Property Name="HOSTNAME" Type="varchar" MaxLength="100" />
+    <Property Name="DBNAME" Type="varchar" MaxLength="100" />
+    <Property Name="DBUID" Type="varchar" MaxLength="100" />
+    <Property Name="DBPSW" Type="varchar" MaxLength="100" />
+    <Property Name="FILE_PATH" Type="varchar" MaxLength="500" />
+    <Property Name="HTTPNAME" Type="varchar" MaxLength="500" />
+    <Property Name="TARGET" Type="varchar" MaxLength="50" />
+    <Property Name="LEV" Type="int" />
+    <Property Name="DATA_TP" Type="varchar" MaxLength="2" />
+    <Property Name="SYS_ORD" Type="int" />
+  </EntityType>
+  <EntityType Name="TEST0012USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CARD_NO" Type="varchar" MaxLength="50" />
+    <Property Name="USR_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="SEX" Type="varchar" MaxLength="2" />
+    <Property Name="TEL_H" Type="varchar" MaxLength="50" />
+    <Property Name="TEL_M" Type="varchar" MaxLength="50" />
+    <Property Name="ADDR" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="TESTDEPT">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+    </Key>
+    <Property Name="DEPT_NO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DEPT_NAME" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TESTDPUR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="DEPT_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'CMBASE.dbo.TESTFILE' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="TESTFILE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FILE_ID" Type="varchar" MaxLength="50" />
+    <Property Name="FILE_DESC" Type="nvarchar" MaxLength="1000" />
+    <Property Name="FILE_NAME" Type="nvarchar" MaxLength="1000" />
+    <Property Name="FILE_DATA" Type="image" />
+  </EntityType>
+  <EntityType Name="TESTLOG">
+    <Key>
+      <PropertyRef Name="LID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WORK_SDT" Type="datetime" />
+    <Property Name="WORK_EDT" Type="datetime" />
+    <Property Name="WORK_TP" Type="varchar" MaxLength="50" />
+    <Property Name="AGENT" Type="varchar" MaxLength="50" />
+    <Property Name="WORK_ADDR" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TESTUSER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CARD_NO" Type="varchar" MaxLength="50" />
+    <Property Name="USR_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="SEX" Type="varchar" MaxLength="2" />
+    <Property Name="TEL_H" Type="varchar" MaxLength="50" />
+    <Property Name="TEL_M" Type="varchar" MaxLength="50" />
+    <Property Name="ADDR" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="TESTWEXP">
+    <Key>
+      <PropertyRef Name="BID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" />
+    <Property Name="BID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="term" Type="varchar" MaxLength="50" />
+    <Property Name="COMPANY" Type="varchar" MaxLength="100" />
+    <Property Name="TITLE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UMCLOGR">
+    <Key>
+      <PropertyRef Name="USR_ID" />
+    </Key>
+    <Property Name="USR_ID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="USR_PSW" Type="varchar" MaxLength="30" />
+    <Property Name="LOG_CNT" Type="int" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="UMCUSER_TEMP">
+    <Key>
+      <PropertyRef Name="IC_SN" />
+    </Key>
+    <Property Name="USR_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IC_SN" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WORK_GP" Type="varchar" MaxLength="100" />
+    <Property Name="FL_GP" Type="varchar" MaxLength="100" />
+    <Property Name="SC_NO" Type="varchar" MaxLength="100" />
+    <Property Name="DEPT_NO" Type="varchar" MaxLength="50" />
+    <Property Name="CITYLIST" Type="varchar" MaxLength="200" />
+    <Property Name="RATE" Type="varchar" MaxLength="50" />
+    <Property Name="MAG_SC_NO" Type="varchar" MaxLength="50" />
+    <Property Name="USR_NAME" Type="varchar" MaxLength="20" />
+    <Property Name="PASSWD" Type="varchar" MaxLength="20" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="100" />
+    <Property Name="TEL_O" Type="varchar" MaxLength="20" />
+    <Property Name="TEL_H" Type="varchar" MaxLength="20" />
+    <Property Name="TEL_M" Type="varchar" MaxLength="20" />
+    <Property Name="TEL_F" Type="varchar" MaxLength="20" />
+    <Property Name="U_STAT" Type="int" />
+    <Property Name="V_DATE" Type="datetime" />
+    <Property Name="STOP_FG" Type="varchar" MaxLength="1" />
+    <Property Name="NOTE" Type="text" />
+    <Property Name="MAG_FG" Type="varchar" MaxLength="1" />
+    <Property Name="SRV_TP" Type="varchar" MaxLength="50" />
+    <Property Name="CPAMI_DEPT_NO" Type="varchar" MaxLength="50" />
+    <Property Name="ADD_DT" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_DT" Type="varchar" MaxLength="7" />
+    <Property Name="UPD_TM" Type="varchar" MaxLength="8" />
+    <Property Name="UPD_UID" Type="varchar" MaxLength="10" />
+    <Property Name="LMT_DT" Type="varchar" MaxLength="7" />
+  </EntityType>
+  <EntityContainer Name="CMBASEModelStoreContainer">
+    <EntitySet Name="ATWLOGR" EntityType="Self.ATWLOGR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CBWEMAL" EntityType="Self.CBWEMAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CBWSMSR" EntityType="Self.CBWSMSR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSMLIST" EntityType="Self.DSMLIST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dtproperties" EntityType="Self.dtproperties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MACPOST" EntityType="Self.MACPOST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OGCDEPT" EntityType="Self.OGCDEPT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OGCDPUR" EntityType="Self.OGCDPUR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OGCORIGI" EntityType="Self.OGCORIGI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OGCTITLE" EntityType="Self.OGCTITLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OGCUATH" EntityType="Self.OGCUATH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OGCUSER" EntityType="Self.OGCUSER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OTCUSER" EntityType="Self.OTCUSER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SECCITY" EntityType="Self.SECCITY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCAUTH" EntityType="Self.SMCAUTH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCCODE" EntityType="Self.SMCCODE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCFILETMP" EntityType="Self.SMCFILETMP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCMENU2" EntityType="Self.SMCMENU2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCNEWS" EntityType="Self.SMCNEWS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCNEWSCODE" EntityType="Self.SMCNEWSCODE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCNEWSDOC" EntityType="Self.SMCNEWSDOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCPOSTN" EntityType="Self.SMCPOSTN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCPROG" EntityType="Self.SMCPROG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCROAD" EntityType="Self.SMCROAD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMCSYSC" EntityType="Self.SMCSYSC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEST0012USER" EntityType="Self.TEST0012USER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TESTDEPT" EntityType="Self.TESTDEPT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TESTDPUR" EntityType="Self.TESTDPUR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TESTLOG" EntityType="Self.TESTLOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TESTUSER" EntityType="Self.TESTUSER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TESTWEXP" EntityType="Self.TESTWEXP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UMCLOGR" EntityType="Self.UMCLOGR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UMCUSER_TEMP" EntityType="Self.UMCUSER_TEMP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OTCDEPT" EntityType="Self.OTCDEPT" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [OTCDEPT].[DEPT_NO] AS [DEPT_NO], 
+    [OTCDEPT].[AN_DEPT_NO] AS [AN_DEPT_NO], 
+    [OTCDEPT].[O_DEPT_NO] AS [O_DEPT_NO], 
+    [OTCDEPT].[DNO] AS [DNO], 
+    [OTCDEPT].[DEPT_NAME] AS [DEPT_NAME], 
+    [OTCDEPT].[DEPT_CHIEF] AS [DEPT_CHIEF], 
+    [OTCDEPT].[DEPT_WGT] AS [DEPT_WGT], 
+    [OTCDEPT].[DATA_TP] AS [DATA_TP], 
+    [OTCDEPT].[DPU_ID] AS [DPU_ID], 
+    [OTCDEPT].[UNIT_ID] AS [UNIT_ID], 
+    [OTCDEPT].[ADD_DT] AS [ADD_DT], 
+    [OTCDEPT].[UPD_DT] AS [UPD_DT], 
+    [OTCDEPT].[UPD_TM] AS [UPD_TM], 
+    [OTCDEPT].[UPD_UID] AS [UPD_UID], 
+    [OTCDEPT].[DEF_PAGE] AS [DEF_PAGE]
+    FROM [dbo].[OTCDEPT] AS [OTCDEPT]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="OTCDPUR" EntityType="Self.OTCDPUR" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [OTCDPUR].[DEPT_NO] AS [DEPT_NO], 
+    [OTCDPUR].[USR_ID] AS [USR_ID], 
+    [OTCDPUR].[DATA_TP] AS [DATA_TP], 
+    [OTCDPUR].[ADD_DT] AS [ADD_DT], 
+    [OTCDPUR].[UPD_DT] AS [UPD_DT], 
+    [OTCDPUR].[UPD_TM] AS [UPD_TM], 
+    [OTCDPUR].[UPD_UID] AS [UPD_UID]
+    FROM [dbo].[OTCDPUR] AS [OTCDPUR]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SMCPOST" EntityType="Self.SMCPOST" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SMCPOST].[CITY_ID] AS [CITY_ID], 
+    [SMCPOST].[CITY] AS [CITY], 
+    [SMCPOST].[TOWN] AS [TOWN], 
+    [SMCPOST].[LIFE_CATY] AS [LIFE_CATY], 
+    [SMCPOST].[CPA_CITY_ID] AS [CPA_CITY_ID], 
+    [SMCPOST].[CPA_TOWN_ID] AS [CPA_TOWN_ID], 
+    [SMCPOST].[PTCOD] AS [PTCOD], 
+    [SMCPOST].[AREA] AS [AREA], 
+    [SMCPOST].[SUP1] AS [SUP1], 
+    [SMCPOST].[SUP2] AS [SUP2], 
+    [SMCPOST].[MEB] AS [MEB], 
+    [SMCPOST].[POP_CNT] AS [POP_CNT], 
+    [SMCPOST].[DOR_CNT] AS [DOR_CNT], 
+    [SMCPOST].[ADD_DT] AS [ADD_DT], 
+    [SMCPOST].[UPD_DT] AS [UPD_DT], 
+    [SMCPOST].[UPD_TM] AS [UPD_TM], 
+    [SMCPOST].[UPD_UID] AS [UPD_UID]
+    FROM [dbo].[SMCPOST] AS [SMCPOST]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TESTFILE" EntityType="Self.TESTFILE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TESTFILE].[ID] AS [ID], 
+    [TESTFILE].[FILE_ID] AS [FILE_ID], 
+    [TESTFILE].[FILE_DESC] AS [FILE_DESC], 
+    [TESTFILE].[FILE_NAME] AS [FILE_NAME], 
+    [TESTFILE].[FILE_DATA] AS [FILE_DATA]
+    FROM [dbo].[TESTFILE] AS [TESTFILE]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

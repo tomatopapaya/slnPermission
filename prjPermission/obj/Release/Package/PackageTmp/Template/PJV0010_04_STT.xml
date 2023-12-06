@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="big5" standalone="no" ?>
+<UDFSTT>
+  <STTFile STTFileCode="RPT" STTParameter="PJV0010_04_PRM.xml">
+    <STTSheet STTSheetName="執行情形">
+      <STTReport STTReportName="執行情形" STTReportType="BandReport" STTEnablePage="False" STTReportHeight="23000" STTPageCount="False" STTCount="True" STTFullEmptyContent="False">
+        <RPTFormats>
+          <RPTFormat RPTFieldName="SYR" RPTFieldType="CHAR" />
+          <RPTFormat RPTFieldName="SMN" RPTFieldType="CHAR" />
+          <RPTFormat RPTFieldName="SEQ" RPTFieldType="NUM" />
+          <RPTFormat RPTFieldName="TD_CODE" RPTFieldType="CHAR" />
+          <RPTFormat RPTFieldName="TD_NAME" RPTFieldType="CHAR" />
+          <RPTFormat RPTFieldName="FD_CODE" RPTFieldType="CHAR" />
+          <RPTFormat RPTFieldName="FUND" RPTFieldType="NUM" />
+          <RPTFormat RPTFieldName="REV_FUND" RPTFieldType="NUM" />
+          <RPTFormat RPTFieldName="SMN_FUND" RPTFieldType="NUM" />
+          <RPTFormat RPTFieldName="REV_SMN_FUND" RPTFieldType="NUM" />
+          <RPTFormat RPTFieldName="COST_FEE" RPTFieldType="NUM" />
+          <RPTFormat RPTFieldName="REV_COST_FEE" RPTFieldType="NUM" />
+          <RPTFormat RPTFieldName="PPAY_FEE" RPTFieldType="NUM" />
+          <RPTFormat RPTFieldName="REV_PPAY_FEE" RPTFieldType="NUM" />
+          <RPTFormat RPTFieldName="PRE_TK102" RPTFieldType="CHAR" />
+          <RPTFormat RPTFieldName="REL_TK102" RPTFieldType="CHAR" />
+          <RPTFormat RPTFieldName="PRE_TK105" RPTFieldType="CHAR" />
+          <RPTFormat RPTFieldName="REL_TK105" RPTFieldType="CHAR" />
+          <RPTFormat RPTFieldName="PRE_TK107" RPTFieldType="CHAR" />
+          <RPTFormat RPTFieldName="REL_TK107" RPTFieldType="CHAR" />
+          <RPTFormat RPTFieldName="PRE_SCHD" RPTFieldType="NUM" />
+          <RPTFormat RPTFieldName="REL_SCHD" RPTFieldType="NUM" />
+          <RPTFormat RPTFieldName="EXECT_DESC" RPTFieldType="CHAR" />
+          <RPTFormat RPTFieldName="DELAY_RESN" RPTFieldType="CHAR" />
+        </RPTFormats>
+        <STTDatas>
+          <STTSourceSheet STTSheetName="Sheet1">
+            <STTSingle>
+              <STTDataSource STTSourceCode="SC1"></STTDataSource>
+            </STTSingle>
+            <STTMulti>
+              <STTDataSource STTSourceCode="SC2"></STTDataSource>
+            </STTMulti>
+          </STTSourceSheet>
+        </STTDatas>
+      </STTReport>
+    </STTSheet>
+  </STTFile>
+</UDFSTT>

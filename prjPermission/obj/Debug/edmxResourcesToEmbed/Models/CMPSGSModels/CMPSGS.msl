@@ -1,0 +1,1042 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CMPSGSModelStoreContainer" CdmEntityContainer="CMPSGSEntities">
+    <EntitySetMapping Name="APDBGLS">
+      <EntityTypeMapping TypeName="CMPSGSModel.APDBGLS">
+        <MappingFragment StoreEntitySet="APDBGLS">
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="AC_ITEM_CODE" ColumnName="AC_ITEM_CODE" />
+          <ScalarProperty Name="AN_AC_ITEM_CODE" ColumnName="AN_AC_ITEM_CODE" />
+          <ScalarProperty Name="AC_ITEM_NAME" ColumnName="AC_ITEM_NAME" />
+          <ScalarProperty Name="IT_ORDER" ColumnName="IT_ORDER" />
+          <ScalarProperty Name="IT_TYPE" ColumnName="IT_TYPE" />
+          <ScalarProperty Name="IT_FUND" ColumnName="IT_FUND" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APDFILE">
+      <EntityTypeMapping TypeName="CMPSGSModel.APDFILE">
+        <MappingFragment StoreEntitySet="APDFILE">
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="FID" ColumnName="FID" />
+          <ScalarProperty Name="FC_NO" ColumnName="FC_NO" />
+          <ScalarProperty Name="FC_DESC" ColumnName="FC_DESC" />
+          <ScalarProperty Name="FILE_DESC" ColumnName="FILE_DESC" />
+          <ScalarProperty Name="FILE_MEMO" ColumnName="FILE_MEMO" />
+          <ScalarProperty Name="FILE_PATH" ColumnName="FILE_PATH" />
+          <ScalarProperty Name="FILE_BODY" ColumnName="FILE_BODY" />
+          <ScalarProperty Name="FILE_BODY_S" ColumnName="FILE_BODY_S" />
+          <ScalarProperty Name="FILE_SIZE" ColumnName="FILE_SIZE" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APDFUND">
+      <EntityTypeMapping TypeName="CMPSGSModel.APDFUND">
+        <MappingFragment StoreEntitySet="APDFUND">
+          <ScalarProperty Name="FID" ColumnName="FID" />
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="SYR" ColumnName="SYR" />
+          <ScalarProperty Name="IPJ_CODE_X" ColumnName="IPJ_CODE_X" />
+          <ScalarProperty Name="FIT_CODE" ColumnName="FIT_CODE" />
+          <ScalarProperty Name="FUND_DESC" ColumnName="FUND_DESC" />
+          <ScalarProperty Name="FUND" ColumnName="FUND" />
+          <ScalarProperty Name="JUD_FUND" ColumnName="JUD_FUND" />
+          <ScalarProperty Name="DCS_FUND" ColumnName="DCS_FUND" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APDLOCP">
+      <EntityTypeMapping TypeName="CMPSGSModel.APDLOCP">
+        <MappingFragment StoreEntitySet="APDLOCP">
+          <ScalarProperty Name="LID" ColumnName="LID" />
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+          <ScalarProperty Name="VILLAGE" ColumnName="VILLAGE" />
+          <ScalarProperty Name="GIS_SYS" ColumnName="GIS_SYS" />
+          <ScalarProperty Name="GIS_X" ColumnName="GIS_X" />
+          <ScalarProperty Name="GIS_Y" ColumnName="GIS_Y" />
+          <ScalarProperty Name="GIS_Z" ColumnName="GIS_Z" />
+          <ScalarProperty Name="POPULATION" ColumnName="POPULATION" />
+          <ScalarProperty Name="CLAN" ColumnName="CLAN" />
+          <ScalarProperty Name="SUPH_CNT" ColumnName="SUPH_CNT" />
+          <ScalarProperty Name="POS_SYB" ColumnName="POS_SYB" />
+          <ScalarProperty Name="AC_ITEM_CODE" ColumnName="AC_ITEM_CODE" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APDPICS">
+      <EntityTypeMapping TypeName="CMPSGSModel.APDPICS">
+        <MappingFragment StoreEntitySet="APDPICS">
+          <ScalarProperty Name="FID" ColumnName="FID" />
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="PIC_MEMO" ColumnName="PIC_MEMO" />
+          <ScalarProperty Name="PIC_PATH" ColumnName="PIC_PATH" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APDWQTY">
+      <EntityTypeMapping TypeName="CMPSGSModel.APDWQTY">
+        <MappingFragment StoreEntitySet="APDWQTY">
+          <ScalarProperty Name="LID" ColumnName="LID" />
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="AN_MID" ColumnName="AN_MID" />
+          <ScalarProperty Name="MT_DESC" ColumnName="MT_DESC" />
+          <ScalarProperty Name="MT_CODE" ColumnName="MT_CODE" />
+          <ScalarProperty Name="MT_NAME" ColumnName="MT_NAME" />
+          <ScalarProperty Name="MT_UNIT" ColumnName="MT_UNIT" />
+          <ScalarProperty Name="MT_QTY" ColumnName="MT_QTY" />
+          <ScalarProperty Name="MT_PRICE" ColumnName="MT_PRICE" />
+          <ScalarProperty Name="MT_SPEC" ColumnName="MT_SPEC" />
+          <ScalarProperty Name="IV_QTY" ColumnName="IV_QTY" />
+          <ScalarProperty Name="IV_PRICE" ColumnName="IV_PRICE" />
+          <ScalarProperty Name="IV_DESC" ColumnName="IV_DESC" />
+          <ScalarProperty Name="DC_QTY" ColumnName="DC_QTY" />
+          <ScalarProperty Name="DC_PRICE" ColumnName="DC_PRICE" />
+          <ScalarProperty Name="DC_DESC" ColumnName="DC_DESC" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APMADMC">
+      <EntityTypeMapping TypeName="CMPSGSModel.APMADMC">
+        <MappingFragment StoreEntitySet="APMADMC">
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="ADV_DP" ColumnName="ADV_DP" />
+          <ScalarProperty Name="ADM_LEV" ColumnName="ADM_LEV" />
+          <ScalarProperty Name="ADV_UID" ColumnName="ADV_UID" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APMFORM">
+      <EntityTypeMapping TypeName="CMPSGSModel.APMFORM">
+        <MappingFragment StoreEntitySet="APMFORM">
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="YRC_ID" ColumnName="YRC_ID" />
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="SYR" ColumnName="SYR" />
+          <ScalarProperty Name="ROAD_NO" ColumnName="ROAD_NO" />
+          <ScalarProperty Name="TD_CODE" ColumnName="TD_CODE" />
+          <ScalarProperty Name="EXT_FG" ColumnName="EXT_FG" />
+          <ScalarProperty Name="AP_CODE" ColumnName="AP_CODE" />
+          <ScalarProperty Name="AP_PJ_NAME" ColumnName="AP_PJ_NAME" />
+          <ScalarProperty Name="AP_NAME" ColumnName="AP_NAME" />
+          <ScalarProperty Name="TIT_CODE" ColumnName="TIT_CODE" />
+          <ScalarProperty Name="DA_CODE" ColumnName="DA_CODE" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+          <ScalarProperty Name="TD_LINE" ColumnName="TD_LINE" />
+          <ScalarProperty Name="VILLAGE" ColumnName="VILLAGE" />
+          <ScalarProperty Name="SYS_CATY" ColumnName="SYS_CATY" />
+          <ScalarProperty Name="SYS_CATY_OTH" ColumnName="SYS_CATY_OTH" />
+          <ScalarProperty Name="PJ_CATY_CODE" ColumnName="PJ_CATY_CODE" />
+          <ScalarProperty Name="ADV_DP" ColumnName="ADV_DP" />
+          <ScalarProperty Name="ADV_UID" ColumnName="ADV_UID" />
+          <ScalarProperty Name="OPEN_FG" ColumnName="OPEN_FG" />
+          <ScalarProperty Name="AP_NOTE" ColumnName="AP_NOTE" />
+          <ScalarProperty Name="AP_ALL_NOTE" ColumnName="AP_ALL_NOTE" />
+          <ScalarProperty Name="AP_YEAR_NOTE" ColumnName="AP_YEAR_NOTE" />
+          <ScalarProperty Name="TL_FUND" ColumnName="TL_FUND" />
+          <ScalarProperty Name="BF_FUND" ColumnName="BF_FUND" />
+          <ScalarProperty Name="FILL_MCH" ColumnName="FILL_MCH" />
+          <ScalarProperty Name="FILL_DP" ColumnName="FILL_DP" />
+          <ScalarProperty Name="EXE_MCH" ColumnName="EXE_MCH" />
+          <ScalarProperty Name="GIS_SYS" ColumnName="GIS_SYS" />
+          <ScalarProperty Name="GIS_RANGE_X" ColumnName="GIS_RANGE_X" />
+          <ScalarProperty Name="GIS_RANGE_Y" ColumnName="GIS_RANGE_Y" />
+          <ScalarProperty Name="POPULATION" ColumnName="POPULATION" />
+          <ScalarProperty Name="CLAN" ColumnName="CLAN" />
+          <ScalarProperty Name="AP_STAT" ColumnName="AP_STAT" />
+          <ScalarProperty Name="CANCEL_DT" ColumnName="CANCEL_DT" />
+          <ScalarProperty Name="CANCEL_DESC" ColumnName="CANCEL_DESC" />
+          <ScalarProperty Name="CONT_NAME" ColumnName="CONT_NAME" />
+          <ScalarProperty Name="CONT_TITLE" ColumnName="CONT_TITLE" />
+          <ScalarProperty Name="CONT_TEL" ColumnName="CONT_TEL" />
+          <ScalarProperty Name="CONT_FAX" ColumnName="CONT_FAX" />
+          <ScalarProperty Name="CONT_EMAIL" ColumnName="CONT_EMAIL" />
+          <ScalarProperty Name="START_DT" ColumnName="START_DT" />
+          <ScalarProperty Name="END_DT" ColumnName="END_DT" />
+          <ScalarProperty Name="MAN_POWER" ColumnName="MAN_POWER" />
+          <ScalarProperty Name="BENEFITS" ColumnName="BENEFITS" />
+          <ScalarProperty Name="IPJ_CODE" ColumnName="IPJ_CODE" />
+          <ScalarProperty Name="CHK1_FG" ColumnName="CHK1_FG" />
+          <ScalarProperty Name="CHK2_FG" ColumnName="CHK2_FG" />
+          <ScalarProperty Name="CHK3_FG" ColumnName="CHK3_FG" />
+          <ScalarProperty Name="CATY_CODE" ColumnName="CATY_CODE" />
+          <ScalarProperty Name="S1_ORDER" ColumnName="S1_ORDER" />
+          <ScalarProperty Name="S1_FN_DT" ColumnName="S1_FN_DT" />
+          <ScalarProperty Name="S1_FN_NO" ColumnName="S1_FN_NO" />
+          <ScalarProperty Name="S1_COMT" ColumnName="S1_COMT" />
+          <ScalarProperty Name="S1_OF_DT" ColumnName="S1_OF_DT" />
+          <ScalarProperty Name="S1_OF_NO" ColumnName="S1_OF_NO" />
+          <ScalarProperty Name="S2_ORDER" ColumnName="S2_ORDER" />
+          <ScalarProperty Name="S2_FN_DT" ColumnName="S2_FN_DT" />
+          <ScalarProperty Name="S2_FN_NO" ColumnName="S2_FN_NO" />
+          <ScalarProperty Name="S2_COMT" ColumnName="S2_COMT" />
+          <ScalarProperty Name="S2_SCORE" ColumnName="S2_SCORE" />
+          <ScalarProperty Name="S2_OF_DT" ColumnName="S2_OF_DT" />
+          <ScalarProperty Name="S2_OF_NO" ColumnName="S2_OF_NO" />
+          <ScalarProperty Name="SWW_FG1" ColumnName="SWW_FG1" />
+          <ScalarProperty Name="SWW_FG2" ColumnName="SWW_FG2" />
+          <ScalarProperty Name="SWW_FG3" ColumnName="SWW_FG3" />
+          <ScalarProperty Name="SWW_FG4" ColumnName="SWW_FG4" />
+          <ScalarProperty Name="SWW_FG5" ColumnName="SWW_FG5" />
+          <ScalarProperty Name="SWW_OT" ColumnName="SWW_OT" />
+          <ScalarProperty Name="SWW_OT_DESC" ColumnName="SWW_OT_DESC" />
+          <ScalarProperty Name="SWB_FG1" ColumnName="SWB_FG1" />
+          <ScalarProperty Name="SWB_FG2" ColumnName="SWB_FG2" />
+          <ScalarProperty Name="SWB_FG3" ColumnName="SWB_FG3" />
+          <ScalarProperty Name="SWB_FG4" ColumnName="SWB_FG4" />
+          <ScalarProperty Name="SWB_FG5" ColumnName="SWB_FG5" />
+          <ScalarProperty Name="SWB_SYR" ColumnName="SWB_SYR" />
+          <ScalarProperty Name="TF106_DT" ColumnName="TF106_DT" />
+          <ScalarProperty Name="TF108_DT" ColumnName="TF108_DT" />
+          <ScalarProperty Name="TK103_DT" ColumnName="TK103_DT" />
+          <ScalarProperty Name="TK105_DT" ColumnName="TK105_DT" />
+          <ScalarProperty Name="TK106_DT" ColumnName="TK106_DT" />
+          <ScalarProperty Name="TK107_DT" ColumnName="TK107_DT" />
+          <ScalarProperty Name="SWW1_FG" ColumnName="SWW1_FG" />
+          <ScalarProperty Name="SWW2_FG" ColumnName="SWW2_FG" />
+          <ScalarProperty Name="SWW3_FG" ColumnName="SWW3_FG" />
+          <ScalarProperty Name="SWW4_FG" ColumnName="SWW4_FG" />
+          <ScalarProperty Name="SWW5_FG" ColumnName="SWW5_FG" />
+          <ScalarProperty Name="SWW6_FG" ColumnName="SWW6_FG" />
+          <ScalarProperty Name="SWW7_FG" ColumnName="SWW7_FG" />
+          <ScalarProperty Name="SWW8_FG" ColumnName="SWW8_FG" />
+          <ScalarProperty Name="SWW81_FG" ColumnName="SWW81_FG" />
+          <ScalarProperty Name="SWW9_RATE" ColumnName="SWW9_RATE" />
+          <ScalarProperty Name="SWW10_FG" ColumnName="SWW10_FG" />
+          <ScalarProperty Name="SWW11_FG" ColumnName="SWW11_FG" />
+          <ScalarProperty Name="SWWOT_DESC" ColumnName="SWWOT_DESC" />
+          <ScalarProperty Name="SC1_SCORE" ColumnName="SC1_SCORE" />
+          <ScalarProperty Name="SC2_SCORE" ColumnName="SC2_SCORE" />
+          <ScalarProperty Name="SC3_SCORE" ColumnName="SC3_SCORE" />
+          <ScalarProperty Name="SC4_SCORE" ColumnName="SC4_SCORE" />
+          <ScalarProperty Name="SC5_SCORE" ColumnName="SC5_SCORE" />
+          <ScalarProperty Name="SC6_SCORE" ColumnName="SC6_SCORE" />
+          <ScalarProperty Name="SC7_SCORE" ColumnName="SC7_SCORE" />
+          <ScalarProperty Name="SC1_SCORE1" ColumnName="SC1_SCORE1" />
+          <ScalarProperty Name="SC2_SCORE1" ColumnName="SC2_SCORE1" />
+          <ScalarProperty Name="SC3_SCORE1" ColumnName="SC3_SCORE1" />
+          <ScalarProperty Name="SC4_SCORE1" ColumnName="SC4_SCORE1" />
+          <ScalarProperty Name="SC5_SCORE1" ColumnName="SC5_SCORE1" />
+          <ScalarProperty Name="SC6_SCORE1" ColumnName="SC6_SCORE1" />
+          <ScalarProperty Name="SC7_SCORE1" ColumnName="SC7_SCORE1" />
+          <ScalarProperty Name="TCEN_FUND" ColumnName="TCEN_FUND" />
+          <ScalarProperty Name="TLOC_FUND" ColumnName="TLOC_FUND" />
+          <ScalarProperty Name="RCEN_FUND" ColumnName="RCEN_FUND" />
+          <ScalarProperty Name="RLOC_FUND" ColumnName="RLOC_FUND" />
+          <ScalarProperty Name="VER_STAT" ColumnName="VER_STAT" />
+          <ScalarProperty Name="CHK_STAT" ColumnName="CHK_STAT" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+          <ScalarProperty Name="BUDGET_TP" ColumnName="BUDGET_TP" />
+          <ScalarProperty Name="ATTENTION_PEOPLE" ColumnName="ATTENTION_PEOPLE" />
+          <ScalarProperty Name="PRV_CON_SEWERS" ColumnName="PRV_CON_SEWERS" />
+          <ScalarProperty Name="TEMP_TD_CODE" ColumnName="TEMP_TD_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DADFILE">
+      <EntityTypeMapping TypeName="CMPSGSModel.DADFILE">
+        <MappingFragment StoreEntitySet="DADFILE">
+          <ScalarProperty Name="FFID" ColumnName="FFID" />
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="FILE_DESC" ColumnName="FILE_DESC" />
+          <ScalarProperty Name="FILE_PATH" ColumnName="FILE_PATH" />
+          <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
+          <ScalarProperty Name="MOD_DT" ColumnName="MOD_DT" />
+          <ScalarProperty Name="EDITOR" ColumnName="EDITOR" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DADFUND">
+      <EntityTypeMapping TypeName="CMPSGSModel.DADFUND">
+        <MappingFragment StoreEntitySet="DADFUND">
+          <ScalarProperty Name="FID" ColumnName="FID" />
+          <ScalarProperty Name="DA_CODE" ColumnName="DA_CODE" />
+          <ScalarProperty Name="SYR" ColumnName="SYR" />
+          <ScalarProperty Name="IPJ_CODE_X" ColumnName="IPJ_CODE_X" />
+          <ScalarProperty Name="FIT_CODE" ColumnName="FIT_CODE" />
+          <ScalarProperty Name="FUND" ColumnName="FUND" />
+          <ScalarProperty Name="FUND_DESC" ColumnName="FUND_DESC" />
+          <ScalarProperty Name="DCS_FUND" ColumnName="DCS_FUND" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DADLOCP">
+      <EntityTypeMapping TypeName="CMPSGSModel.DADLOCP">
+        <MappingFragment StoreEntitySet="DADLOCP">
+          <ScalarProperty Name="LID" ColumnName="LID" />
+          <ScalarProperty Name="DA_CODE" ColumnName="DA_CODE" />
+          <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+          <ScalarProperty Name="VILLAGE" ColumnName="VILLAGE" />
+          <ScalarProperty Name="GIS_SYS" ColumnName="GIS_SYS" />
+          <ScalarProperty Name="GIS_X" ColumnName="GIS_X" />
+          <ScalarProperty Name="GIS_Y" ColumnName="GIS_Y" />
+          <ScalarProperty Name="GIS_Z" ColumnName="GIS_Z" />
+          <ScalarProperty Name="POPULATION" ColumnName="POPULATION" />
+          <ScalarProperty Name="CLAN" ColumnName="CLAN" />
+          <ScalarProperty Name="SUPH_CNT" ColumnName="SUPH_CNT" />
+          <ScalarProperty Name="POS_SYB" ColumnName="POS_SYB" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DADSDWB">
+      <EntityTypeMapping TypeName="CMPSGSModel.DADSDWB">
+        <MappingFragment StoreEntitySet="DADSDWB">
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="IT_CODE" ColumnName="IT_CODE" />
+          <ScalarProperty Name="AN_IT_CODE" ColumnName="AN_IT_CODE" />
+          <ScalarProperty Name="GP_ORDER" ColumnName="GP_ORDER" />
+          <ScalarProperty Name="IT_NAME" ColumnName="IT_NAME" />
+          <ScalarProperty Name="IT_GP_NAME" ColumnName="IT_GP_NAME" />
+          <ScalarProperty Name="IT_TYPE" ColumnName="IT_TYPE" />
+          <ScalarProperty Name="IT_WGT" ColumnName="IT_WGT" />
+          <ScalarProperty Name="WKSCHD_FG" ColumnName="WKSCHD_FG" />
+          <ScalarProperty Name="WRO_FG" ColumnName="WRO_FG" />
+          <ScalarProperty Name="DEL_FG" ColumnName="DEL_FG" />
+          <ScalarProperty Name="PRE_EDT" ColumnName="PRE_EDT" />
+          <ScalarProperty Name="REL_EDT" ColumnName="REL_EDT" />
+          <ScalarProperty Name="PRE_HDT" ColumnName="PRE_HDT" />
+          <ScalarProperty Name="PRE_ADT" ColumnName="PRE_ADT" />
+          <ScalarProperty Name="EDIT_FG" ColumnName="EDIT_FG" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DADTCOD">
+      <EntityTypeMapping TypeName="CMPSGSModel.DADTCOD">
+        <MappingFragment StoreEntitySet="DADTCOD">
+          <ScalarProperty Name="DA_CODE" ColumnName="DA_CODE" />
+          <ScalarProperty Name="TD_CODE" ColumnName="TD_CODE" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DADWQTY">
+      <EntityTypeMapping TypeName="CMPSGSModel.DADWQTY">
+        <MappingFragment StoreEntitySet="DADWQTY">
+          <ScalarProperty Name="LID" ColumnName="LID" />
+          <ScalarProperty Name="DA_CODE" ColumnName="DA_CODE" />
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="AN_MID" ColumnName="AN_MID" />
+          <ScalarProperty Name="MT_DESC" ColumnName="MT_DESC" />
+          <ScalarProperty Name="MT_CODE" ColumnName="MT_CODE" />
+          <ScalarProperty Name="MT_NAME" ColumnName="MT_NAME" />
+          <ScalarProperty Name="MT_UNIT" ColumnName="MT_UNIT" />
+          <ScalarProperty Name="MT_QTY" ColumnName="MT_QTY" />
+          <ScalarProperty Name="MT_PRICE" ColumnName="MT_PRICE" />
+          <ScalarProperty Name="MT_SPEC" ColumnName="MT_SPEC" />
+          <ScalarProperty Name="DC_QTY" ColumnName="DC_QTY" />
+          <ScalarProperty Name="DC_PRICE" ColumnName="DC_PRICE" />
+          <ScalarProperty Name="DC_DESC" ColumnName="DC_DESC" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DAMFORM">
+      <EntityTypeMapping TypeName="CMPSGSModel.DAMFORM">
+        <MappingFragment StoreEntitySet="DAMFORM">
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="YRC_ID" ColumnName="YRC_ID" />
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="SYR" ColumnName="SYR" />
+          <ScalarProperty Name="DID" ColumnName="DID" />
+          <ScalarProperty Name="DA_CODE" ColumnName="DA_CODE" />
+          <ScalarProperty Name="DA_NAME" ColumnName="DA_NAME" />
+          <ScalarProperty Name="TD_CODE" ColumnName="TD_CODE" />
+          <ScalarProperty Name="EXT_FG" ColumnName="EXT_FG" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+          <ScalarProperty Name="TD_LINE" ColumnName="TD_LINE" />
+          <ScalarProperty Name="TIT_CODE" ColumnName="TIT_CODE" />
+          <ScalarProperty Name="SYS_CATY" ColumnName="SYS_CATY" />
+          <ScalarProperty Name="VILLAGE" ColumnName="VILLAGE" />
+          <ScalarProperty Name="PJ_CATY_CODE" ColumnName="PJ_CATY_CODE" />
+          <ScalarProperty Name="FILL_DP" ColumnName="FILL_DP" />
+          <ScalarProperty Name="ROAD_TP" ColumnName="ROAD_TP" />
+          <ScalarProperty Name="ROAD_LINE" ColumnName="ROAD_LINE" />
+          <ScalarProperty Name="PCCJDG_FUND" ColumnName="PCCJDG_FUND" />
+          <ScalarProperty Name="ADM_DP" ColumnName="ADM_DP" />
+          <ScalarProperty Name="STAT_NO" ColumnName="STAT_NO" />
+          <ScalarProperty Name="CATY_CODE" ColumnName="CATY_CODE" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="ADV_DP" ColumnName="ADV_DP" />
+          <ScalarProperty Name="ADV_UID" ColumnName="ADV_UID" />
+          <ScalarProperty Name="OPEN_FG" ColumnName="OPEN_FG" />
+          <ScalarProperty Name="BGT_TYPE" ColumnName="BGT_TYPE" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dtproperties">
+      <EntityTypeMapping TypeName="CMPSGSModel.dtproperties_CMPSGS">
+        <MappingFragment StoreEntitySet="dtproperties">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="objectid" ColumnName="objectid" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+          <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OGCDEPT">
+      <EntityTypeMapping TypeName="CMPSGSModel.OGCDEPT_CMPSGS">
+        <MappingFragment StoreEntitySet="OGCDEPT">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="AN_DEPT_NO" ColumnName="AN_DEPT_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="DEPT_CHIEF" ColumnName="DEPT_CHIEF" />
+          <ScalarProperty Name="DEPT_WGT" ColumnName="DEPT_WGT" />
+          <ScalarProperty Name="DATA_TP" ColumnName="DATA_TP" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+          <ScalarProperty Name="DEF_PAGE" ColumnName="DEF_PAGE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OGCDPUR">
+      <EntityTypeMapping TypeName="CMPSGSModel.OGCDPUR_CMPSGS">
+        <MappingFragment StoreEntitySet="OGCDPUR">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="USR_ID" ColumnName="USR_ID" />
+          <ScalarProperty Name="DATA_TP" ColumnName="DATA_TP" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OGCUATH">
+      <EntityTypeMapping TypeName="CMPSGSModel.OGCUATH_CMPSGS">
+        <MappingFragment StoreEntitySet="OGCUATH">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="PRG_ID" ColumnName="PRG_ID" />
+          <ScalarProperty Name="DATA_TP" ColumnName="DATA_TP" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OGCUSER">
+      <EntityTypeMapping TypeName="CMPSGSModel.OGCUSER_CMPSGS">
+        <MappingFragment StoreEntitySet="OGCUSER">
+          <ScalarProperty Name="USR_ID" ColumnName="USR_ID" />
+          <ScalarProperty Name="USR_NAME" ColumnName="USR_NAME" />
+          <ScalarProperty Name="USR_PSW" ColumnName="USR_PSW" />
+          <ScalarProperty Name="AGENT" ColumnName="AGENT" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TEL_O" ColumnName="TEL_O" />
+          <ScalarProperty Name="TEL_M" ColumnName="TEL_M" />
+          <ScalarProperty Name="TEL_F" ColumnName="TEL_F" />
+          <ScalarProperty Name="USR_STAT" ColumnName="USR_STAT" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PBMLIST">
+      <EntityTypeMapping TypeName="CMPSGSModel.PBMLIST_CMPSGS">
+        <MappingFragment StoreEntitySet="PBMLIST">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+          <ScalarProperty Name="DESP" ColumnName="DESP" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+          <ScalarProperty Name="EDATE" ColumnName="EDATE" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJCFLST">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJCFLST">
+        <MappingFragment StoreEntitySet="PJCFLST">
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="FC_NO" ColumnName="FC_NO" />
+          <ScalarProperty Name="FC_DESC" ColumnName="FC_DESC" />
+          <ScalarProperty Name="MF_FG" ColumnName="MF_FG" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJDCATY">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJDCATY">
+        <MappingFragment StoreEntitySet="PJDCATY">
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="CATY_CODE" ColumnName="CATY_CODE" />
+          <ScalarProperty Name="PJ_CATY_CODE" ColumnName="PJ_CATY_CODE" />
+          <ScalarProperty Name="CATY_NAME" ColumnName="CATY_NAME" />
+          <ScalarProperty Name="CATY_NOTE" ColumnName="CATY_NOTE" />
+          <ScalarProperty Name="EVRF_FG" ColumnName="EVRF_FG" />
+          <ScalarProperty Name="OTDSG_DT" ColumnName="OTDSG_DT" />
+          <ScalarProperty Name="OTDSG_BUSS" ColumnName="OTDSG_BUSS" />
+          <ScalarProperty Name="DSGRL_DT" ColumnName="DSGRL_DT" />
+          <ScalarProperty Name="PCCJDG_DT" ColumnName="PCCJDG_DT" />
+          <ScalarProperty Name="PCCJDG_FUND" ColumnName="PCCJDG_FUND" />
+          <ScalarProperty Name="INIDSG_DT" ColumnName="INIDSG_DT" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJDCMCT">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJDCMCT">
+        <MappingFragment StoreEntitySet="PJDCMCT">
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="CMS_CODE" ColumnName="CMS_CODE" />
+          <ScalarProperty Name="CMS_NAME" ColumnName="CMS_NAME" />
+          <ScalarProperty Name="CMS_UNIT" ColumnName="CMS_UNIT" />
+          <ScalarProperty Name="CMS_NOTE" ColumnName="CMS_NOTE" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJDDOCS">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJDDOCS">
+        <MappingFragment StoreEntitySet="PJDDOCS">
+          <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
+          <ScalarProperty Name="FID" ColumnName="FID" />
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="FILE_DESC" ColumnName="FILE_DESC" />
+          <ScalarProperty Name="FILE_PATH" ColumnName="FILE_PATH" />
+          <ScalarProperty Name="FILE_BODY" ColumnName="FILE_BODY" />
+          <ScalarProperty Name="FILE_SIZE" ColumnName="FILE_SIZE" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJDFDIS">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJDFDIS">
+        <MappingFragment StoreEntitySet="PJDFDIS">
+          <ScalarProperty Name="FID" ColumnName="FID" />
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="SYR" ColumnName="SYR" />
+          <ScalarProperty Name="TIT_CODE" ColumnName="TIT_CODE" />
+          <ScalarProperty Name="FIT_CODE" ColumnName="FIT_CODE" />
+          <ScalarProperty Name="ND_FUND" ColumnName="ND_FUND" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJDFILE">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJDFILE">
+        <MappingFragment StoreEntitySet="PJDFILE">
+          <ScalarProperty Name="FFID" ColumnName="FFID" />
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="FILE_DESC" ColumnName="FILE_DESC" />
+          <ScalarProperty Name="FILE_PATH" ColumnName="FILE_PATH" />
+          <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
+          <ScalarProperty Name="MOD_DT" ColumnName="MOD_DT" />
+          <ScalarProperty Name="EDITOR" ColumnName="EDITOR" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJDFUND">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJDFUND">
+        <MappingFragment StoreEntitySet="PJDFUND">
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="SYR" ColumnName="SYR" />
+          <ScalarProperty Name="IPJ_CODE" ColumnName="IPJ_CODE" />
+          <ScalarProperty Name="FUND" ColumnName="FUND" />
+          <ScalarProperty Name="YBG_FUND" ColumnName="YBG_FUND" />
+          <ScalarProperty Name="FUND_DESC" ColumnName="FUND_DESC" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJDMDRC">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJDMDRC">
+        <MappingFragment StoreEntitySet="PJDMDRC">
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="SEQ_NO" ColumnName="SEQ_NO" />
+          <ScalarProperty Name="STT_DT" ColumnName="STT_DT" />
+          <ScalarProperty Name="END_DT" ColumnName="END_DT" />
+          <ScalarProperty Name="PJ_CONT" ColumnName="PJ_CONT" />
+          <ScalarProperty Name="LEV1_DT" ColumnName="LEV1_DT" />
+          <ScalarProperty Name="LEV1_FN" ColumnName="LEV1_FN" />
+          <ScalarProperty Name="LEV2_DT" ColumnName="LEV2_DT" />
+          <ScalarProperty Name="LEV2_FN" ColumnName="LEV2_FN" />
+          <ScalarProperty Name="LEV3_DT" ColumnName="LEV3_DT" />
+          <ScalarProperty Name="LEV3_FN" ColumnName="LEV3_FN" />
+          <ScalarProperty Name="LEV4_DT" ColumnName="LEV4_DT" />
+          <ScalarProperty Name="LEV4_FN" ColumnName="LEV4_FN" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJDSDWB">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJDSDWB">
+        <MappingFragment StoreEntitySet="PJDSDWB">
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="IT_CODE" ColumnName="IT_CODE" />
+          <ScalarProperty Name="AN_IT_CODE" ColumnName="AN_IT_CODE" />
+          <ScalarProperty Name="GP_ORDER" ColumnName="GP_ORDER" />
+          <ScalarProperty Name="IT_NAME" ColumnName="IT_NAME" />
+          <ScalarProperty Name="IT_GP_NAME" ColumnName="IT_GP_NAME" />
+          <ScalarProperty Name="IT_TYPE" ColumnName="IT_TYPE" />
+          <ScalarProperty Name="IT_WGT" ColumnName="IT_WGT" />
+          <ScalarProperty Name="WKSCHD_FG" ColumnName="WKSCHD_FG" />
+          <ScalarProperty Name="WRO_FG" ColumnName="WRO_FG" />
+          <ScalarProperty Name="DEL_FG" ColumnName="DEL_FG" />
+          <ScalarProperty Name="EDIT_FG" ColumnName="EDIT_FG" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJDSUBC">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJDSUBC">
+        <MappingFragment StoreEntitySet="PJDSUBC">
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="CATY_CODE" ColumnName="CATY_CODE" />
+          <ScalarProperty Name="CATY_NAME" ColumnName="CATY_NAME" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJDSUPD">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJDSUPD">
+        <MappingFragment StoreEntitySet="PJDSUPD">
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="ADV_DP" ColumnName="ADV_DP" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJDSYRC">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJDSYRC">
+        <MappingFragment StoreEntitySet="PJDSYRC">
+          <ScalarProperty Name="YRC_ID" ColumnName="YRC_ID" />
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="SYR" ColumnName="SYR" />
+          <ScalarProperty Name="BGN_SYR" ColumnName="BGN_SYR" />
+          <ScalarProperty Name="END_SYR" ColumnName="END_SYR" />
+          <ScalarProperty Name="PSG_NAME" ColumnName="PSG_NAME" />
+          <ScalarProperty Name="FLOCK_FG" ColumnName="FLOCK_FG" />
+          <ScalarProperty Name="ADV_DP" ColumnName="ADV_DP" />
+          <ScalarProperty Name="ADV_UID" ColumnName="ADV_UID" />
+          <ScalarProperty Name="OPEN_FG" ColumnName="OPEN_FG" />
+          <ScalarProperty Name="STAT_FG" ColumnName="STAT_FG" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJDWKCP">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJDWKCP">
+        <MappingFragment StoreEntitySet="PJDWKCP">
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="IT_CODE" ColumnName="IT_CODE" />
+          <ScalarProperty Name="AN_IT_CODE" ColumnName="AN_IT_CODE" />
+          <ScalarProperty Name="GP_ORDER" ColumnName="GP_ORDER" />
+          <ScalarProperty Name="IT_NAME" ColumnName="IT_NAME" />
+          <ScalarProperty Name="IT_GP_NAME" ColumnName="IT_GP_NAME" />
+          <ScalarProperty Name="IT_TYPE" ColumnName="IT_TYPE" />
+          <ScalarProperty Name="IT_WGT" ColumnName="IT_WGT" />
+          <ScalarProperty Name="WKSCHD_FG" ColumnName="WKSCHD_FG" />
+          <ScalarProperty Name="WRO_FG" ColumnName="WRO_FG" />
+          <ScalarProperty Name="DEL_FG" ColumnName="DEL_FG" />
+          <ScalarProperty Name="EDIT_FG" ColumnName="EDIT_FG" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJHFDIS">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJHFDIS">
+        <MappingFragment StoreEntitySet="PJHFDIS">
+          <ScalarProperty Name="FID" ColumnName="FID" />
+          <ScalarProperty Name="SEQ_NO" ColumnName="SEQ_NO" />
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="SYR" ColumnName="SYR" />
+          <ScalarProperty Name="TIT_CODE" ColumnName="TIT_CODE" />
+          <ScalarProperty Name="FIT_CODE" ColumnName="FIT_CODE" />
+          <ScalarProperty Name="ND_FUND" ColumnName="ND_FUND" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJMFORM">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJMFORM_CMPSGS">
+        <MappingFragment StoreEntitySet="PJMFORM">
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="AN_PPID" ColumnName="AN_PPID" />
+          <ScalarProperty Name="PJ_CODE" ColumnName="PJ_CODE" />
+          <ScalarProperty Name="APJ_CODE" ColumnName="APJ_CODE" />
+          <ScalarProperty Name="PJ_NAME" ColumnName="PJ_NAME" />
+          <ScalarProperty Name="PJ_CATY" ColumnName="PJ_CATY" />
+          <ScalarProperty Name="GP_ORDER" ColumnName="GP_ORDER" />
+          <ScalarProperty Name="PRE_FUND" ColumnName="PRE_FUND" />
+          <ScalarProperty Name="STAT_NO" ColumnName="STAT_NO" />
+          <ScalarProperty Name="ADM_TP" ColumnName="ADM_TP" />
+          <ScalarProperty Name="ADM_SC" ColumnName="ADM_SC" />
+          <ScalarProperty Name="ADM_DP" ColumnName="ADM_DP" />
+          <ScalarProperty Name="ADM_UID" ColumnName="ADM_UID" />
+          <ScalarProperty Name="STT_DT" ColumnName="STT_DT" />
+          <ScalarProperty Name="END_DT" ColumnName="END_DT" />
+          <ScalarProperty Name="PJ_CONT" ColumnName="PJ_CONT" />
+          <ScalarProperty Name="LEV1_DT" ColumnName="LEV1_DT" />
+          <ScalarProperty Name="LEV2_DT" ColumnName="LEV2_DT" />
+          <ScalarProperty Name="LEV3_DT" ColumnName="LEV3_DT" />
+          <ScalarProperty Name="LEV1_FN" ColumnName="LEV1_FN" />
+          <ScalarProperty Name="LEV2_FN" ColumnName="LEV2_FN" />
+          <ScalarProperty Name="LEV3_FN" ColumnName="LEV3_FN" />
+          <ScalarProperty Name="CLOSE_FG" ColumnName="CLOSE_FG" />
+          <ScalarProperty Name="CLOSE_DT" ColumnName="CLOSE_DT" />
+          <ScalarProperty Name="CNT_FG" ColumnName="CNT_FG" />
+          <ScalarProperty Name="CNT_LEV" ColumnName="CNT_LEV" />
+          <ScalarProperty Name="EVRF_FG" ColumnName="EVRF_FG" />
+          <ScalarProperty Name="OTDSG_DT" ColumnName="OTDSG_DT" />
+          <ScalarProperty Name="OTDSG_BUSS" ColumnName="OTDSG_BUSS" />
+          <ScalarProperty Name="DSGRL_DT" ColumnName="DSGRL_DT" />
+          <ScalarProperty Name="PCCJDG_DT" ColumnName="PCCJDG_DT" />
+          <ScalarProperty Name="PCCJDG_FUND" ColumnName="PCCJDG_FUND" />
+          <ScalarProperty Name="INIDSG_DT" ColumnName="INIDSG_DT" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="ADV_DP" ColumnName="ADV_DP" />
+          <ScalarProperty Name="ADV_UID" ColumnName="ADV_UID" />
+          <ScalarProperty Name="OPEN_FG" ColumnName="OPEN_FG" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJOFDIS">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJOFDIS">
+        <MappingFragment StoreEntitySet="PJOFDIS">
+          <ScalarProperty Name="FID" ColumnName="FID" />
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="SYR" ColumnName="SYR" />
+          <ScalarProperty Name="TIT_CODE" ColumnName="TIT_CODE" />
+          <ScalarProperty Name="FIT_CODE" ColumnName="FIT_CODE" />
+          <ScalarProperty Name="ND_FUND" ColumnName="ND_FUND" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PJWFILE">
+      <EntityTypeMapping TypeName="CMPSGSModel.PJWFILE">
+        <MappingFragment StoreEntitySet="PJWFILE">
+          <ScalarProperty Name="PPID" ColumnName="PPID" />
+          <ScalarProperty Name="F_NO" ColumnName="F_NO" />
+          <ScalarProperty Name="FILE_DESC" ColumnName="FILE_DESC" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCCODE">
+      <EntityTypeMapping TypeName="CMPSGSModel.SMCCODE_CMPSGS">
+        <MappingFragment StoreEntitySet="SMCCODE">
+          <ScalarProperty Name="SYS_ID" ColumnName="SYS_ID" />
+          <ScalarProperty Name="CATY_ID" ColumnName="CATY_ID" />
+          <ScalarProperty Name="CATY_COD" ColumnName="CATY_COD" />
+          <ScalarProperty Name="CODE_DESC" ColumnName="CODE_DESC" />
+          <ScalarProperty Name="DESC_COD" ColumnName="DESC_COD" />
+          <ScalarProperty Name="SPEC_FG" ColumnName="SPEC_FG" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCGNUM">
+      <EntityTypeMapping TypeName="CMPSGSModel.SMCGNUM_CMPSGS">
+        <MappingFragment StoreEntitySet="SMCGNUM">
+          <ScalarProperty Name="NKEY" ColumnName="NKEY" />
+          <ScalarProperty Name="HD_NUM" ColumnName="HD_NUM" />
+          <ScalarProperty Name="TL_NUM" ColumnName="TL_NUM" />
+          <ScalarProperty Name="NUM_LEN" ColumnName="NUM_LEN" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMCPROG">
+      <EntityTypeMapping TypeName="CMPSGSModel.SMCPROG_CMPSGS">
+        <MappingFragment StoreEntitySet="SMCPROG">
+          <ScalarProperty Name="PRG_ID" ColumnName="PRG_ID" />
+          <ScalarProperty Name="PRG_NAME" ColumnName="PRG_NAME" />
+          <ScalarProperty Name="PRG_SEQ" ColumnName="PRG_SEQ" />
+          <ScalarProperty Name="MOD_ID" ColumnName="MOD_ID" />
+          <ScalarProperty Name="MOD_NAME" ColumnName="MOD_NAME" />
+          <ScalarProperty Name="MOD_SEQ" ColumnName="MOD_SEQ" />
+          <ScalarProperty Name="PRG_TP" ColumnName="PRG_TP" />
+          <ScalarProperty Name="PRG_DIR" ColumnName="PRG_DIR" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMWSDWB">
+      <EntityTypeMapping TypeName="CMPSGSModel.SMWSDWB">
+        <MappingFragment StoreEntitySet="SMWSDWB">
+          <ScalarProperty Name="IT_CODE" ColumnName="IT_CODE" />
+          <ScalarProperty Name="AN_IT_CODE" ColumnName="AN_IT_CODE" />
+          <ScalarProperty Name="GP_ORDER" ColumnName="GP_ORDER" />
+          <ScalarProperty Name="IT_NAME" ColumnName="IT_NAME" />
+          <ScalarProperty Name="IT_GP_NAME" ColumnName="IT_GP_NAME" />
+          <ScalarProperty Name="IT_TYPE" ColumnName="IT_TYPE" />
+          <ScalarProperty Name="IT_WGT" ColumnName="IT_WGT" />
+          <ScalarProperty Name="WKSCHD_FG" ColumnName="WKSCHD_FG" />
+          <ScalarProperty Name="WRO_FG" ColumnName="WRO_FG" />
+          <ScalarProperty Name="DEL_FG" ColumnName="DEL_FG" />
+          <ScalarProperty Name="EDIT_FG" ColumnName="EDIT_FG" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T">
+      <EntityTypeMapping TypeName="CMPSGSModel.T">
+        <MappingFragment StoreEntitySet="T">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="縣市別" ColumnName="縣市別" />
+          <ScalarProperty Name="系統" ColumnName="系統" />
+          <ScalarProperty Name="類別" ColumnName="類別" />
+          <ScalarProperty Name="項次" ColumnName="項次" />
+          <ScalarProperty Name="項目" ColumnName="項目" />
+          <ScalarProperty Name="總經費" ColumnName="總經費" />
+          <ScalarProperty Name="中央補助" ColumnName="中央補助" />
+          <ScalarProperty Name="地方自籌" ColumnName="地方自籌" />
+          <ScalarProperty Name="辦理層級" ColumnName="辦理層級" />
+          <ScalarProperty Name="TMP" ColumnName="TMP" />
+          <ScalarProperty Name="EXT" ColumnName="EXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TDDFDIS">
+      <EntityTypeMapping TypeName="CMPSGSModel.TDDFDIS">
+        <MappingFragment StoreEntitySet="TDDFDIS">
+          <ScalarProperty Name="FID" ColumnName="FID" />
+          <ScalarProperty Name="TID" ColumnName="TID" />
+          <ScalarProperty Name="SYR" ColumnName="SYR" />
+          <ScalarProperty Name="TIT_CODE" ColumnName="TIT_CODE" />
+          <ScalarProperty Name="FIT_CODE" ColumnName="FIT_CODE" />
+          <ScalarProperty Name="SUP_RATIO" ColumnName="SUP_RATIO" />
+          <ScalarProperty Name="FUND" ColumnName="FUND" />
+          <ScalarProperty Name="PRE_FUND" ColumnName="PRE_FUND" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TDDFILE">
+      <EntityTypeMapping TypeName="CMPSGSModel.TDDFILE">
+        <MappingFragment StoreEntitySet="TDDFILE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TID" ColumnName="TID" />
+          <ScalarProperty Name="FILE_DESC" ColumnName="FILE_DESC" />
+          <ScalarProperty Name="FILE_PATH" ColumnName="FILE_PATH" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TDDSDWB">
+      <EntityTypeMapping TypeName="CMPSGSModel.TDDSDWB_CMPSGS">
+        <MappingFragment StoreEntitySet="TDDSDWB">
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="IT_CODE" ColumnName="IT_CODE" />
+          <ScalarProperty Name="AN_IT_CODE" ColumnName="AN_IT_CODE" />
+          <ScalarProperty Name="IT_NAME" ColumnName="IT_NAME" />
+          <ScalarProperty Name="IT_TYPE" ColumnName="IT_TYPE" />
+          <ScalarProperty Name="GP_ORDER" ColumnName="GP_ORDER" />
+          <ScalarProperty Name="IT_GP_NAME" ColumnName="IT_GP_NAME" />
+          <ScalarProperty Name="PRE_SDT" ColumnName="PRE_SDT" />
+          <ScalarProperty Name="PRE_EDT" ColumnName="PRE_EDT" />
+          <ScalarProperty Name="REL_SDT" ColumnName="REL_SDT" />
+          <ScalarProperty Name="REL_EDT" ColumnName="REL_EDT" />
+          <ScalarProperty Name="PRE_FUND" ColumnName="PRE_FUND" />
+          <ScalarProperty Name="REL_FUND" ColumnName="REL_FUND" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TDMFORM">
+      <EntityTypeMapping TypeName="CMPSGSModel.TDMFORM_CMPSGS">
+        <MappingFragment StoreEntitySet="TDMFORM">
+          <ScalarProperty Name="TID" ColumnName="TID" />
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="TD_CODE" ColumnName="TD_CODE" />
+          <ScalarProperty Name="TD_NAME" ColumnName="TD_NAME" />
+          <ScalarProperty Name="IPJ_CODE" ColumnName="IPJ_CODE" />
+          <ScalarProperty Name="CATY_CODE" ColumnName="CATY_CODE" />
+          <ScalarProperty Name="AP_NAME" ColumnName="AP_NAME" />
+          <ScalarProperty Name="PJ_CATY" ColumnName="PJ_CATY" />
+          <ScalarProperty Name="PJ_CODE" ColumnName="PJ_CODE" />
+          <ScalarProperty Name="AP_TP" ColumnName="AP_TP" />
+          <ScalarProperty Name="ROAD_TP" ColumnName="ROAD_TP" />
+          <ScalarProperty Name="ROAD_NAME" ColumnName="ROAD_NAME" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+          <ScalarProperty Name="LINE" ColumnName="LINE" />
+          <ScalarProperty Name="START_YR" ColumnName="START_YR" />
+          <ScalarProperty Name="END_YR" ColumnName="END_YR" />
+          <ScalarProperty Name="RESN_DESC" ColumnName="RESN_DESC" />
+          <ScalarProperty Name="PERF_DESC" ColumnName="PERF_DESC" />
+          <ScalarProperty Name="START_PT" ColumnName="START_PT" />
+          <ScalarProperty Name="END_PT" ColumnName="END_PT" />
+          <ScalarProperty Name="ROAD_WIDTH" ColumnName="ROAD_WIDTH" />
+          <ScalarProperty Name="ROAD_LENGTH" ColumnName="ROAD_LENGTH" />
+          <ScalarProperty Name="BRIDGE_AREA" ColumnName="BRIDGE_AREA" />
+          <ScalarProperty Name="LAND_AREA" ColumnName="LAND_AREA" />
+          <ScalarProperty Name="INCITY_LENGTH" ColumnName="INCITY_LENGTH" />
+          <ScalarProperty Name="OUTCITY_LENGTH" ColumnName="OUTCITY_LENGTH" />
+          <ScalarProperty Name="PRT_TP" ColumnName="PRT_TP" />
+          <ScalarProperty Name="NTRAF_QTY" ColumnName="NTRAF_QTY" />
+          <ScalarProperty Name="PTRAF_QTY" ColumnName="PTRAF_QTY" />
+          <ScalarProperty Name="FTRAF_QTY" ColumnName="FTRAF_QTY" />
+          <ScalarProperty Name="TCMTHD_DESC" ColumnName="TCMTHD_DESC" />
+          <ScalarProperty Name="NDLAND_AREA" ColumnName="NDLAND_AREA" />
+          <ScalarProperty Name="GTLAND_AREA" ColumnName="GTLAND_AREA" />
+          <ScalarProperty Name="NBLAND_AREA" ColumnName="NBLAND_AREA" />
+          <ScalarProperty Name="CGLAND_AREA" ColumnName="CGLAND_AREA" />
+          <ScalarProperty Name="OGLAND_FUND" ColumnName="OGLAND_FUND" />
+          <ScalarProperty Name="NDLAND_FUND" ColumnName="NDLAND_FUND" />
+          <ScalarProperty Name="FLLAND_AREA" ColumnName="FLLAND_AREA" />
+          <ScalarProperty Name="SNLAND_AREA" ColumnName="SNLAND_AREA" />
+          <ScalarProperty Name="PIRM_COUNT" ColumnName="PIRM_COUNT" />
+          <ScalarProperty Name="ROAD_LEV" ColumnName="ROAD_LEV" />
+          <ScalarProperty Name="STEP_NO" ColumnName="STEP_NO" />
+          <ScalarProperty Name="STAT_NO" ColumnName="STAT_NO" />
+          <ScalarProperty Name="PIORITY" ColumnName="PIORITY" />
+          <ScalarProperty Name="AUTO_SCORE" ColumnName="AUTO_SCORE" />
+          <ScalarProperty Name="COMT_SCORE" ColumnName="COMT_SCORE" />
+          <ScalarProperty Name="EDIT_UID" ColumnName="EDIT_UID" />
+          <ScalarProperty Name="ADV_SC" ColumnName="ADV_SC" />
+          <ScalarProperty Name="ADM_DP" ColumnName="ADM_DP" />
+          <ScalarProperty Name="ADM_UID" ColumnName="ADM_UID" />
+          <ScalarProperty Name="CHK_SC" ColumnName="CHK_SC" />
+          <ScalarProperty Name="CHK_DP" ColumnName="CHK_DP" />
+          <ScalarProperty Name="CHK_UID" ColumnName="CHK_UID" />
+          <ScalarProperty Name="DCS_SC" ColumnName="DCS_SC" />
+          <ScalarProperty Name="DCS_DP" ColumnName="DCS_DP" />
+          <ScalarProperty Name="DCS_UID" ColumnName="DCS_UID" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+          <ScalarProperty Name="CLS_NOTE" ColumnName="CLS_NOTE" />
+          <ScalarProperty Name="WK_FUND" ColumnName="WK_FUND" />
+          <ScalarProperty Name="LD_FUND" ColumnName="LD_FUND" />
+          <ScalarProperty Name="SUM_FUND" ColumnName="SUM_FUND" />
+          <ScalarProperty Name="S_SCORE" ColumnName="S_SCORE" />
+          <ScalarProperty Name="DARESN_TP" ColumnName="DARESN_TP" />
+          <ScalarProperty Name="DARESN_NOTE" ColumnName="DARESN_NOTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TDDCTFD">
+      <EntityTypeMapping TypeName="CMPSGSModel.TDDCTFD">
+        <MappingFragment StoreEntitySet="TDDCTFD">
+          <ScalarProperty Name="PTID" ColumnName="PTID" />
+          <ScalarProperty Name="SYR" ColumnName="SYR" />
+          <ScalarProperty Name="TTID" ColumnName="TTID" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_TM" ColumnName="UPD_TM" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

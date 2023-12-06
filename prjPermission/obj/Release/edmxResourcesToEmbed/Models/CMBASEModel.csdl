@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CMBASEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ATWLOGR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="19" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USR_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PROG_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PROG_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CMD" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CBWEMAL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="19" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MAIL_TO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL_FROM" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SUBJECT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CONTENT" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_FG" Type="Boolean" />
+    <Property Name="TRANS_DT" Type="DateTime" Precision="3" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CBWSMSR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="19" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AN_ADDR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AN_CONT" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_FG" Type="Boolean" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DSMLIST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="19" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NT_SUBJECT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="NT_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NT_TM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NT_CATY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NT_CONT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="NT_RPLY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="NT_FG" Type="Boolean" />
+    <Property Name="ADV_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RPLY_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="Int32" />
+    <Property Name="property" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="uvalue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="lvalue" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="version" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MACPOST">
+    <Key>
+      <PropertyRef Name="CITY" />
+      <PropertyRef Name="TOWN" />
+    </Key>
+    <Property Name="CITY_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TOWN_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CITY" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TOWN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LIFE_CATY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PTCOD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="P_PRICE" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="OGCDEPT">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AN_DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="O_DEPT_NO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SMP_DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AD_DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AD_DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPT_CHIEF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPT_WGT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DATA_TP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CITYLIST" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="DPU_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UNIT_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEF_PAGE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MGR_FG" Type="Boolean" />
+    <Property Name="DEPT_STAT" Type="Boolean" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OGCDPUR">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="USR_ID" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USR_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DATA_TP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OGCUATH">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="PRG_ID" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRG_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DATA_TP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="OTCUSER">
+    <Key>
+      <PropertyRef Name="USR_ID" />
+    </Key>
+    <Property Name="USR_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USR_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="USR_PSW" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AGENT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_O" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_M" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_F" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USR_STAT" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_DESC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SUB_DEPT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ADM_DP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ADM_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SMCAUTH">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="SYS_ID" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SYS_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DATA_TP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CUS_FG" Type="Boolean" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SMCCODE">
+    <Key>
+      <PropertyRef Name="SYS_ID" />
+      <PropertyRef Name="CATY_ID" />
+      <PropertyRef Name="CATY_COD" />
+    </Key>
+    <Property Name="SYS_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CATY_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CATY_COD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CODE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESC_COD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SPEC_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SMCFILETMP">
+    <Key>
+      <PropertyRef Name="FRM_ID" />
+      <PropertyRef Name="KEY_ID" />
+      <PropertyRef Name="ITEM_ID" />
+      <PropertyRef Name="USR_ID" />
+    </Key>
+    <Property Name="FRM_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KEY_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ITEM_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USR_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PHOTO_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PHOTO_FULL" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="PHOTO_POSTER" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="PHOTO_THUMB" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="UPD_DT" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="SMCNEWS">
+    <Key>
+      <PropertyRef Name="NEWSID" />
+    </Key>
+    <Property Name="NEWSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HEADLINE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SUMMARY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="STARTDATE" Type="DateTime" Precision="3" />
+    <Property Name="ENDDATE" Type="DateTime" Precision="3" />
+    <Property Name="BODY" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="Int32" />
+    <Property Name="TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SMCNEWSCODE">
+    <Key>
+      <PropertyRef Name="SYS_ID" />
+      <PropertyRef Name="CATY_ID" />
+      <PropertyRef Name="CATY_COD" />
+    </Key>
+    <Property Name="SYS_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CATY_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CATY_COD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CODE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESC_COD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SPEC_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SMCNEWSDOC">
+    <Key>
+      <PropertyRef Name="NEWSID" />
+      <PropertyRef Name="FILID" />
+    </Key>
+    <Property Name="NEWSID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FILID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FILE_DESC" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_PATH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_BODY" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FILE_SIZE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SMCPOSTN">
+    <Key>
+      <PropertyRef Name="CITY" />
+      <PropertyRef Name="TOWN" />
+    </Key>
+    <Property Name="CITY_ID" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TOWN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LIFE_CATY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CPA_CITY_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CPA_TOWN_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PTCOD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AREA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SUP1" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="SUP2" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="MEB" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="POP_CNT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DOR_CNT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SMCPROG">
+    <Key>
+      <PropertyRef Name="PRG_ID" />
+    </Key>
+    <Property Name="PRG_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRG_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRG_SEQ" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MOD_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MOD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOD_SEQ" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PRG_TP" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PRG_DIR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SMCROAD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ZIP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TOWN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ROAD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NOTE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SMCSYSC">
+    <Key>
+      <PropertyRef Name="SYS_ID" />
+    </Key>
+    <Property Name="SYS_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SYS_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GSYS_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HOSTNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DBNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DBUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DBPSW" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FILE_PATH" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="HTTPNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TARGET" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LEV" Type="Int32" />
+    <Property Name="DATA_TP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SYS_ORD" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TEST0012USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CARD_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USR_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SEX" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_H" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_M" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADDR" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TESTDEPT">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+    </Key>
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TESTDPUR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TESTLOG">
+    <Key>
+      <PropertyRef Name="LID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WORK_SDT" Type="DateTime" Precision="3" />
+    <Property Name="WORK_EDT" Type="DateTime" Precision="3" />
+    <Property Name="WORK_TP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AGENT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WORK_ADDR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TESTUSER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CARD_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USR_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SEX" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_H" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_M" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADDR" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TESTWEXP">
+    <Key>
+      <PropertyRef Name="BID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="term" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UMCLOGR">
+    <Key>
+      <PropertyRef Name="USR_ID" />
+    </Key>
+    <Property Name="USR_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USR_PSW" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="LOG_CNT" Type="Int32" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UMCUSER_TEMP">
+    <Key>
+      <PropertyRef Name="IC_SN" />
+    </Key>
+    <Property Name="USR_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IC_SN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WORK_GP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FL_GP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SC_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CITYLIST" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAG_SC_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USR_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PASSWD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_O" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_H" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_M" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_F" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="U_STAT" Type="Int32" />
+    <Property Name="V_DATE" Type="DateTime" Precision="3" />
+    <Property Name="STOP_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MAG_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SRV_TP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CPAMI_DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LMT_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="OTCDEPT">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AN_DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="O_DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_CHIEF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_WGT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DATA_TP" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DPU_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UNIT_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEF_PAGE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="OTCDPUR">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="USR_ID" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USR_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DATA_TP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SMCPOST">
+    <Key>
+      <PropertyRef Name="CITY" />
+      <PropertyRef Name="TOWN" />
+    </Key>
+    <Property Name="CITY_ID" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TOWN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LIFE_CATY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CPA_CITY_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CPA_TOWN_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PTCOD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AREA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SUP1" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="SUP2" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="MEB" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="POP_CNT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DOR_CNT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TESTFILE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FILE_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FILE_DESC" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_NAME" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_DATA" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="CMBASEEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ATWLOGR" EntityType="Self.ATWLOGR" />
+    <EntitySet Name="CBWEMAL" EntityType="Self.CBWEMAL" />
+    <EntitySet Name="CBWSMSR" EntityType="Self.CBWSMSR" />
+    <EntitySet Name="DSMLIST" EntityType="Self.DSMLIST" />
+    <EntitySet Name="dtproperties" EntityType="Self.dtproperties" />
+    <EntitySet Name="MACPOST" EntityType="Self.MACPOST" />
+    <EntitySet Name="OGCDEPT" EntityType="Self.OGCDEPT" />
+    <EntitySet Name="OGCDPUR" EntityType="Self.OGCDPUR" />
+    <EntitySet Name="OGCUATH" EntityType="Self.OGCUATH" />
+    <EntitySet Name="OTCUSER" EntityType="Self.OTCUSER" />
+    <EntitySet Name="SMCAUTH" EntityType="Self.SMCAUTH" />
+    <EntitySet Name="SMCCODE" EntityType="Self.SMCCODE" />
+    <EntitySet Name="SMCFILETMP" EntityType="Self.SMCFILETMP" />
+    <EntitySet Name="SMCNEWS" EntityType="Self.SMCNEWS" />
+    <EntitySet Name="SMCNEWSCODE" EntityType="Self.SMCNEWSCODE" />
+    <EntitySet Name="SMCNEWSDOC" EntityType="Self.SMCNEWSDOC" />
+    <EntitySet Name="SMCPOSTN" EntityType="Self.SMCPOSTN" />
+    <EntitySet Name="SMCPROG" EntityType="Self.SMCPROG" />
+    <EntitySet Name="SMCROAD" EntityType="Self.SMCROAD" />
+    <EntitySet Name="SMCSYSC" EntityType="Self.SMCSYSC" />
+    <EntitySet Name="TEST0012USER" EntityType="Self.TEST0012USER" />
+    <EntitySet Name="TESTDEPT" EntityType="Self.TESTDEPT" />
+    <EntitySet Name="TESTDPUR" EntityType="Self.TESTDPUR" />
+    <EntitySet Name="TESTLOG" EntityType="Self.TESTLOG" />
+    <EntitySet Name="TESTUSER" EntityType="Self.TESTUSER" />
+    <EntitySet Name="TESTWEXP" EntityType="Self.TESTWEXP" />
+    <EntitySet Name="UMCLOGR" EntityType="Self.UMCLOGR" />
+    <EntitySet Name="UMCUSER_TEMP" EntityType="Self.UMCUSER_TEMP" />
+    <EntitySet Name="OTCDEPT" EntityType="Self.OTCDEPT" />
+    <EntitySet Name="OTCDPUR" EntityType="Self.OTCDPUR" />
+    <EntitySet Name="SMCPOST" EntityType="Self.SMCPOST" />
+    <EntitySet Name="TESTFILE" EntityType="Self.TESTFILE" />
+    <EntitySet Name="SECCITY" EntityType="CMBASEModel.SECCITY" />
+    <EntitySet Name="OGCUSER" EntityType="CMBASEModel.OGCUSER" />
+    <EntitySet Name="OGCORIGI" EntityType="CMBASEModel.OGCORIGI" />
+    <EntitySet Name="OGCTITLE" EntityType="CMBASEModel.OGCTITLE" />
+    <EntitySet Name="SMCMENU2" EntityType="CMBASEModel.SMCMENU2" />
+  </EntityContainer>
+  <EntityType Name="SECCITY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USR_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="TOWN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AREA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="ComplexType1">
+    <Property Type="String" Name="FALL_TIME" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <EntityType Name="OGCUSER">
+    <Key>
+      <PropertyRef Name="USR_ID" />
+    </Key>
+    <Property Name="USR_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LDAP_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USR_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="USR_PSW" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AGENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TEL_O" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TEL_M" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TEL_F" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USR_STAT" Type="Boolean" />
+    <Property Name="NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPT_DESC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SUB_DEPT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ADM_DP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ADM_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FALL_TIME" Type="Int32" />
+  </EntityType>
+  <EntityType Name="OGCORIGI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORIGINAL_PSW" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OGCTITLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SMCMENU2">
+    <Key>
+      <PropertyRef Name="SYS_ID" />
+    </Key>
+    <Property Name="SYS_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AN_SYS_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SYS_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GSYSID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HOSTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DBNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DBUID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DBPSW" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="APP_PATH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FILE_PATH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HTTPNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TARGET" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_TP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SYS_ORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

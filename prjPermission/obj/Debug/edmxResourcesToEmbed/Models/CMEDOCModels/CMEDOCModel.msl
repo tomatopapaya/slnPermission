@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CMEDOCModelStoreContainer" CdmEntityContainer="CMEDOCEntities">
+    <EntitySetMapping Name="TDDDCOB">
+      <EntityTypeMapping TypeName="CMEDOCModel.TDDDCOB">
+        <MappingFragment StoreEntitySet="TDDDCOB">
+          <ScalarProperty Name="TD_CODE" ColumnName="TD_CODE" />
+          <ScalarProperty Name="IT_CODE" ColumnName="IT_CODE" />
+          <ScalarProperty Name="OBJ_NAME" ColumnName="OBJ_NAME" />
+          <ScalarProperty Name="OBJ_EXTNAME" ColumnName="OBJ_EXTNAME" />
+          <ScalarProperty Name="OBJ_TITLE" ColumnName="OBJ_TITLE" />
+          <ScalarProperty Name="OBJ_DESC" ColumnName="OBJ_DESC" />
+          <ScalarProperty Name="OBJ_VERSION_M" ColumnName="OBJ_VERSION_M" />
+          <ScalarProperty Name="OBJ_VERSION_D" ColumnName="OBJ_VERSION_D" />
+          <ScalarProperty Name="OBJ_STATE" ColumnName="OBJ_STATE" />
+          <ScalarProperty Name="OBJ_SIZE" ColumnName="OBJ_SIZE" />
+          <ScalarProperty Name="OBJ_CRT_DM" ColumnName="OBJ_CRT_DM" />
+          <ScalarProperty Name="OBJ_MOD_DM" ColumnName="OBJ_MOD_DM" />
+          <ScalarProperty Name="OBJ_BODY" ColumnName="OBJ_BODY" />
+          <ScalarProperty Name="AUTHOR" ColumnName="AUTHOR" />
+          <ScalarProperty Name="ADD_DT" ColumnName="ADD_DT" />
+          <ScalarProperty Name="UPD_DT" ColumnName="UPD_DT" />
+          <ScalarProperty Name="UPD_UID" ColumnName="UPD_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TDV_TDDDCOB">
+      <EntityTypeMapping TypeName="CMEDOCModel.TDV_TDDDCOB">
+        <MappingFragment StoreEntitySet="TDV_TDDDCOB">
+          <ScalarProperty Name="TD_CODE" ColumnName="TD_CODE" />
+          <ScalarProperty Name="TD_NAME" ColumnName="TD_NAME" />
+          <ScalarProperty Name="IT_CODE" ColumnName="IT_CODE" />
+          <ScalarProperty Name="IT_CODE_DESC" ColumnName="IT_CODE_DESC" />
+          <ScalarProperty Name="OBJ_TITLE" ColumnName="OBJ_TITLE" />
+          <ScalarProperty Name="OBJ_DESC" ColumnName="OBJ_DESC" />
+          <ScalarProperty Name="OBJ_NAME" ColumnName="OBJ_NAME" />
+          <ScalarProperty Name="OBJ_CONT" ColumnName="OBJ_CONT" />
+          <ScalarProperty Name="TD_CATY" ColumnName="TD_CATY" />
+          <ScalarProperty Name="OBJ_CRT_DM" ColumnName="OBJ_CRT_DM" />
+          <ScalarProperty Name="AUTHOR" ColumnName="AUTHOR" />
+          <ScalarProperty Name="OBJ_BODY" ColumnName="OBJ_BODY" />
+          <ScalarProperty Name="OBJ_SIZE" ColumnName="OBJ_SIZE" />
+          <ScalarProperty Name="OBJ_MOD_DM" ColumnName="OBJ_MOD_DM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

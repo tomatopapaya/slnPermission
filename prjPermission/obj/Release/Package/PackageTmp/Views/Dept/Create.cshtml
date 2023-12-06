@@ -1,0 +1,148 @@
+﻿@model prjPermission.Models.DeptViewModel
+@*@Html.Action("SideBar", "Home")*@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min"></script>
+
+    <script src="~/Scripts/dept_mgmt.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-3.6.3.min.js"></script>
+    <script src="~/Scripts/TreeView.js"></script>
+    <title>Create</title>
+</head>
+<style>
+        body {
+        display: flex;
+        justify-content: center;
+        /*align-items: center;*/
+/*        height: 100vh;*/
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        text-align: left;
+    }
+
+    label, input {
+        margin: 5px;
+    }
+</style>
+<body>
+
+    @using (Html.BeginForm("Create", "Dept", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+    <div style="display:flex">
+        <div>
+
+            <h1>部門資訊</h1>
+            <div class="form-group">
+                @Html.Label("部門編號")
+                @Html.TextBoxFor(m => m.DEPT_NO, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("部門名稱")
+                @Html.TextBoxFor(m => m.DEPT_NAME, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("經管部門")
+                @Html.CheckBoxFor(m => m.MGR_FG, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.Label("主管機關")
+                @Html.DropDownListFor(m => m.AN_DEPT_NO, Model.an_id_name, "請選擇", new { @class = "form-control" })
+            </div>
+            @*<div class="form-group">
+                @Html.Label("部門名稱")
+                @Html.DropDownListFor(m => m.selected_dept_no, Model.dept_no)
+            </div>*@
+            <div class="form-group">
+                @Html.Label("使用者")
+                @Html.DropDownListFor(m => m.selected_user_id, Model.id_name, "請選擇", new { id = "dd", @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("部門主管")
+                <select id="ddd" name="DEPT_CHIEF" class="form-control">
+                    <option>請選擇</option>
+                </select>
+            </div>
+
+            <div>
+                <button name="create" type="submit" class="btn btn-primary">新增</button>
+                @Html.ActionLink("取消", "TreeVieww", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>使用者編號</th>
+                        <th>使用者名稱</th>
+                    </tr>
+                </thead>
+                <tbody id="list">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+}
+
+
+</body>
+
+<script>
+    var count = 0;
+    $(document).ready(function () {
+        // 監聽下拉式選單的選擇事件
+        $('#dd').on('change', function () {
+
+            // 獲取選中的選項
+            const selectedValue = $('#dd').val();
+            const selectedText = $('#dd').find("option:selected").text();
+            var selecteduser = removeNonChinese(selectedText);
+            @*var displayText = "@Html.DisplayFor(m => m.)";*@
+            // 移除下拉清單中選擇的選項
+            $("#dd option:selected").remove();
+            // 將選中的選項暫存至表單中
+
+            $('#list').append("<tr id=del_" + count + "><td><input type='hidden' name='list[" + count + "].Id' value='" + selectedValue + "' />" + selectedValue + "</td>" +
+                "<td >" + selecteduser + "</td>" + "<td><a class='btn btn-danger' href='#' onClick='deluser(del_" + count + ",ddddel_" + count + ",\"" + selectedText + "\",\"" + selectedValue + "\",\"list[" + count +"].Id\")'>刪除</a></td></tr>"
+                /*+"<tr ><td>" + displayText + "</td></tr>"*/);
+            //onClick = "TreeViewClick(this.id)
+            $('#ddd').append("<option id=ddddel_" + count + " value=" + selecteduser +">" + selecteduser +"</option>"
+                );
+            count++;
+        });
+    });
+    //去除英文、數字、符號
+    function removeNonChinese(text) {
+        return text.replace(/[^\u4e00-\u9fa5]/g, ''); // 正則表達式匹配非中文字符，並用空字符串替換
+    }
+
+    function deluser(id, id2, selectedtext, selectedvalue,selectedname) {
+
+        $(id).remove();
+        $(id2).remove();
+        //新增value=null,name一樣的input讓submit可以正常運作
+        $('#list').append("<tr><td><input type='hidden' name='" + selectedname +"' value='' /></td></tr>")
+        $('#dd').append("<option value='" + selectedvalue + "'>" + selectedtext + "</option>")
+
+    }
+</script>

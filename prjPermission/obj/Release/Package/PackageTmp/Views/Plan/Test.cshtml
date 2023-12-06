@@ -1,0 +1,92 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="/path/to/your/styles.css">
+</head>
+
+<style>
+    /* 卡片样式 */
+    .card {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .card:hover {
+            background-color: #f0f0f0;
+        }
+
+    /* 列表样式 */
+    .card-list {
+        width: 200px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-right: 20px;
+        display: inline-block;
+        vertical-align: top;
+        max-height: 100px; /* 调整为您希望的高度   這個是控制顯示條長度的 */
+        overflow-y: auto;
+    }
+
+        .card-list h2 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-align: center; /* 居中标题文本 */
+            background-color: #333; /* 标题背景颜色 */
+            color: #fff; /* 标题文字颜色 */
+            padding: 5px 0; /* 增加标题上下内边距 */
+            border-radius: 5px 5px 0 0; /* 使标题的左上和右上角圆角 */
+        }
+
+
+</style>
+<body>
+    <div id="list1" class="card-list">
+        <h2>未選取</h2> <!-- 添加标题 -->
+        <div class="card" draggable="true" data-card-id="1">Card 1</div>
+        <div class="card" draggable="true" data-card-id="2">Card 2</div>
+    </div>
+
+    <div id="list2" class="card-list">
+        <h2>已選取</h2> <!-- 添加标题 -->
+        <div class="card" draggable="true" data-card-id="3">Card 3</div>
+    </div>
+</body>
+
+
+<script>
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        card.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', e.target.dataset.cardId);
+        });
+    });
+
+    const lists = document.querySelectorAll('.card-list');
+
+    lists.forEach(list => {
+        list.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+
+        list.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const cardId = e.dataTransfer.getData('text/plain');
+            const card = document.querySelector(`[data-card-id="${cardId}"]`);
+            list.appendChild(card);
+        });
+    });
+</script>

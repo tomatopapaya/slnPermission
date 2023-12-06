@@ -1,0 +1,31 @@
+﻿@model prjPermission.Models.OGCDEPT
+
+@{
+    Layout = null;
+}
+<div class="content">
+    @Html.Action("SideBar", "Home")
+</div>
+<form method="post" action="@Url.Action("Create")">
+    <table style="text-align:left;" class="model-form">
+
+        <tr><th style="color:cornflowerblue">新增資料</th></tr>
+        <tr>
+            <th>
+                群組編號:
+                <input type="text" id="DEPT_NO" name="DEPT_NO" class="form-contol" required />
+            </th>
+            <th>
+                群組姓名:
+                <input type="text" id="DEPT_NAME" name="DEPT_NAME" class="form-contol" required />
+            </th>
+        </tr>
+
+        <tr><th><br /></th></tr>
+        <tr>
+            <th><input type="submit" value="新增" class="btn btn-default" style="border:1px gray solid" /><a href="@Url.Action("Index", "Group")" class="btn btn-default" style="border:1px gray solid">取消</a></th>
+        </tr>
+    </table>
+</form>
+<div style="color:red; text-align: left; margin: 0px 0px 30px 290px;">@ViewBag.NameERRORR</div>
+

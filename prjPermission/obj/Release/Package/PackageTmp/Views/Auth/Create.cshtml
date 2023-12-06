@@ -1,0 +1,127 @@
+﻿@using prjPermission.Models
+@model List<AddViewModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min"></script>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        /*align-items: center;*/
+        /*        height: 100vh;*/
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        text-align: left;
+    }
+
+    label, input {
+        margin: 5px;
+    }
+</style>
+<body>
+    <div style="text-align:center;">
+        <h4>新增部門</h4>
+        @using (Html.BeginForm())
+        {
+            <p>
+                @Html.TextBox("SearchString")
+                <input type="submit" class="btn btn-default" value="搜尋" />
+            </p>
+        }
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="新增" class="btn btn-primary" />
+                        @Html.ActionLink("離開", "Index", null, new { @class = "btn btn-default" })
+                    </div>
+                </div>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>選擇</th>
+                            <th>部門編號</th>
+                            <th>部門名稱</th>
+                            <th>常用功能</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <input name="avm[@item.Index].SelectedAdd" type="checkbox" value="true" class="form-control" @(item.SelectedAdd ? "checked" : "") />
+                                    <input type="hidden" name="avm[@item.Index].SelectedAdd" value="false">
+                                </td>
+                                <td>
+                                    <label name="avm[@item.Index].DEPT_NO" class="form-control" value="@item.DEPT_NO">
+                                        @item.DEPT_NO
+                                    </label>
+                                    <input type="hidden" name="avm[@item.Index].DEPT_NO" value="@item.DEPT_NO" />
+                                </td>
+                                <td>
+                                    <label name="avm[@item.Index].DEPT_NAME" class="form-control" value="@item.DEPT_NAME">
+                                        @item.DEPT_NAME
+                                    </label>
+                                    <input type="hidden" name="avm[@item.Index].DEPT_NAME" value="@item.DEPT_NAME" />
+
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="avm[@item.Index].CUS_FG" value="true" class="form-control" @(item.CUS_FG.HasValue && item.CUS_FG.Value ? "checked" : "")>
+                                    <input type="hidden" name="avm[@item.Index].CUS_FG" value="false">
+                                </td>
+                                <td>
+                                    <input type="hidden" name="avm[@item.Index].SYS_ID" value="@item.SYS_ID" />
+                                    <input type="hidden" name="avm[@item.Index].DATA_TP" value="@item.DATA_TP" />
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+                <div id="pagination"></div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="新增" class="btn btn-primary" />
+                        @Html.ActionLink("離開", "Index", null, new { @class = "btn btn-default" })
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+
+
+        </div>
+    </div>
+</body>
+<script>
+
+</script>
+

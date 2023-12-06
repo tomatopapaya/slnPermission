@@ -1,0 +1,1072 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CMPSGSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="APDBGLS">
+    <Key>
+      <PropertyRef Name="AID" />
+      <PropertyRef Name="AC_ITEM_CODE" />
+    </Key>
+    <Property Name="AID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AC_ITEM_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AN_AC_ITEM_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AC_ITEM_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IT_ORDER" Type="Int32" />
+    <Property Name="IT_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IT_FUND" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="APDFILE">
+    <Key>
+      <PropertyRef Name="AID" />
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="AID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FC_NO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FC_DESC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_DESC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_MEMO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_PATH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_BODY" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FILE_BODY_S" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FILE_SIZE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="APDFUND">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="Decimal" Precision="19" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SYR" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="IPJ_CODE_X" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FIT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FUND_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FUND" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="JUD_FUND" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DCS_FUND" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="APDLOCP">
+    <Key>
+      <PropertyRef Name="LID" />
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="LID" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="AID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="TOWN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VILLAGE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="GIS_SYS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="GIS_X" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GIS_Y" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GIS_Z" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="POPULATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CLAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SUPH_CNT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="POS_SYB" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AC_ITEM_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="APDPICS">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PIC_MEMO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PIC_PATH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="APDWQTY">
+    <Key>
+      <PropertyRef Name="LID" />
+      <PropertyRef Name="AID" />
+      <PropertyRef Name="MID" />
+    </Key>
+    <Property Name="LID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="AID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="MID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="AN_MID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MT_DESC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MT_UNIT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MT_QTY" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MT_PRICE" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="MT_SPEC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IV_QTY" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IV_PRICE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IV_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DC_QTY" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DC_PRICE" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="DC_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="APMADMC">
+    <Key>
+      <PropertyRef Name="AID" />
+      <PropertyRef Name="ADV_DP" />
+    </Key>
+    <Property Name="AID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ADV_DP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ADM_LEV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADV_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="APMFORM">
+    <Key>
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="AID" Type="Decimal" Precision="19" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="YRC_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SYR" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="ROAD_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TD_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXT_FG" Type="Boolean" />
+    <Property Name="AP_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AP_PJ_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AP_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TIT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DA_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TOWN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TD_LINE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VILLAGE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SYS_CATY" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SYS_CATY_OTH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PJ_CATY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADV_DP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADV_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OPEN_FG" Type="Boolean" />
+    <Property Name="AP_NOTE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AP_ALL_NOTE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AP_YEAR_NOTE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TL_FUND" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="BF_FUND" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="FILL_MCH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FILL_DP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXE_MCH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GIS_SYS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GIS_RANGE_X" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="GIS_RANGE_Y" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="POPULATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CLAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AP_STAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CANCEL_DT" Type="DateTime" Precision="3" />
+    <Property Name="CANCEL_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONT_TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONT_TEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONT_FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONT_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="START_DT" Type="DateTime" Precision="3" />
+    <Property Name="END_DT" Type="DateTime" Precision="3" />
+    <Property Name="MAN_POWER" Type="Int32" />
+    <Property Name="BENEFITS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IPJ_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="CHK1_FG" Type="Boolean" />
+    <Property Name="CHK2_FG" Type="Boolean" />
+    <Property Name="CHK3_FG" Type="Boolean" />
+    <Property Name="CATY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="S1_ORDER" Type="Int32" />
+    <Property Name="S1_FN_DT" Type="DateTime" Precision="3" />
+    <Property Name="S1_FN_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="S1_COMT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="S1_OF_DT" Type="DateTime" Precision="3" />
+    <Property Name="S1_OF_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="S2_ORDER" Type="Int32" />
+    <Property Name="S2_FN_DT" Type="DateTime" Precision="3" />
+    <Property Name="S2_FN_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="S2_COMT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="S2_SCORE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="S2_OF_DT" Type="DateTime" Precision="3" />
+    <Property Name="S2_OF_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SWW_FG1" Type="Boolean" />
+    <Property Name="SWW_FG2" Type="Boolean" />
+    <Property Name="SWW_FG3" Type="Boolean" />
+    <Property Name="SWW_FG4" Type="Boolean" />
+    <Property Name="SWW_FG5" Type="Boolean" />
+    <Property Name="SWW_OT" Type="Boolean" />
+    <Property Name="SWW_OT_DESC" Type="Boolean" />
+    <Property Name="SWB_FG1" Type="Boolean" />
+    <Property Name="SWB_FG2" Type="Boolean" />
+    <Property Name="SWB_FG3" Type="Boolean" />
+    <Property Name="SWB_FG4" Type="Boolean" />
+    <Property Name="SWB_FG5" Type="Boolean" />
+    <Property Name="SWB_SYR" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="TF106_DT" Type="DateTime" Precision="3" />
+    <Property Name="TF108_DT" Type="DateTime" Precision="3" />
+    <Property Name="TK103_DT" Type="DateTime" Precision="3" />
+    <Property Name="TK105_DT" Type="DateTime" Precision="3" />
+    <Property Name="TK106_DT" Type="DateTime" Precision="3" />
+    <Property Name="TK107_DT" Type="DateTime" Precision="3" />
+    <Property Name="SWW1_FG" Type="Boolean" />
+    <Property Name="SWW2_FG" Type="Boolean" />
+    <Property Name="SWW3_FG" Type="Boolean" />
+    <Property Name="SWW4_FG" Type="Boolean" />
+    <Property Name="SWW5_FG" Type="Boolean" />
+    <Property Name="SWW6_FG" Type="Boolean" />
+    <Property Name="SWW7_FG" Type="Boolean" />
+    <Property Name="SWW8_FG" Type="Boolean" />
+    <Property Name="SWW81_FG" Type="Boolean" />
+    <Property Name="SWW9_RATE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SWW10_FG" Type="Boolean" />
+    <Property Name="SWW11_FG" Type="Boolean" />
+    <Property Name="SWWOT_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SC1_SCORE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SC2_SCORE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SC3_SCORE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SC4_SCORE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SC5_SCORE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SC6_SCORE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SC7_SCORE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SC1_SCORE1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SC2_SCORE1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SC3_SCORE1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SC4_SCORE1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SC5_SCORE1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SC6_SCORE1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SC7_SCORE1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TCEN_FUND" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="TLOC_FUND" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="RCEN_FUND" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="RLOC_FUND" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="VER_STAT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CHK_STAT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BUDGET_TP" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ATTENTION_PEOPLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRV_CON_SEWERS" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="TEMP_TD_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DADFILE">
+    <Key>
+      <PropertyRef Name="FFID" />
+    </Key>
+    <Property Name="FFID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FILE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FILE_PATH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FILE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOD_DT" Type="DateTime" Precision="3" />
+    <Property Name="EDITOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DADFUND">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DA_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SYR" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="IPJ_CODE_X" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FIT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FUND" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="FUND_DESC" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="DCS_FUND" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DADLOCP">
+    <Key>
+      <PropertyRef Name="LID" />
+    </Key>
+    <Property Name="LID" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="DA_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TOWN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VILLAGE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GIS_SYS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GIS_X" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="GIS_Y" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="GIS_Z" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="POPULATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CLAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SUPH_CNT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="POS_SYB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DADSDWB">
+    <Key>
+      <PropertyRef Name="AID" />
+      <PropertyRef Name="IT_CODE" />
+    </Key>
+    <Property Name="AID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AN_IT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GP_ORDER" Type="Int32" />
+    <Property Name="IT_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IT_GP_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IT_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="IT_WGT" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="WKSCHD_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="WRO_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DEL_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PRE_EDT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="REL_EDT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="PRE_HDT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="PRE_ADT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="EDIT_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DADTCOD">
+    <Key>
+      <PropertyRef Name="DA_CODE" />
+      <PropertyRef Name="TD_CODE" />
+    </Key>
+    <Property Name="DA_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TD_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DADWQTY">
+    <Key>
+      <PropertyRef Name="LID" />
+    </Key>
+    <Property Name="LID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="DA_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="AN_MID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MT_DESC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MT_UNIT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MT_QTY" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MT_PRICE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MT_SPEC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DC_QTY" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DC_PRICE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DC_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DAMFORM">
+    <Key>
+      <PropertyRef Name="DA_CODE" />
+    </Key>
+    <Property Name="AID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="YRC_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SYR" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DA_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DA_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TD_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXT_FG" Type="Boolean" />
+    <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TOWN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TD_LINE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TIT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SYS_CATY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VILLAGE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PJ_CATY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FILL_DP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ROAD_TP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ROAD_LINE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PCCJDG_FUND" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="ADM_DP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STAT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CATY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NOTE" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="ADV_DP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADV_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OPEN_FG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BGT_TYPE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="dtproperties_CMPSGS">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="Int32" />
+    <Property Name="property" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="uvalue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="lvalue" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="version" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OGCDEPT_CMPSGS">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AN_DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_CHIEF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_WGT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DATA_TP" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEF_PAGE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="OGCDPUR_CMPSGS">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="USR_ID" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USR_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DATA_TP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="OGCUATH_CMPSGS">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+      <PropertyRef Name="PRG_ID" />
+      <PropertyRef Name="DATA_TP" />
+    </Key>
+    <Property Name="DEPT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRG_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DATA_TP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="OGCUSER_CMPSGS">
+    <Key>
+      <PropertyRef Name="USR_ID" />
+    </Key>
+    <Property Name="USR_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USR_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="USR_PSW" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AGENT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_O" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_M" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_F" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USR_STAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PBMLIST_CMPSGS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="SUBJECT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CONTENT" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="UploadDate" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="EDATE" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PJCFLST">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="FC_NO" />
+    </Key>
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FC_NO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FC_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MF_FG" Type="Boolean" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PJDCATY">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CATY_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PJ_CATY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CATY_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CATY_NOTE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="EVRF_FG" Type="Boolean" />
+    <Property Name="OTDSG_DT" Type="DateTime" Precision="3" />
+    <Property Name="OTDSG_BUSS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DSGRL_DT" Type="DateTime" Precision="3" />
+    <Property Name="PCCJDG_DT" Type="DateTime" Precision="3" />
+    <Property Name="PCCJDG_FUND" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="INIDSG_DT" Type="DateTime" Precision="3" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PJDCMCT">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="CMS_CODE" />
+    </Key>
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CMS_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CMS_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CMS_UNIT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CMS_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PJDDOCS">
+    <Key>
+      <PropertyRef Name="FID" />
+      <PropertyRef Name="PPID" />
+    </Key>
+    <Property Name="FID" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FILE_DESC" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_PATH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_BODY" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FILE_SIZE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PJDFDIS">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SYR" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="TIT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FIT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ND_FUND" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PJDFILE">
+    <Key>
+      <PropertyRef Name="FFID" />
+    </Key>
+    <Property Name="FFID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FILE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FILE_PATH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FILE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOD_DT" Type="DateTime" Precision="3" />
+    <Property Name="EDITOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PJDFUND">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="SYR" />
+      <PropertyRef Name="IPJ_CODE" />
+    </Key>
+    <Property Name="PPID" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="SYR" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IPJ_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FUND" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="YBG_FUND" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="FUND_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PJDMDRC">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="SEQ_NO" />
+    </Key>
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SEQ_NO" Type="Int32" Nullable="false" />
+    <Property Name="STT_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="END_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PJ_CONT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="LEV1_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LEV1_FN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LEV2_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LEV2_FN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LEV3_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LEV3_FN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LEV4_DT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LEV4_FN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PJDSDWB">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="IT_CODE" />
+    </Key>
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AN_IT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GP_ORDER" Type="Int32" />
+    <Property Name="IT_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IT_GP_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IT_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="IT_WGT" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="WKSCHD_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="WRO_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DEL_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="EDIT_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PJDSUBC">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="CATY_CODE" />
+    </Key>
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CATY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CATY_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PJDSUPD">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="ADV_DP" />
+    </Key>
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ADV_DP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PJDSYRC">
+    <Key>
+      <PropertyRef Name="YRC_ID" />
+    </Key>
+    <Property Name="YRC_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SYR" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="BGN_SYR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="END_SYR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PSG_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FLOCK_FG" Type="Boolean" />
+    <Property Name="ADV_DP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADV_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OPEN_FG" Type="Boolean" />
+    <Property Name="STAT_FG" Type="Boolean" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PJDWKCP">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="IT_CODE" />
+    </Key>
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AN_IT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GP_ORDER" Type="Int32" />
+    <Property Name="IT_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IT_GP_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IT_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="IT_WGT" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="WKSCHD_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="WRO_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DEL_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="EDIT_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PJHFDIS">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SEQ_NO" Type="Int32" />
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SYR" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="TIT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FIT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ND_FUND" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PJMFORM_CMPSGS">
+    <Key>
+      <PropertyRef Name="PPID" />
+    </Key>
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="AN_PPID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PJ_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="APJ_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PJ_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PJ_CATY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GP_ORDER" Type="Int32" />
+    <Property Name="PRE_FUND" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="STAT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADM_TP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ADM_SC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADM_DP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADM_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STT_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="END_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="PJ_CONT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="LEV1_DT" Type="DateTime" Precision="0" />
+    <Property Name="LEV2_DT" Type="DateTime" Precision="0" />
+    <Property Name="LEV3_DT" Type="DateTime" Precision="0" />
+    <Property Name="LEV1_FN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LEV2_FN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LEV3_FN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CLOSE_FG" Type="Boolean" />
+    <Property Name="CLOSE_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="CNT_FG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CNT_LEV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EVRF_FG" Type="Boolean" />
+    <Property Name="OTDSG_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="OTDSG_BUSS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DSGRL_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="PCCJDG_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="PCCJDG_FUND" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="INIDSG_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="NOTE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ADV_DP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADV_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OPEN_FG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PJOFDIS">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SYR" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="TIT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FIT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ND_FUND" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PJWFILE">
+    <Key>
+      <PropertyRef Name="PPID" />
+      <PropertyRef Name="F_NO" />
+    </Key>
+    <Property Name="PPID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="F_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FILE_DESC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SMCCODE_CMPSGS">
+    <Key>
+      <PropertyRef Name="SYS_ID" />
+      <PropertyRef Name="CATY_ID" />
+      <PropertyRef Name="CATY_COD" />
+    </Key>
+    <Property Name="SYS_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CATY_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CATY_COD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CODE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESC_COD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SPEC_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SMCGNUM_CMPSGS">
+    <Key>
+      <PropertyRef Name="NKEY" />
+    </Key>
+    <Property Name="NKEY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HD_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TL_NUM" Type="Int32" />
+    <Property Name="NUM_LEN" Type="Int32" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SMCPROG_CMPSGS">
+    <Key>
+      <PropertyRef Name="PRG_ID" />
+    </Key>
+    <Property Name="PRG_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRG_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRG_SEQ" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MOD_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MOD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOD_SEQ" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PRG_TP" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PRG_DIR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SMWSDWB">
+    <Key>
+      <PropertyRef Name="IT_CODE" />
+    </Key>
+    <Property Name="IT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AN_IT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GP_ORDER" Type="Int32" />
+    <Property Name="IT_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IT_GP_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IT_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="IT_WGT" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="WKSCHD_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="WRO_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DEL_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="EDIT_FG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="T">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="縣市別" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="系統" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="類別" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="項次" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="項目" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="總經費" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="中央補助" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="地方自籌" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="辦理層級" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="TMP" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="EXT" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TDDFDIS">
+    <Key>
+      <PropertyRef Name="FID" />
+    </Key>
+    <Property Name="FID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SYR" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="TIT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FIT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SUP_RATIO" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FUND" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="PRE_FUND" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TDDFILE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="TID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="FILE_DESC" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FILE_PATH" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TDDSDWB_CMPSGS">
+    <Key>
+      <PropertyRef Name="AID" />
+      <PropertyRef Name="IT_CODE" />
+    </Key>
+    <Property Name="AID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AN_IT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IT_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IT_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GP_ORDER" Type="Int32" />
+    <Property Name="IT_GP_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRE_SDT" Type="DateTime" Precision="3" />
+    <Property Name="PRE_EDT" Type="DateTime" Precision="3" />
+    <Property Name="REL_SDT" Type="DateTime" Precision="3" />
+    <Property Name="REL_EDT" Type="DateTime" Precision="3" />
+    <Property Name="PRE_FUND" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="REL_FUND" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TDMFORM_CMPSGS">
+    <Key>
+      <PropertyRef Name="TID" />
+    </Key>
+    <Property Name="TID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TD_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TD_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IPJ_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CATY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AP_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PJ_CATY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PJ_CODE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AP_TP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ROAD_TP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ROAD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="TOWN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LINE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="START_YR" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="END_YR" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="RESN_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PERF_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="START_PT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="END_PT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ROAD_WIDTH" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="ROAD_LENGTH" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="BRIDGE_AREA" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LAND_AREA" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="INCITY_LENGTH" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OUTCITY_LENGTH" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PRT_TP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="NTRAF_QTY" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PTRAF_QTY" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FTRAF_QTY" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TCMTHD_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NDLAND_AREA" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="GTLAND_AREA" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="NBLAND_AREA" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="CGLAND_AREA" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="OGLAND_FUND" Type="Decimal" Precision="13" Scale="0" />
+    <Property Name="NDLAND_FUND" Type="Decimal" Precision="13" Scale="0" />
+    <Property Name="FLLAND_AREA" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="SNLAND_AREA" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="PIRM_COUNT" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="ROAD_LEV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="STEP_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="STAT_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PIORITY" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AUTO_SCORE" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="COMT_SCORE" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="EDIT_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ADV_SC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADM_DP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADM_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CHK_SC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CHK_DP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CHK_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DCS_SC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DCS_DP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DCS_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CLS_NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="WK_FUND" Type="Decimal" Precision="13" Scale="0" />
+    <Property Name="LD_FUND" Type="Decimal" Precision="13" Scale="0" />
+    <Property Name="SUM_FUND" Type="Decimal" Precision="13" Scale="0" />
+    <Property Name="S_SCORE" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="DARESN_TP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="DARESN_NOTE" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TDDCTFD">
+    <Key>
+      <PropertyRef Name="PTID" />
+      <PropertyRef Name="SYR" />
+      <PropertyRef Name="TTID" />
+    </Key>
+    <Property Name="PTID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SYR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TTID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ADD_DT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DT" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_TM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_UID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="CMPSGSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="APDBGLS" EntityType="Self.APDBGLS" />
+    <EntitySet Name="APDFILE" EntityType="Self.APDFILE" />
+    <EntitySet Name="APDFUND" EntityType="Self.APDFUND" />
+    <EntitySet Name="APDLOCP" EntityType="Self.APDLOCP" />
+    <EntitySet Name="APDPICS" EntityType="Self.APDPICS" />
+    <EntitySet Name="APDWQTY" EntityType="Self.APDWQTY" />
+    <EntitySet Name="APMADMC" EntityType="Self.APMADMC" />
+    <EntitySet Name="APMFORM" EntityType="Self.APMFORM" />
+    <EntitySet Name="DADFILE" EntityType="Self.DADFILE" />
+    <EntitySet Name="DADFUND" EntityType="Self.DADFUND" />
+    <EntitySet Name="DADLOCP" EntityType="Self.DADLOCP" />
+    <EntitySet Name="DADSDWB" EntityType="Self.DADSDWB" />
+    <EntitySet Name="DADTCOD" EntityType="Self.DADTCOD" />
+    <EntitySet Name="DADWQTY" EntityType="Self.DADWQTY" />
+    <EntitySet Name="DAMFORM" EntityType="Self.DAMFORM" />
+    <EntitySet Name="dtproperties" EntityType="CMPSGSModel.dtproperties_CMPSGS" />
+    <EntitySet Name="OGCDEPT" EntityType="CMPSGSModel.OGCDEPT_CMPSGS" />
+    <EntitySet Name="OGCDPUR" EntityType="CMPSGSModel.OGCDPUR_CMPSGS" />
+    <EntitySet Name="OGCUATH" EntityType="CMPSGSModel.OGCUATH_CMPSGS" />
+    <EntitySet Name="OGCUSER" EntityType="CMPSGSModel.OGCUSER_CMPSGS" />
+    <EntitySet Name="PBMLIST" EntityType="CMPSGSModel.PBMLIST_CMPSGS" />
+    <EntitySet Name="PJCFLST" EntityType="Self.PJCFLST" />
+    <EntitySet Name="PJDCATY" EntityType="Self.PJDCATY" />
+    <EntitySet Name="PJDCMCT" EntityType="Self.PJDCMCT" />
+    <EntitySet Name="PJDDOCS" EntityType="Self.PJDDOCS" />
+    <EntitySet Name="PJDFDIS" EntityType="Self.PJDFDIS" />
+    <EntitySet Name="PJDFILE" EntityType="Self.PJDFILE" />
+    <EntitySet Name="PJDFUND" EntityType="Self.PJDFUND" />
+    <EntitySet Name="PJDMDRC" EntityType="Self.PJDMDRC" />
+    <EntitySet Name="PJDSDWB" EntityType="Self.PJDSDWB" />
+    <EntitySet Name="PJDSUBC" EntityType="Self.PJDSUBC" />
+    <EntitySet Name="PJDSUPD" EntityType="Self.PJDSUPD" />
+    <EntitySet Name="PJDSYRC" EntityType="Self.PJDSYRC" />
+    <EntitySet Name="PJDWKCP" EntityType="Self.PJDWKCP" />
+    <EntitySet Name="PJHFDIS" EntityType="Self.PJHFDIS" />
+    <EntitySet Name="PJMFORM" EntityType="CMPSGSModel.PJMFORM_CMPSGS" />
+    <EntitySet Name="PJOFDIS" EntityType="Self.PJOFDIS" />
+    <EntitySet Name="PJWFILE" EntityType="Self.PJWFILE" />
+    <EntitySet Name="SMCCODE" EntityType="CMPSGSModel.SMCCODE_CMPSGS" />
+    <EntitySet Name="SMCGNUM" EntityType="CMPSGSModel.SMCGNUM_CMPSGS" />
+    <EntitySet Name="SMCPROG" EntityType="CMPSGSModel.SMCPROG_CMPSGS" />
+    <EntitySet Name="SMWSDWB" EntityType="Self.SMWSDWB" />
+    <EntitySet Name="T" EntityType="Self.T" />
+    <EntitySet Name="TDDFDIS" EntityType="Self.TDDFDIS" />
+    <EntitySet Name="TDDFILE" EntityType="Self.TDDFILE" />
+    <EntitySet Name="TDDSDWB" EntityType="CMPSGSModel.TDDSDWB_CMPSGS" />
+    <EntitySet Name="TDMFORM" EntityType="CMPSGSModel.TDMFORM_CMPSGS" />
+    <EntitySet Name="TDDCTFD" EntityType="Self.TDDCTFD" />
+  </EntityContainer>
+</Schema>

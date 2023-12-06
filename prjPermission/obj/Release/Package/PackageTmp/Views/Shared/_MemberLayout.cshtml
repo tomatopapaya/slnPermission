@@ -1,0 +1,199 @@
+﻿@model prjPermission.Models.ALL
+@*@Html.Action("Employee", "Home");*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 下水道管理系統</title>
+    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <style>
+        .navbar-inverse {
+            background-image: url('https://sewers.cpami.gov.tw/SEPMIS_NEW/image/title02.png');
+            background-size: cover; /* 调整图片大小以填充整个导航栏 */
+            background-repeat: no-repeat; /* 防止背景图片重复 */
+            background-position: center center; /* 将图片居中对齐 */
+            height: 80px;
+        }
+
+        td {
+            vertical-align: middle;
+        }
+        /* The sidebar menu */
+        .sidebar {
+            height: 100%; /* 100% Full-height */
+            width: 270px; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0;
+            left: 0;
+            background-color: #ADD8E6; /* color*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 30px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+        }
+
+
+            /* When you mouse over the navigation links, change their color */
+            .sidebar a:hover {
+                color: #F8F8FF;
+            }
+
+            /* Position and style the close button (top right corner) */
+            .sidebar .closebtn {
+                position: absolute;
+                top: 0px;
+                right: 1px;
+                font-size: 20px;
+                margin-left: 10px;
+            }
+
+        /* The button used to open the sidebar */
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+
+            .openbtn:hover {
+                background-color: #696969;
+            }
+
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+            transition: margin-left .5s; /* If you want a transition effect */
+            padding: 20px;
+        }
+
+        /*dropdownlist*/
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        /* Fixed sidenav, full height */
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+
+        /* The sidebar links */
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #2F4F4F;
+            display: block;
+            transition: 0.4s;
+        }
+
+        /* Style the sidenav links and the dropdown button */
+        .sidenav a, .dropdown-btn {
+            padding: 0px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #2F4F4F;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+            transition: 0.4s;
+        }
+
+            /* On mouse-over */
+            .sidenav a:hover, .dropdown-btn:hover {
+                color: #F8F8FF;
+            }
+
+        /* Main content */
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+            font-size: 25px; /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+
+        /* Add an active class to the active dropdown button */
+        .active {
+            background-color: #2e62ad;
+            color: white;
+        }
+
+        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+        .dropdown-container {
+            display: none;
+            background-color: #00aaff;
+            color: white;
+            padding-left: 0px;
+        }
+
+        /* Optional: Style the caret down icon */
+        .fa-caret-down {
+            float: right;
+            /*        float: left;*/
+            /*        padding-right: 10px;*/
+            padding-left: 0px;
+        }
+
+        /* 要將內容放在最下層，使用絕對定位 */
+        .content > div {
+            position: center;
+            bottom: 0;
+        }
+    </style>
+                           
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:white" >
+        <div class="container navbar-right" >
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.ActionLink("內政部營建署-下水道工程處工程管理系統", "SideBar", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })*@
+            </div>
+            <div class="navbar-collapse collapse" >
+                <ul class="nav navbar-nav  navbar-right">
+                    <li><a href="#" style="color:white; font-size:25px;">使用者資訊:@Session["UsrName"]</a></li>
+                    <li><a href="#" style="color:white; font-size:25px;">使用者部門:@Session["Dept"]</a></li>
+                    <li>@Html.ActionLink("登出", "Logout", "Home", new { @style = "color:white; font-size:25px;" })</li>
+                    <li><a href="#" style="color:white; font-size:25px;"> </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        @*<hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET</p>
+            </footer>*@
+    </div>
+
+
+</body>
+</html>
+
+<script src="~/Scripts/modernizr-2.6.2.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min"></script>

@@ -1,0 +1,205 @@
+﻿
+
+@model prjPermission.Models.UserViewModel
+
+@{
+    Layout = null;
+}
+
+<div class="content">
+    @Html.Action("SideBar", "Home")
+</div>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body class="model-form">
+
+    <h3 style="text-align:left;">修改使用者:</h3>
+
+    <form method="post" action="@Url.Action("UserEdit","User")">
+        <table class="table table-bordered table-hover" style="text-align: left; width:70%">
+            <tr>
+                <td>使用者帳號:</td>
+                <td>
+                    <input type="text" name="User" value="@ViewBag.choose" readonly />
+                    <a href="@Url.Action("ChooseUser","User")" class="btn btn-default">選擇使用者</a>
+                </td>
+                <td>使用者名稱:</td>
+                <td>
+                    <input type="text" name="UserName" value="@ViewBag.chooseName" readonly />
+                </td>
+            </tr>
+
+            @*<tr>
+                    <td id="D">縣市區鄉鎮分區:</td>
+                    <td colspan="2">
+                        @Html.RadioButton("Site", "北區", true)北區 @Html.RadioButton("Site", "中區")中區 @Html.RadioButton("Site", "南區")南區
+                    </td>
+
+                </tr>*@
+            <tr>
+                <td>縣市資料權限:</td>
+                <td colspan="2">
+                    @for (int i = 0; i < 23; i++)
+                    {
+                        if (i == 7 || i == 14 || i == 21)
+                        {
+                            <br />
+                        }
+                        foreach (var item in Model.SECCITY)
+                        {
+                            if (item.CITY == Model.SMCPOSTN[i].CITY)
+                            {
+                                <input type="checkbox" name="CityCheckbox" value="@Model.SMCPOSTN[i].CITY" data-city="@Model.SMCPOSTN[i].CITY" checked onclick="handleCityCheckbox(this,'@Model.SMCPOSTN[i].CITY')">
+                                <a href="#" onclick="changeCityValue('@Model.SMCPOSTN[i].CITY')">@Model.SMCPOSTN[i].CITY</a>
+                                goto ContinueOuterLoop;
+                            }
+                        }
+                        <input type="checkbox" name="CityCheckbox" value="@Model.SMCPOSTN[i].CITY" data-city="@Model.SMCPOSTN[i].CITY" onclick="handleCityCheckbox(this,'@Model.SMCPOSTN[i].CITY')">
+                        <a href="#" onclick="changeCityValue('@Model.SMCPOSTN[i].CITY')">@Model.SMCPOSTN[i].CITY</a>
+                        ContinueOuterLoop: continue;
+                        }
+                </td>
+
+                <td rowspan="3">
+                    <input type="submit" value="修改" class="btn btn-default" /><a href="@Url.Action("Index","User")" class="btn btn-primary">返回</a>@Html.ActionLink("刪除", "UserDelete",
+                    new { choose = ViewBag.choose },
+                    new { onclick = "return confirm('確定刪除嗎?');", @class = "btn btn-danger" })
+                    <br />
+                    <br />
+                    <div style="color:red">@ViewBag.Errorr</div>
+                </td>
+            </tr>
+            <tr id="Second">
+                <td id="C">縣市區鄉鎮權限:</td>
+                <td id="TOWN" colspan="2">
+                    @for (int i = 0; i < Model.SMCPOSTN.Count(); i++)
+                    {
+
+                        var city = Model.SMCPOSTN[i].CITY;
+
+                        {
+                            <div id="@city" class="town-container" style="@(city == "台中市" ? "" : "display: none;")">
+                                <button type="button" id="selectAll" onclick="toggleCheckboxes('@city')" style="cursor: pointer;">全選紐</button>
+                                <br />
+                                <div style="height: 0.5em;"></div>
+                                @for (int w = 0; w < Model.ALLSMCPOSTN.Where(m => m.CITY == city).Count(); w++)
+                                {
+
+                                    if (w != 0 && w % 7 == 0)
+                                    {
+                                        <div style="height: 0.3em;"></div>
+                                    }
+
+                                    var targetTown = Model.ALLSMCPOSTN.Where(m => m.CITY == city).ToList()[w].TOWN;
+
+                                    bool areTownsEqual = Model.SECCITY
+                                        .Where(m => m.CITY == city)
+                                        .Select(m => m.TOWN)
+                                        .All(town => town == targetTown);
+
+                                    for (int s = 0; s < Model.SECCITY.Where(m => m.CITY == city).ToList().Count(); s++)
+                                    {
+                                        if (Model.ALLSMCPOSTN.Where(m => m.CITY == city).ToList()[w].TOWN == Model.SECCITY.Where(m => m.CITY == city).ToList()[s].TOWN)
+                                        {
+                                            <input type="checkbox" name="SelectedBoxTOWN" value="@city@Model.ALLSMCPOSTN.Where(m=>m.CITY == city).ToList()[w].TOWN" checked>
+                                            <span> </span>
+                                            @Model.ALLSMCPOSTN.Where(m => m.CITY == city).ToList()[w].TOWN
+                                            <span> </span>
+                                            goto ContinueOuterLoop;
+                                        }
+                                    }
+
+                                    <input type="checkbox" name="SelectedBoxTOWN" value="@city@Model.ALLSMCPOSTN.Where(m=>m.CITY == city).ToList()[w].TOWN">
+
+                                    <span> </span>
+                                    @Model.ALLSMCPOSTN.Where(m => m.CITY == city).ToList()[w].TOWN
+                                    <span> </span>
+                                    ContinueOuterLoop: continue;
+                                    }
+                            </div>
+                        }
+                    }
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+</body>
+
+
+<script>
+    function changeCityValue(CityValue) {
+        // 在这里执行你想要的操作，例如显示特定城市的数据
+
+        // 显示特定城市的数据
+        var townContainers = document.getElementsByClassName('town-container');
+        for (var i = 0; i < townContainers.length; i++) {
+            if (townContainers[i].id === CityValue) {
+                townContainers[i].style.display = 'block';
+            } else {
+                townContainers[i].style.display = 'none';
+            }
+        }
+    }
+
+    function handleCityCheckbox(checkbox, CityValue) {
+        var city = checkbox.getAttribute("data-city");
+        var townContainer = document.getElementById(city);
+        var townCheckboxes = townContainer.querySelectorAll('input[type="checkbox"]');
+
+        for (var i = 0; i < townCheckboxes.length; i++) {
+            townCheckboxes[i].checked = checkbox.checked;
+        }
+
+        var townContainers = document.getElementsByClassName('town-container');
+        for (var i = 0; i < townContainers.length; i++) {
+            if (townContainers[i].id === CityValue) {
+                townContainers[i].style.display = 'block';
+            } else {
+                townContainers[i].style.display = 'none';
+            }
+        }
+    }
+
+    function toggleCheckboxes(city) {
+        var townContainer = document.getElementById(city);
+        var townCheckboxes = townContainer.querySelectorAll('input[type="checkbox"]');
+
+        for (var i = 0; i < townCheckboxes.length; i++) {
+            townCheckboxes[i].checked = !townCheckboxes[i].checked;
+        }
+
+        var selectAllButton = document.getElementById("selectAll");
+        var allTownCheckboxes = document.querySelectorAll('.town-container input[type="checkbox"]');
+        var allChecked = true;
+
+        for (var i = 0; i < allTownCheckboxes.length; i++) {
+            if (!allTownCheckboxes[i].checked) {
+                allChecked = false;
+                break;
+            }
+        }
+
+        selectAllButton.textContent = allChecked ? "取消全選" : "全選";
+    }
+
+
+    // 監聽 RadioButton 的點擊事件
+    //var radioButtons = document.getElementsByName("Site");
+    //for (var i = 0; i < radioButtons.length; i++) {
+    //    radioButtons[i].addEventListener("click", function () {
+    //            var currentURL = window.location.href;
+    //            var url = new URL(currentURL);
+    //            url.searchParams.set("Site", this.value);
+    //            // 跳轉到新的 URL
+    //            window.location.href = url.href;
+            
+    //    });
+    //}
+
+</script>
+
+

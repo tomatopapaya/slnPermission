@@ -1,0 +1,159 @@
+﻿@model IEnumerable<prjPermission.Models.ChooseViewModel>
+
+@{
+    Layout = null;
+}
+
+<div class="content">
+    @Html.Action("SideBar", "Home")
+</div>
+<script src="~/Scripts/jquery-3.6.3.min.js"></script>
+<style type="text/css">
+    #Header {
+        width: 360px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 15px;
+        color: #fffaf3;
+        font-weight: bold;
+        background-color: #f9c81e;
+    }
+
+    #Sidebar {
+        width: 120px;
+        float: left;
+        height: 280px;
+        text-align: center;
+        line-height: 280px;
+        font-size: 15px;
+        color: #ffffff;
+        font-weight: bold;
+        background-color: #cecece;
+    }
+
+    #body {
+        width: 240px;
+        height: 280px;
+        text-align: center;
+        line-height: 280px;
+        font-size: 15px;
+        color: #f9c81e;
+        font-weight: bold;
+        background-color: #fffaf3;
+        float: left;
+    }
+
+    #Footer {
+        width: 360px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 15px;
+        color: #fffaf3;
+        font-weight: bold;
+        background-color: #f9c81e;
+    }
+
+    .table1, .td1, .th1 {
+        border: 1.5px solid black;
+    }
+
+    .table1 {
+        border-collapse: collapse;
+        width: 40%;
+    }
+
+    .down {
+        margin-top: 10px;
+    }
+</style>
+
+<div  class="model-form">
+    <table style="text-align:left">
+        <tr><th style="color:cornflowerblue">詳細資料</th></tr>
+        <tr>
+            <th>
+                @Html.ActionLink("編輯", "Edit", new { UserID = TempData["USERID"] } , new { @class = "btn btn-primary" })
+                @Html.ActionLink("刪除", "Delete",
+                    new { ID = TempData["USERID"] },
+                    new { onclick = "return confirm('確定刪除嗎?');", @class = "btn btn-danger" }
+               )
+                @*<a href="@Url.Action("Cancel", "Home")" class="btn btn-primary">返回</a>*@
+                <input type="button" class="btn btn-default  ;"onclick="history.back()" value="返回">
+                <br />
+                <br />
+            </th>
+        </tr>
+        <tr>
+            <th>
+                員工編號:
+                @TempData["USERID"]
+            </th>
+            <th>
+                員工姓名:
+                @TempData["USERNAME"]
+            </th>
+        </tr>
+        <tr>
+            <th>
+                連絡電話:
+                @TempData["TEL_O"]
+            </th>
+            <th>
+                行動電話:
+                @TempData["TEL_M"]
+            </th>
+        </tr>
+        <tr>
+            <th>
+                電子郵件:
+                @TempData["MAIL"]
+            </th>
+            <th>
+                在職狀況:
+                <input id="" type="checkbox" name="" checked="@TempData["USERSTAT"]">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                備註說明:
+                @TempData["NOTE"]
+            </th>
+        </tr>
+    </table>
+    @*/////////////////這是選取後的顯示/////////////////////////////*@
+    <br />
+    <table class="table table">
+        <tr><th><br />隸屬部門及群組:</th></tr>
+        <tr style="background-color:deepskyblue;">
+            <th>
+                部門或群組名稱
+            </th>
+            <th>
+                部門或群組
+            </th>
+        </tr>
+        <tr>
+            @foreach (var item in Model)
+            {
+                if(item.OGCDPUR.DATA_TP == "D") 
+                { 
+                    <td>@item.OGCDEPT.DEPT_NAME</td>
+                    <td>部門</td>
+                }
+            }
+        </tr>
+        @foreach(var item in Model) 
+        { 
+            if (item.OGCDPUR.DATA_TP == "G")
+            {
+                <tr>
+                    <td>@item.OGCDEPT.DEPT_NAME</td>
+                    <td>群組</td>
+                </tr>
+            }
+        }
+        
+    </table>
+</div>

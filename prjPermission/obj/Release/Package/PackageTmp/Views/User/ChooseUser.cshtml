@@ -1,0 +1,36 @@
+﻿@model IEnumerable<prjPermission.Models.ChooseUser3ViewModel>
+
+<form method="get" action="@Url.Action("ChooseUser","User")">
+   <br />
+    <div>使用者帳號: <input name="ID" type="text" style="width:140px" />　使用者名稱: <input name="Name" type="text" style="width:140px"/>　所屬部門:
+        <select name="dropdownlist">
+            <option>請選擇</option>
+            @foreach (var item in ViewBag.DEPT)
+            {
+                <option>
+                    @item.DEPT_NAME
+                </option>
+            }
+        </select>　<input type="submit" value="查詢" class="btn btn-default" />　<input type="button" class="btn btn-primary" onclick="history.back()" value="返回"></div>
+</form>
+
+<br />
+
+<table class="table table-hover">
+    <tr style="background-color:deepskyblue">
+        <th>選擇</th>
+        <th>使用者帳號</th>
+        <th>使用者名稱</th>
+        <th>所屬部門</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><a href="@Url.Action("Choose","User")?ID=@item.chooseUser1ViewModel.oGCUSER.USR_ID&&Name=@item.chooseUser1ViewModel.oGCUSER.USR_NAME" >選取</a></td>
+            <td>@item.chooseUser1ViewModel.oGCUSER.USR_ID</td>
+            <td>@item.chooseUser1ViewModel.oGCUSER.USR_NAME</td>
+            <td>@item.ChooseUser2ViewModel.oGCDEPT.DEPT_NAME</td>
+        </tr>
+    }
+
+</table>

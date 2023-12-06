@@ -1,0 +1,149 @@
+﻿@model prjPermission.Models.DeptViewModel
+
+<div class="content">
+    @Html.Action("SideBar", "Home")
+</div>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-3.6.3.min.js"></script>
+    <script src="~/Scripts/TreeView.js"></script>
+    <title>TreeVieww</title>
+    <link href="~/Content/TreeView.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div display="flex" @*flex-wrap="wrap"*@ style="padding-top: 30px;">
+        <div id="collapseDVR3" class="panel-collapse collapse in" style="float: left;">
+            <div class="tree ">
+                <ul>
+                    <li>
+                        <span><i class="fa fa-minus-square"></i> 內政部營建署下水道工程處</span>
+                        @foreach (var item1 in Model.Dept1)
+                        {
+                            <ul>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-minus-square"></i>
+                                        <a href="#" id="@item1.DEPT_NO" onClick="TreeViewClick(this.id)">@item1.DEPT_NAME</a>
+                                    </span>
+                                    @foreach (var item2 in Model.Dept2.Where(m => m.AN_DEPT_NO == item1.DEPT_NO))
+                                    {
+                                        <ul>
+                                            <li>
+
+                                                <span>
+                                                    <i class="fa fa-minus-square"></i>
+                                                    <a href="#" id="@item2.DEPT_NO" onClick="TreeViewClick(this.id)">@item2.DEPT_NAME</a>
+                                                </span>
+                                                @if (Model.Dept2.Where(m => m.AN_DEPT_NO == item2.DEPT_NO).Count() == 0)
+                                                {
+
+                                                }
+                                                @foreach (var item3 in Model.Dept2.Where(m => m.AN_DEPT_NO == item2.DEPT_NO))
+                                                {
+                                                    <ul>
+                                                        <li>
+                                                            <span>
+                                                                <a href="#" id="@item3.DEPT_NO" onClick="TreeViewClick(this.id)">@item3.DEPT_NAME</a>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                }
+
+                                            </li>
+                                        </ul>
+                                    }
+
+                                </li>
+                            </ul>
+                        }
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a href="@Url.Action("Create", "Dept")" class="btn btn-primary">
+            新增部門
+        </a>
+        <h1>部門資訊</h1>
+        <table class="table" style="max-width:430px" id="dept">
+            <tr>
+                <th>部門編號</th>
+                <th>部門名稱</th>
+                <th>經管部門</th>
+                <th>部門主管</th>
+            </tr>
+        </table>
+        <h1>部門使用者</h1>
+        <table class="table" style="max-width:430px" id="user">
+            <tr>
+                <th>使用者編號</th>
+                <th>使用者名稱</th>
+            </tr>
+        </table>
+        <table>
+        </table>
+    </div>
+</body>
+</html>
+
+@{
+    string EditUrl = Url.Action("Edit", "Dept");
+    string DeleteUrl = Url.Action("Delete", "Dept");
+}
+
+
+<script type="text/javascript" language="javascript">
+    function TreeViewClick(clicked_id)
+    {
+
+        $.ajax({
+            url: '@Url.Action("TreeVieww", "Dept")',
+            type: 'post',
+            dataType: 'json',
+/*            contentType: 'application/json; charset=utf-8',*/
+            data: { deptno: clicked_id }, //json format
+
+            success: function (returnData) {
+                //部門資訊
+
+
+
+                $('#dept').empty();
+                $("#dept").append("<th>部門編號</th><th>部門名稱</th><th>經管部門</th><th>部門主管</th>");
+                for (var i = 0; i < 1; i++) {
+                    var EditUrlWithId = "@EditUrl" + "?id=" + returnData[i].DEPT_NO;
+                    var DeleteUrlWithId = "@DeleteUrl" + "?id=" + returnData[i].DEPT_NO;
+
+                    $("#dept").append(
+                        "<tr>"+
+                        "<td>" + returnData[i].DEPT_NO + "</td>" +
+                        "<td>" + returnData[i].DEPT_NAME + "</td>" +
+                        "<td><input id=chkb type=checkbox disabled=disabled /></td>"+
+                        "<td>" + returnData[i].DEPT_CHIEF + "</td>" +
+                        "<td><a class='btn btn-primary' href='" + EditUrlWithId + "'>修改</a></td>" +
+                        "<td><a class='btn btn-danger' href='" + DeleteUrlWithId + "'>刪除</a></td>" +
+                        "</tr>"
+                    );
+
+                    var checkbox = document.getElementById('chkb');
+                    checkbox.checked = returnData[i].MGR_FG;
+                }
+                //部門使用者
+                $('#user').empty();
+                $("#user").append("<th>使用者編號</th><th>使用者名稱</th>")
+                for (var i = 0; i < returnData.length; i++) {
+                    $("#user").append(
+                        "<tr>"+
+                        "<td>" + returnData[i].USR_ID + "</td>" +
+                        "<td>" + returnData[i].USR_NAME + "</td>" +
+                        "</tr>"
+                    );
+                }
+            }
+        })
+    }
+</script>

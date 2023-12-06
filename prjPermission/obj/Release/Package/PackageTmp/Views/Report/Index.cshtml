@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model string
+
+<h1>@Model</h1>
+
+<button id="btnLoadData">加载数据</button>
+
+@section scripts {
+    <script>
+        $(function () {
+            $('#btnLoadData').click(function () {
+                loadData();
+            });
+
+            async function loadData() {
+                try {
+                    var response = await fetch('/Report/GetData');
+                    var data = await response.text();
+                    $('h1').text(data);
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+        });
+    </script>
+}

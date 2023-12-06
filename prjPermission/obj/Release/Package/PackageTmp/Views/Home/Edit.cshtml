@@ -1,0 +1,249 @@
+﻿@model prjPermission.Models.OGCUSER
+
+@{
+    Layout = null;
+}
+
+<div class="content">
+    @Html.Action("SideBar", "Home")
+</div>
+<script src="~/Scripts/jquery-3.6.3.min.js"></script>
+<style type="text/css">
+    #Header {
+        width: 360px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 15px;
+        color: #fffaf3;
+        font-weight: bold;
+        background-color: #f9c81e;
+    }
+
+    #Sidebar {
+        width: 120px;
+        float: left;
+        height: 280px;
+        text-align: center;
+        line-height: 280px;
+        font-size: 15px;
+        color: #ffffff;
+        font-weight: bold;
+        background-color: #cecece;
+    }
+
+    #body {
+        width: 240px;
+        height: 280px;
+        text-align: center;
+        line-height: 280px;
+        font-size: 15px;
+        color: #f9c81e;
+        font-weight: bold;
+        background-color: #fffaf3;
+        float: left;
+    }
+
+    #Footer {
+        width: 360px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 15px;
+        color: #fffaf3;
+        font-weight: bold;
+        background-color: #f9c81e;
+    }
+
+    .table1, .td1, .th1 {
+        border: 1.5px solid black;
+    }
+
+    .table1 {
+        border-collapse: collapse;
+        width: 40%;
+    }
+
+    .down {
+        margin-top: 10px;
+    }
+</style>
+
+
+<form method="post" action="@Url.Action("Edit")">
+    <table style="text-align:left; " class="model-form">
+
+        <tr><th style="color:cornflowerblue">修改資料</th></tr>
+        <tr>
+            <th>
+                員工編號:
+                <input type="text" id="USR_ID" name="USR_ID" class="form-contol" value="@Model.USR_ID" style="background-color: lightskyblue" readonly />
+            </th>
+            <th>
+                員工姓名:
+                <input type="text" id="USR_NAME" name="USR_NAME" class="form-contol" value="@Model.USR_NAME"/>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                連絡電話:
+                <input type="text" id="TEL_O" name="TEL_O" class="form-contol" value="@Model.TEL_O" />
+            </th>
+            <th>
+                行動電話:
+                <input type="text" id="TEL_M" name="TEL_M" class="form-contol" value="@Model.TEL_M" />
+            </th>
+        </tr>
+        <tr>
+            <th>
+                電子郵件:
+                <input type="text" id="EMAIL" name="EMAIL" class="form-contol" value="@Model.EMAIL"/>
+            </th>
+            <th>
+                在職狀況:
+                <input type="checkbox" id="USR_STAT" name="USR_STAT" value="True" checked="@Model.USR_STAT">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                備註說明:
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <textarea id="NOTE" name="NOTE" rows="3" cols="50" style="width:300px;height:50px;">@Model.NOTE</textarea>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                密碼:
+                <input type="text" id="USR_PSW" name="USR_PSW" value="@Model.USR_PSW" class="form-contol" required />
+            </th>
+            <th>
+                確認密碼:
+                <input type="text" id="USR_PSW2" name="USR_PSW2" value="@Model.USR_PSW" class="form-contol" required />
+            </th>
+        </tr>
+        <tr><th><br /></th></tr>
+        <tr>
+            <th><input type="submit" value="修改" class="btn btn-default" style="border:1px gray solid" /><a href="@Url.Action("Cancel", "Home")" class="btn btn-default" style="border:1px gray solid">取消</a></th>
+        </tr>
+    </table>
+</form>
+<div style="color:red; text-align: left; margin: 0px 0px 30px 290px;">@ViewBag.Errorr</div>
+
+<form method="post" action="@Url.Action("CreateDeptGroup")">
+    <input type="text" id="USR_ID" name="USR_ID" class="hidden" value="@Model.USR_ID" style="background-color:lightblue" readonly />
+    <table class="table1" style="text-align: left; margin: 0px 20px 30px 290px; width:35%">
+        <tr>
+            <th class="th1" style="background-color:lightskyblue;">
+                部門或群組
+            </th>
+            <td class="td1">
+                <div>
+                    <select name="State" id="State">
+                        <option name="group">請選擇</option>
+                        <option name="group">部門</option>
+                        <option name="HI">群組</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th class="th1" style="background-color: lightskyblue; ">
+                名稱
+            </th>
+            <td class="td1">
+                <select id="Value" name="Value"><option>------</option></select>
+            </td>
+            <td colspan="2" style="text-align:center" class="btnn"><button>新增</button></td>
+        </tr>
+    </table>
+</form>
+<div style="color:red; text-align: left; margin: 0px 0px 30px 290px;">@ViewBag.Error</div>
+@*////////////這裡開始是新增內容//////////////////////*@
+<table class="table" style="text-align: left; margin: 20px 30px 30px 290px; width:30%">
+    <thead>
+        <tr style="background-color: lightpink;">
+            <th>
+                部門或群組名稱
+            </th>
+            <th>
+                部門或群組
+            </th>
+            <th>
+                操作
+            </th>
+        </tr>
+    </thead>
+    <tbody id="demo" class="alert-danger">
+        @foreach (var item in ViewBag.DEPTGROUP)
+        {
+            if (item.DEPTID.DATA_TP == "D")
+            {
+                <tr>
+                    <th style="vertical-align: middle">@item.DEPTNAME.DEPT_NAME</th>
+                    <th style="vertical-align: middle">部門</th>
+                    <th>
+                        @Html.ActionLink("刪除", "DeptDelete",
+                        new { ID = item.DEPTID.USR_ID, DEPTID = item.DEPTID.DEPT_NO, DATA = item.DEPTID.DATA_TP },
+                        new { onclick = "return confirm('確定刪除嗎?');", @class = "btn btn-danger" })
+                    </th>
+                </tr>
+            }
+        }
+        @foreach (var item in ViewBag.DEPTGROUP)
+        {
+            if (item.DEPTID.DATA_TP == "G")
+            {
+                <tr>
+                    <th style="vertical-align: middle">@item.DEPTNAME.DEPT_NAME</th>
+                    <th style="vertical-align: middle">群組</th>
+                    <th>
+                        @Html.ActionLink("刪除", "DeptDelete",
+                        new { ID = item.DEPTID.USR_ID, DEPTID = item.DEPTID.DEPT_NO, DATA = item.DEPTID.DATA_TP },
+                        new { onclick = "return confirm('確定刪除嗎?');", @class = "btn btn-danger" })
+                    </th>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@*//////////////////////這裡是結束新增內容////////////////////////////////*@
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        $('#State').change(function () { ChangeCustomer(); });
+    });
+    function ChangeCustomer() {
+        var selectedValue = $('#State option:selected').val();
+        if ($.trim(selectedValue).length > 0) {
+            GetOrders(selectedValue);
+        }
+    }
+    function GetOrders(State) {
+
+        $.ajax({
+            url: '@Url.Action("Orders", "Home")',
+            data: { State: State },
+            type: 'post',
+            cache: false,
+            async: false,
+            dataType: 'json',
+            success: function (data) {
+                if (data.length > 0) {
+                    $('#Value').empty();
+                    $('#Value').append($('<option></option>').val('').text('請選擇'));
+                    $.each(data, function (i, item) {
+                        $('#Value').append($('<option></option>').val(item.Key).text(item.Value));
+                    });
+                }
+            }
+        });
+    }
+</script>

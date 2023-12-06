@@ -1,0 +1,44 @@
+﻿@model prjPermission.Models.MenuViewModel
+
+@{
+    ViewBag.Title = "會員登入";
+}
+<form method="post" action="@Url.Action("Login")" style="text-align:left; margin: 30px 0px 0px 0px">
+    <div class="panel panel-primary">
+        <div class="panel-heading">會員登入</div>
+        <div class="panel-body">
+            <p>
+                帳號:
+                <input type="text" class="form-control" name="txtUid" required />
+            </p>
+            <p>
+                密碼:
+                <input type="password" style="display:none" />
+                <input type="password" class="form-control" id="pwd" name="txtPwd" required autocomplete="new-password" />
+                <input type="checkbox" id="showpwd" onclick="Showpwd()" />顯示密碼
+            </p>
+            <p>
+                @*Logout時沒辦法取的驗證碼，需要正確登入後才會顯示*@
+                @*<img id="valiCode" class="validcode" src="/Home/GetValidateCode" alt="驗證碼" title="點擊刷新" />
+                    <br />
+                    驗證碼:
+                    <input type="text" class="form-control" name="chptcha" required />*@
+            </p>
+            <p>
+                <input type="submit" class="btn btn-primary" value="登入" />
+            </p>
+            <p class="text-danger">@ViewBag.Err</p>
+        </div>
+    </div>
+</form>
+<script>
+    function Showpwd() {
+        var PasswordInput = document.getElementById("pwd")
+        if (PasswordInput.type == "password") {
+            PasswordInput.type = "text";
+        }
+        else {
+            PasswordInput.type = "password";
+        }
+    }
+</script>

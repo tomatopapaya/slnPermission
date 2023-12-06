@@ -1,0 +1,283 @@
+﻿@model prjPermission.Models.ALL
+@*@Html.Action("Employee", "Home")*@
+@{  
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 下水道管理系統</title>
+    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+
+<body style="background-image:url('https://sewers.cpami.gov.tw/SEPMIS_NEW/image/PICTURE1.png');background-position: right bottom;background-size: cover;">
+    <style>
+        .fixed-column {
+            width: 160px; /* Adjust the width value as per your requirement */
+            min-width: 160px; /* Optional: Set a minimum width to ensure the content doesn't overlap */
+        }
+        /* The sidebar menu */
+        .sidebar {
+            min-height: 100vh;
+            width: 300px;
+            position: fixed;
+            z-index: 1;
+            top: 25px; /* Move the sidebar down by 50px */
+            left: 0;
+            background-color: #ADD8E6;
+            overflow-x: hidden;
+            padding-top: 50px;
+            padding-bottom: 30px; /* Add some padding at the bottom */
+            transition: 0.5s;
+        }
+
+            .sidebar .dropdown-btn:hover, .sidebar .dropdown-btn.active {
+                color: black; /*被點擊後顯示的字體顏色*/
+            }
+
+            .sidebar a, .sidebar .dropdown-btn {
+                font-size: 18.5px;
+                font-weight: 800; /* Add this line to make text bold */
+                color: #000000;
+                display: block;
+                padding: 16px;
+                text-decoration: none;
+                transition: 0.3s;
+            }
+            /* When you mouse over the navigation links, change their color */
+
+            /* Position and style the close button (top right corner) */
+            .sidebar .closebtn {
+                position: absolute;
+                top: 0px;
+                right: 1px;
+                font-size: 20px;
+                margin-left: 10px;
+            }
+
+        /* The button used to open the sidebar */
+        .openbtn {
+            font-size: 20px;
+            border-radius: 50%;
+            border: none;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+            .openbtn:hover {
+                background-color: #696969;
+            }
+
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+            transition: margin-left .5s; /* If you want a transition effect */
+            padding: 20px;
+            margin-top: 50px; /* Adjust the position */
+        }
+        /*dropdownlist*/
+        .sidebar button {
+            height: 50px;
+            padding: 0px 20px;
+            font-size: 17px;
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+            zoom: 60%; /* 設定縮放比例為 80% */
+        }
+        /* Fixed sidenav, full height */
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+
+        /* The sidebar links */
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #2F4F4F;
+            display: block;
+            transition: 0.4s;
+        }
+
+        /* Style the sidenav links and the dropdown button */
+        .sidenav a, .dropdown-btn {
+            padding: 0px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #2F4F4F;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+            transition: 0.4s;
+        }
+
+            /* On mouse-over */
+            .sidenav a:hover, .dropdown-btn:hover {
+                color: #F8F8FF;
+            }
+
+
+
+        /* Main content */
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+            font-size: 25px; /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+
+        /* Add an active class to the active dropdown button */
+        .active {
+            background-color: #ADD8E6; /*打開後的背景顏色*/
+            color: black;
+        }
+
+        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+        .dropdown-container {
+            display: none;
+            background-color: #ADD8E6; /*內層背景顏色*/
+            color: black;
+            padding-left: 0px;
+        }
+
+        /* Optional: Style the caret down icon */
+        .fa-caret-down {
+            float: right;
+            /*        float: left;*/
+            /*        padding-right: 10px;*/
+            padding-left: 0px;
+        }
+
+        .model-form {
+            margin: 90px 0px 30px 340px;
+        }
+
+        .model-form2 {
+            margin: 80px 0px 0px 300px;
+            overflow: hidden;
+        }
+    </style>
+
+
+    <div id="mySidebar" class="sidebar" style="text-align:left; margin: 0px 0px 0px 0px">
+        @*<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <br />*@
+        @foreach (var item1 in Model.Menu1)
+        {
+            foreach (var item_ in Model.Menu4)
+            {
+                if (item1.SYS_NAME.Substring(0, item1.SYS_NAME.IndexOf(".")) == item_.MENUVM.SYS_NAME.Substring(0, item_.MENUVM.SYS_NAME.IndexOf(".")))
+                {
+                    <button class="dropdown-btn ">
+                        @item1.SYS_NAME
+                        <p class="fa fa-caret-down"></p>
+                    </button>
+                    break;
+                }
+
+            }
+            <div class="dropdown-container">
+                @foreach (var item2 in Model.Menu2.Where(m => m.AN_SYS_ID == item1.SYS_ID))
+                {
+                    foreach (var item__ in Model.Menu4)
+                    {
+                        if (item2.SYS_NAME.Substring(0, 3) == item__.MENUVM.SYS_NAME.Substring(0, 3))
+                        {
+                            <button class="dropdown-btn " style=" color:white">
+                                @item2.SYS_NAME
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            break;
+                        }
+                    }
+                    <div class="dropdown-container">
+                        @foreach (var item3 in Model.Menu3.Where(m => m.AN_SYS_ID == item2.SYS_ID))
+                        {
+                            foreach (var item4 in Model.Menu4)
+                            {
+                                if (item3.SYS_ID == item4.MENUVM.SYS_ID)
+                                {
+                                    if(item3.SYS_NAME == "1.2.1一億元以上計劃合併總表" || item3.SYS_NAME == "1.2.2經費編號異常資料檢視" || item3.SYS_NAME == "1.2.3跨年度一億元報表" || item3.SYS_NAME == "3.1.1預算決標書上傳作業" || item3.SYS_NAME == "3.1.5管理案件認養" || item3.SYS_NAME == "3.1.6工作日誌" || item3.SYS_NAME == "3.3.5統計圖表")
+                                    {
+                                        continue;
+                                    }
+                                    <a href="@item3.APP_PATH" style="font-size:18px">@item3.SYS_NAME</a>
+                                }
+                            }
+                        }
+                    </div>
+
+                }
+            </div>
+        }
+    </div>
+
+    @*<div id="main">
+            <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
+        </div>*@
+
+
+
+    <script>
+        /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "270px";
+            document.getElementById("main").style.marginLeft = "270px";
+        }
+
+        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+        //dropdownlist
+
+        //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

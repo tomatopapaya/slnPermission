@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CMEDOCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TDDDCOB">
+    <Key>
+      <PropertyRef Name="TD_CODE" />
+      <PropertyRef Name="IT_CODE" />
+      <PropertyRef Name="OBJ_NAME" />
+    </Key>
+    <Property Name="TD_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OBJ_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OBJ_EXTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OBJ_TITLE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="OBJ_DESC" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="OBJ_VERSION_M" Type="Int32" />
+    <Property Name="OBJ_VERSION_D" Type="Int32" />
+    <Property Name="OBJ_STATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="OBJ_SIZE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OBJ_CRT_DM" Type="DateTime" Precision="3" />
+    <Property Name="OBJ_MOD_DM" Type="DateTime" Precision="3" />
+    <Property Name="OBJ_BODY" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="AUTHOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ADD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DT" Type="DateTime" Precision="3" />
+    <Property Name="UPD_UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TDV_TDDDCOB">
+    <Key>
+      <PropertyRef Name="TD_CODE" />
+      <PropertyRef Name="IT_CODE" />
+      <PropertyRef Name="OBJ_NAME" />
+      <PropertyRef Name="OBJ_CONT" />
+    </Key>
+    <Property Name="TD_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TD_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IT_CODE_DESC" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="OBJ_TITLE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="OBJ_DESC" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="OBJ_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OBJ_CONT" Type="String" MaxLength="2200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TD_CATY" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OBJ_CRT_DM" Type="DateTime" Precision="3" />
+    <Property Name="AUTHOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OBJ_BODY" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="OBJ_SIZE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OBJ_MOD_DM" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="CMEDOCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TDDDCOB" EntityType="Self.TDDDCOB" />
+    <EntitySet Name="TDV_TDDDCOB" EntityType="Self.TDV_TDDDCOB" />
+  </EntityContainer>
+</Schema>

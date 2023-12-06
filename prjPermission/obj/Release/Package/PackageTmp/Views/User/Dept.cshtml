@@ -1,0 +1,87 @@
+﻿@model IEnumerable<prjPermission.Models.DeptCityViewModel>
+@{
+    Layout = null;
+}
+
+<div class="content">
+    @Html.Action("SideBar", "Home")
+</div>
+<style>
+    html {
+        height: 100%;
+    }
+    /*
+    body {
+        overflow: hidden;
+        background-image: radial-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+    }*/
+
+
+    .buttom {
+        text-align: left;
+        padding: 1em 2em;
+        transform: translate(-50%,-50%);
+        color: #fff;
+        font-size: 1em;
+        line-height: 4em;
+        font-family: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-align: center;
+        background-color: #678;
+        border-radius: 2em;
+    }
+
+    .buttom2 {
+        text-align: left;
+        padding: 1em 2em;
+        transform: translate(-50%,-50%);
+        color: #fff;
+        font-size: 1em;
+        line-height: 4em;
+        font-family: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-align: center;
+        background-color: #678;
+        border-radius: 2em;
+    }
+</style>
+
+<body class="model-form">
+    <div style="text-align:left;">
+
+        <h3>部門權限管理 :</h3>
+
+        <a href="@Url.Action("Index","User")" class="buttom">依使用者</a>
+
+        <a href="@Url.Action("Dept","User")" class="buttom2">依部門</a>
+
+        <a href="@Url.Action("DeptCreate","User")" class="btn btn-default" style="margin-left:30px">新增部門</a>
+
+    </div>
+
+    <br />
+
+    <form method="get" action="@Url.Action("Dept","User")">
+        <div style="text-align: left;">部門名稱:   <input name="DeptName" type="text" /> <input type="submit" value="查詢" class="btn btn-default" style="width:55px; height:30px" /></div>
+    </form>
+
+    <br />
+    <table class="table table-bordered table-hover" style="text-align: left; width:30%">
+        <tr>
+            <th>選擇</th>
+            <th>部門編號</th>
+            <th>部門名稱</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="vertical-align:middle"><a href="@Url.Action("DeptEdit","User")?choose=@item.oGCDEPT.DEPT_NAME" class="btn btn-primary">選擇</a></td>
+                <td style="vertical-align:middle">@item.sECCITY.DEPT_NO</td>
+                <td style="vertical-align:middle">@item.oGCDEPT.DEPT_NAME</td>
+            </tr>
+        }
+    </table>
+
+</body>
